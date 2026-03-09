@@ -5,11 +5,11 @@ author:
   - name: Julien Rabaud
     orcid: 0000-0002-6604-9777
     affiliations:
-      - name: Research Library · UPPA
+      - name: Applied Mathematics Research Library · UPPA
         url: https://bibliotheques.univ-pau.fr
       - name: Pôle Numérique · Research Data Management
         url: https://recherche.univ-pau.fr/fr/science-ouverte/donnees-de-la-recherche.html
-date: today
+date: 2026-03-10
 date-format: "MMMM D, YYYY"
 ---
 
@@ -61,38 +61,17 @@ This workshop introduces the full pipeline for organizing, describing, and expos
 ::: {.column width="50%"}
 ### For the Workshop
 
-- [🖥️ View Slides](./slides.html)
-- [📁 GitHub Repository](https://github.com/ujubib/tropy-arvest)
+- [View Slides](./slides.html)
+- [GitHub Repository](https://github.com/ujubib/tropy-arvest)
 :::
 ::: {.column width="50%"}
 ### Additional Resources
 
-- [🔗 Semantic Web & Metadata](./resources/semantic-web.html)
-- [🖼️ IIIF](./resources/iiif.html)
-- [📦 Tropy](./resources/tropy.html)
-- [🌐 Arvest](./resources/arvest.html)
+- [Semantic Web & Metadata](./resources/semantic-web.html)
+- [IIIF](./resources/iiif.html)
+- [Tropy](./resources/tropy.html)
+- [Arvest](./resources/arvest.html)
 :::
-:::
-
----
-
-## Pre-Workshop Preparation {.unnumbered}
-
-::: {.callout-important}
-### Required Before the Workshop
-
-Please install the following **before** joining the session:
-
-1. **Tropy** — [https://tropy.org](https://tropy.org/download) *(Windows, macOS, Linux)*
-2. **Create an Arvest account** — [https://arvest.app](https://arvest.app/register)
-3. **Prepare a small folder** of images from your research (10–30 photos or scans)
-:::
-
-::: {.callout-tip}
-### Optional but Useful
-
-- Browse the [IIIF Cookbook](https://iiif.io/api/cookbook/) for examples
-- Explore [Europeana](https://europeana.eu) to find IIIF images in your research area
 :::
 
 ---

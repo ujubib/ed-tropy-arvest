@@ -31,6 +31,19 @@ $spacer: 1rem;
   border-left-color: $info;
 }
 
+.tool-card {
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-top: 4px solid $primary;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+  transition: box-shadow 0.2s ease;
+  &:hover {
+    box-shadow: 0 4px 12px rgba(0,56,101,0.15);
+  }
+}
+
 // Tables
 table {
   font-size: 0.9rem;

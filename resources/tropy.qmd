@@ -1,48 +1,268 @@
 ---
-title: "Tropy Resources"
-subtitle: "Tutorials, plugins, and community"
+title: "Tropy"
+subtitle: "Organize and describe your research photographs"
 ---
 
-## Official Resources
+## What is Tropy?
 
-- **Website**: [tropy.org](https://tropy.org)
-- **Documentation**: [docs.tropy.org](https://docs.tropy.org)
-- **GitHub**: [github.com/tropy/tropy](https://github.com/tropy/tropy)
-- **Community forum**: [community.tropy.org](https://community.tropy.org)
-- **Plugins**: [tropy.org/plugins](https://tropy.org/plugins)
+[**Tropy**](https://tropy.org) is a free, open-source desktop application designed to help researchers organize, describe, and annotate photographs taken during archival research.
+
+It was developed by the [Digital Scholar](https://digitalscholar.org/) foundation — the same organization behind [Zotero](https://www.zotero.org/) and [Omeka](https://omeka.org/) — and is primarily used in the humanities and social sciences, though it is also popular among amateur genealogists and archive users.
+
+Tropy allows you to:
+
+- **Organize** photos into projects, lists, and tagged collections
+- **Describe** items with rich, linked metadata (Dublin Core, CIDOC-CRM, or custom schemas)
+- **Annotate** photos and crop selections (regions of interest)
+- **Export** data as JSON-LD (Linked Data), CSV, PDF, or push directly to Omeka S or Zotero
+
+::: {.callout-note}
+### Tropy is *not*:
+- A photo editor (*Photoshop*, Lightroom…)
+- A bibliographic reference manager (*Zotero* handles that)
+- A writing platform
+- An online publishing platform (*Omeka* does that)
+
+It is the **missing link** between your camera roll and your structured research data.
+:::
 
 ---
 
-## Video Tutorials
+## Creating a Project
 
-- Tropy official Vimeo channel: [vimeo.com/user104478141](https://vimeo.com/user104478141)
-- Tropy YouTube: [youtube.com/@tropyorg](https://www.youtube.com/@tropyorg)
+Go to **File → New → Project** (`Ctrl+Shift+P` / `Cmd+Shift+P`).
 
----
+You will be asked to:
 
-## Key Plugins
+1. Give the project a **name**
+2. Choose a **project type**
+3. Choose a **location** on your computer
 
-| Plugin | Function | Link |
+### Project Types
+
+| Type | Behaviour | Best for |
 |---|---|---|
-| **Omeka S Export** | Push items to Omeka S | [github.com/tropy](https://github.com/tropy) |
-| **Omeka S Import** | Pull items from Omeka S | [github.com/tropy](https://github.com/tropy) |
-| **IIIF Export** | Generate IIIF Manifests | [github.com/tropy](https://github.com/tropy) |
-| **CSV Import** | Import records from spreadsheets | [github.com/tropy](https://github.com/tropy) |
+| **Standard** | Copies photos *into* the project folder on import | Archival fieldwork — portable, self-contained |
+| **Advanced** | Stores a thumbnail and links to the original file location | Large collections already organized on disk |
+
+::: {.callout-tip}
+For most research use cases, **Standard** is the safer choice. If you move or rename your files, an Advanced project will lose track of them.
+
+**Suggested folder structure:**  
+`Images / Tropy / ProjectName /`
+:::
 
 ---
 
-## Vocabularies for Tropy Templates
+## The Three Levels of Description
 
-Pre-packaged vocabulary schemas for import into Tropy:
+Tropy structures your work in three nested levels, each with its own metadata:
 
-- **Dublin Core**: built-in
-- **Dublin Core Terms**: built-in
-- **CIDOC-CRM**: [github.com/tropy/tropy/tree/main/db/vocabularies](https://github.com/tropy/tropy/tree/main/db/vocabularies)
-- **Schema.org**: importable from [schema.org/version/latest/schemaorg-current-https.jsonld](https://schema.org/version/latest/schemaorg-current-https.jsonld)
+### 📁 Item
+The **primary unit** of description. An item groups one or more photos that belong together logically.
+
+*Example:* A two-page archival document photographed as recto and verso = 1 item, 2 photos.
+
+Typical metadata: title, date, archive name, box/folder reference, shelfmark.
+
+### 🖼️ Photo
+One image file. Metadata at this level covers technical properties: filename, dimensions, date taken.
+
+You rarely need to describe photos individually — description happens at the item level.
+
+### 🔍 Selection
+A cropped region within a photo. Selections are useful for isolating details: a seal, a signature, an inscription, a decorative motif, a face.
+
+Each selection can have its own title, notes, and tags, and is linked to pixel coordinates in the parent image.
 
 ---
 
-## Selected Publications
+## Metadata Templates
 
-- Putnam, L. (2016). *The Transnational and the Text-Searchable*. American Historical Review. — context for digital archival research
-- The Programming Historian has several lessons using Tropy: [programminghistorian.org](https://programminghistorian.org) (search "Tropy")
+A **template** defines which metadata fields appear in the description panel for an item, photo, or selection. Each field corresponds to a **property** from a vocabulary (Dublin Core, CIDOC-CRM, etc.).
+
+### Built-in Templates
+
+| Template | Type | Based on |
+|---|---|---|
+| *Tropy Generic* | Item | Dublin Core |
+| *Tropy Correspondence* | Item | Dublin Core (event-oriented) |
+| *Dublin Core* | Item | Dublin Core |
+| *Tropy Photo* | Photo | EXIF + Dublin Core |
+| *Tropy Selection* | Selection | Dublin Core |
+
+Built-in templates cannot be deleted or overwritten.
+
+### Creating or Customizing a Template
+
+Go to **Edit → Preferences → Templates**:
+
+1. Clear the *Template* field and enter a **Name**
+2. Choose the **Type** (Item, Photo, or Selection)
+3. Fill in *Creator* and *Description*
+4. Click **Create**
+5. Add, remove, or reorder **properties** using the property editor
+
+To modify an existing template without altering the original, click the **Duplicate** icon first.
+
+### Importing External Vocabularies
+
+Tropy can import any RDF/OWL vocabulary published as JSON-LD or Turtle, making its properties available in your templates:
+
+**Edit → Preferences → Vocabularies → Import**
+
+Pre-packaged schemas are available on the [Tropy GitHub](https://github.com/tropy/tropy/tree/main/db/vocabularies), including CIDOC-CRM, Schema.org, and others.
+
+::: {.callout-tip}
+Once you have imported the CIDOC-CRM vocabulary, you can build event-oriented templates using properties like `P138_represents`, `P7_took_place_at`, or `P14_carried_out_by`.
+:::
+
+---
+
+## Importing Photos
+
+### Supported Formats
+
+JPG/JPEG · PNG · SVG · TIFF · GIF · **PDF** · JPEG 2000 · WebP · HEIC · AVIF
+
+### Methods
+
+**File menu:** `File → Import → Photos` or `File → Import → Folder`
+
+**Drag and drop:** from your file manager directly into the Tropy project view
+
+**Watch folder:** `Edit → Preferences → Project → Watch folder…` — Tropy will automatically import any new files added to a monitored folder
+
+::: {.callout-tip}
+Before importing, set your **default template** in `Edit → Preferences → Settings`. All imported items will use that template automatically.
+:::
+
+::: {.callout-caution}
+**Standard project:** files are copied into the project folder on import — this may double your disk usage.  
+**Advanced project:** only a thumbnail is stored; the project links to the original file. Moving or deleting the original will break the link.
+:::
+
+### Importing from a IIIF Manifest
+
+With the [IIIF plugin](https://github.com/tropy/tropy-plugin-iiif) installed:
+
+1. Download a `manifest.json` file from a IIIF-compatible source (Europeana, Gallica, Nakala, Omeka S, Biblissima…)
+2. In Tropy: `File → Import → [IIIF profile name]` → select the manifest file
+3. Tropy maps the manifest metadata to your template properties automatically
+
+A curated list of IIIF-compatible collections is maintained at [iiif.io/guides/finding_resources/](https://iiif.io/guides/finding_resources/).
+
+### Importing from a CSV Spreadsheet
+
+With the [CSV plugin](https://github.com/tropy/tropy-plugin-csv):
+
+1. Define an import profile in `Edit → Preferences → Plugins`
+2. `File → Import → [CSV profile name]` → select your `.csv` file
+
+---
+
+## Exporting
+
+### Built-in Export
+
+`File → Export`:
+
+- **JSON-LD** — Linked Data, the richest and most interoperable format
+- **PDF** — for printing or archiving a selection of items
+
+### Export Plugins
+
+| Plugin | Function |
+|---|---|
+| [Omeka S](https://github.com/tropy/tropy-plugin-omeka) | Push items (metadata + photos) to an Omeka S instance |
+| [CSV](https://github.com/tropy/tropy-plugin-csv) | Export metadata as a spreadsheet |
+| [CSL / Zotero](https://github.com/tropy/tropy-plugin-csl) | Export items to Zotero as CSL/JSON |
+| [Archive](https://github.com/tropy/tropy-plugin-archive) | Export as a `.zip` (metadata + photo files) |
+
+---
+
+## Full Plugins Reference
+
+All official plugins are listed at [tropy.org/plugins](https://tropy.org/plugins).
+
+| Plugin | Description |
+|---|---|
+| [tropy-plugin-iiif](https://github.com/tropy/tropy-plugin-iiif) | Import photos from a IIIF Manifest |
+| [tropy-plugin-omeka](https://github.com/tropy/tropy-plugin-omeka) | Import from / export to Omeka S |
+| [tropy-plugin-csv](https://github.com/tropy/tropy-plugin-csv) | Import from / export to CSV |
+| [tropy-plugin-csl](https://github.com/tropy/tropy-plugin-csl) | Export to Zotero (CSL/JSON) |
+| [tropy-plugin-archive](https://github.com/tropy/tropy-plugin-archive) | Export as ZIP archive |
+
+To install: download the `.zip` from GitHub → `Edit → Preferences → Plugins → Install plugin`.
+
+---
+
+## Depositing Images in Nakala
+
+If you cite your research photos in publications, or want to share and preserve them long-term, consider depositing them in a **research data repository**.
+
+[**Nakala**](https://nakala.fr) is the data repository operated by [Huma-Num](https://www.huma-num.fr) (CNRS). It provides:
+
+- Stable **DOIs** for your datasets
+- Automatic **IIIF image serving** for all deposited images
+- **API access** to metadata and files
+- Public and private deposit modes
+
+::: {.callout-tip}
+### Tropy → Nakala → Arvest workflow
+
+1. Describe your photos in Tropy with a template aligned with Nakala's metadata schema
+2. Export as JSON-LD or push via the Omeka S plugin
+3. Deposit images in Nakala → receive a DOI and a IIIF Manifest URL
+4. Import the Manifest into Arvest for collaborative annotation and exposure
+
+→ A complete, **FAIR-compliant** pipeline for image corpora.
+:::
+
+Huma-Num provides a detailed **[Guide for describing data in Nakala](https://documentation.huma-num.fr/nakala-guide-de-description/)** and a printable [deposit checklist (PDF, March 2024)](https://documentation.huma-num.fr/media/nakala/Guide_depot_Nakala_mars-2024.pdf).
+
+---
+
+## Official Channels
+
+| Resource | Link |
+|---|---|
+| Website | [tropy.org](https://tropy.org) |
+| Documentation | [docs.tropy.org](https://docs.tropy.org) |
+| Community forum | [community.tropy.org](https://community.tropy.org) |
+| GitHub | [github.com/tropy](https://github.com/tropy) |
+| YouTube | [youtube.com/@tropy](https://www.youtube.com/@tropy) |
+| Vimeo | [vimeo.com/user73164761](https://vimeo.com/user73164761) |
+
+---
+
+## Tutorials & Further Reading
+
+### Video Tutorials
+
+- **Tropy 101 webinar** (Abby Mullen, 2020, 1h05) — [YouTube](https://www.youtube.com/watch?v=jWjP90EWHkQ)
+- **Metadata Templates in Tropy** (Tropy official channel, 10 min) — [YouTube](https://www.youtube.com/watch?v=Hk5APGD6200)
+- **Managing Research Images with Tropy** — [Harvard Library Research Guide](https://guides.library.harvard.edu/c.php?g=833532&p=5990005)
+
+### Written Tutorials
+
+| Author | Resource | Language |
+|---|---|---|
+| B. Lailler | [Tutoriel Tropy](https://zenodo.org/records/3381981) | 🇫🇷 French |
+| Stretching numérique | [Gérer ses photos d'archives avec Tropy](https://zenodo.org/records/10939791) | 🇫🇷 French |
+| BULAC | [Gérer ses ressources iconographiques avec Tropy](https://www.bulac.fr/document/gerer-ses-ressources-iconographiques-avec-tropy-mai-2024) | 🇫🇷 French |
+
+### Selected Blog Posts
+
+- E. Mourlon-Druol — [Six months of using Tropy](https://www.e-mourlon-druol.com/six-months-of-using-tropy/) (2019, 🇬🇧 English)
+- E. Lee — [Personal image management software rec from an art historian: Tropy](https://digitalorientalist.com/2021/03/16/personal-image-management-software-rec-from-an-art-historian-tropy/) — *The Digital Orientalist* (2021, 🇬🇧 English)
+- F. Heimburger — [Gérer ses photos d'archives avec Tropy](http://www.boiteaoutils.info/2017/10/gerer-ses-photos-darchives-avec-tropy/) — *La boîte à outils des historien·ne·s* (2017, 🇫🇷 French)
+- Tropy Blog — [New Project Types in Tropy 1.13](https://tropy.org/blog/new-project-types-in-tropy-1-13) (2023, 🇬🇧 English)
+
+---
+
+## Previous Workshop (French)
+
+This page draws on the **2024–2025 ED 481 SSH Tropy workshop** delivered in French at UPPA. The full companion guide (Quarto book) is available at:
+
+🔗 [uju.quarto.pub/tropy/](https://uju.quarto.pub/tropy/)
