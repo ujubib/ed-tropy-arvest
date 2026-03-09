@@ -1,0 +1,47 @@
+meta:
+  name: "UPPA - Organizing and Curating Image Corpora"
+  link: https://ujubib.github.io/tropy-arvest/
+
+color:
+  palette:
+    uppa-blue: "#003865"
+    uppa-light-blue: "#0070B8"
+    uppa-gold: "#C8A951"
+    uppa-gray: "#6C757D"
+    white: "#FFFFFF"
+    light-bg: "#F8F9FA"
+  foreground: "#1A1A2E"
+  background: "#FFFFFF"
+  primary: "#003865"
+  secondary: "#0070B8"
+  success: "#28a745"
+  info: "#17a2b8"
+  warning: "#C8A951"
+  danger: "#dc3545"
+  light: "#F8F9FA"
+  dark: "#1A1A2E"
+
+typography:
+  fonts:
+    - family: "Source Sans Pro"
+      source: google
+    - family: "Source Code Pro"
+      source: google
+    - family: "Playfair Display"
+      source: google
+  base-size: 16px
+  headings:
+    family: "Playfair Display"
+    weight: 700
+    style: normal
+  monospace:
+    family: "Source Code Pro"
+    size: 0.9em
+  body:
+    family: "Source Sans Pro"
+    weight: 400
+    line-height: 1.6
+
+logo:
+  small: img/logoUPPA-RepFr.png
+  medium: img/logoUPPA-RepFr.png

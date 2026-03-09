@@ -1,0 +1,50 @@
+---
+title: "IIIF Resources"
+subtitle: "Viewers, collections, tools and documentation"
+---
+
+## Getting Started with IIIF
+
+- **How IIIF Works** (official intro): [iiif.io/get-started/how-iiif-works/](https://iiif.io/get-started/how-iiif-works/)
+- **IIIF Cookbook** (practical recipes with examples): [iiif.io/api/cookbook/](https://iiif.io/api/cookbook/)
+- **IIIF Awesome list**: [github.com/IIIF/awesome-iiif](https://github.com/IIIF/awesome-iiif)
+
+---
+
+## API Specifications
+
+- **Image API 3.0**: [iiif.io/api/image/3.0/](https://iiif.io/api/image/3.0/)
+- **Presentation API 3.0**: [iiif.io/api/presentation/3.0/](https://iiif.io/api/presentation/3.0/)
+- **Search API**: [iiif.io/api/search/](https://iiif.io/api/search/)
+- **Authorization Flow API**: [iiif.io/api/auth/](https://iiif.io/api/auth/)
+
+---
+
+## IIIF-Enabled Collections
+
+| Institution | URL |
+|---|---|
+| Europeana | [europeana.eu](https://europeana.eu) |
+| Gallica (BnF) | [gallica.bnf.fr](https://gallica.bnf.fr) |
+| Nakala (Huma-Num) | [nakala.fr](https://nakala.fr) |
+| Wellcome Collection | [wellcomecollection.org](https://wellcomecollection.org) |
+| British Library | [bl.uk](https://www.bl.uk/digitised-manuscripts/) |
+| Harvard Art Museums | [harvardartmuseums.org](https://harvardartmuseums.org) |
+| Bodleian Libraries | [digital.bodleian.ox.ac.uk](https://digital.bodleian.ox.ac.uk) |
+
+---
+
+## IIIF Viewers
+
+- **Universal Viewer**: [universalviewer.io](https://universalviewer.io) — feature-rich, widely used
+- **Mirador**: [projectmirador.org](https://projectmirador.org) — multi-window, annotation-ready
+- **Clover IIIF**: [samvera-labs.github.io/clover-iiif](https://samvera-labs.github.io/clover-iiif/) — modern React viewer
+- **IIIF.io Viewer**: [iiif.io/demos/](https://iiif.io/demos/) — list of all viewers
+
+---
+
+## Manifest Creation Tools
+
+- **Manifest Editor** (online): [manifest-editor.iiif.io](https://manifest-editor.iiif.io)
+- **Digirati Manifest Editor**: [github.com/digirati-co-uk/iiif-manifest-editor](https://github.com/digirati-co-uk/iiif-manifest-editor)
+- **Tropy IIIF Export Plugin**: generates manifests from Tropy projects

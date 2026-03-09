@@ -1,0 +1,52 @@
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "Organizing and Curating Image Corpora"
+  description: "With Tropy and Arvest — Workshop for ED 481 SSH / CHORAL"
+  favicon: img/favicon.png
+  repo-url: https://github.com/ujubib/tropy-arvest
+  repo-actions: [source, issue]
+  page-navigation: true
+
+  navbar:
+    logo: img/logoUPPA-RepFr.png
+    logo-alt: "UPPA Logo"
+    title: false
+    background: "#003865"
+    foreground: light
+    left:
+      - text: "Workshop"
+        href: index.qmd
+      - text: "Slides"
+        href: slides.qmd
+    right:
+      - text: "Resources"
+        menu:
+          - text: "Semantic Web & Metadata"
+            href: resources/semantic-web.qmd
+          - text: "IIIF"
+            href: resources/iiif.qmd
+          - text: "Tropy"
+            href: resources/tropy.qmd
+          - text: "Arvest"
+            href: resources/arvest.qmd
+
+  page-footer:
+    left: |
+      Made with [Quarto](https://quarto.org) · UPPA · [ED 481 SSH](https://ed-ssh.univ-pau.fr) · [CHORAL](https://unita.university)
+    right: |
+      [![CC BY 4.0](https://licensebuttons.net/l/by/4.0/80x15.png)](https://creativecommons.org/licenses/by/4.0/)
+
+format:
+  html:
+    theme: [cosmo, custom.scss]
+    toc: true
+    toc-depth: 3
+    number-sections: false
+    smooth-scroll: true
+    link-external-newwindow: true
+    link-external-icon: true
+
+brand: _brand.yml

@@ -1,0 +1,124 @@
+---
+title: "Organizing and Curating Image Corpora"
+subtitle: "with Tropy and Arvest"
+author:
+  - name: Julien Rabaud
+    orcid: 0000-0002-6604-9777
+    affiliations:
+      - name: Research Library · UPPA
+        url: https://bibliotheques.univ-pau.fr
+      - name: Pôle Numérique · Research Data Management
+        url: https://recherche.univ-pau.fr/fr/science-ouverte/donnees-de-la-recherche.html
+date: today
+date-format: "MMMM D, YYYY"
+---
+
+## Welcome {.unnumbered}
+
+This website contains all materials for the **Organizing and Curating Image Corpora with Tropy and Arvest** workshop, organized for doctoral students of the UPPA SSH Doctoral School and the CHORAL programme (Unita).
+
+::: {.callout-note icon="true"}
+### Workshop Information
+
+| | |
+|---|---|
+| **Audience** | Doctoral students · ED 481 SSH · CHORAL programme |
+| **Format** | Online (visio) |
+| **Language** | English |
+| **Instructor** | Julien Rabaud |
+| **Contact** | [julien.rabaud\@univ-pau.fr](mailto:julien.rabaud@univ-pau.fr) |
+:::
+
+---
+
+## What You Will Learn {.unnumbered}
+
+This workshop introduces the full pipeline for organizing, describing, and exposing **image corpora** for humanities research — from semantic metadata standards to practical tools.
+
+### Part 1 · Conceptual Foundations
+
+- The **Semantic Web** and its relevance for research data
+- **RDF Triples** and **URIs** as the backbone of linked data
+- Metadata schemas: **Dublin Core** and **CIDOC-CRM**
+- Controlled vocabularies: **GeoNames**, **Pactols**, **Openthéso**
+
+### Part 2 · IIIF — The International Image Interoperability Framework
+
+- What IIIF is and why it matters for image corpora
+- Key APIs: **Image API** and **Presentation API** (Manifests)
+- IIIF images from **Europeana**, **Omeka S**, and **Nakala**
+
+### Part 3 · Tools
+
+- **[Tropy](https://tropy.org)** — Organize, describe and annotate research photos
+- **[Arvest](https://arvest.app)** — Import, annotate and expose IIIF image collections
+
+---
+
+## Quick Links {.unnumbered}
+
+::: {.columns}
+::: {.column width="50%"}
+### For the Workshop
+
+- [🖥️ View Slides](./slides.html)
+- [📁 GitHub Repository](https://github.com/ujubib/tropy-arvest)
+:::
+::: {.column width="50%"}
+### Additional Resources
+
+- [🔗 Semantic Web & Metadata](./resources/semantic-web.html)
+- [🖼️ IIIF](./resources/iiif.html)
+- [📦 Tropy](./resources/tropy.html)
+- [🌐 Arvest](./resources/arvest.html)
+:::
+:::
+
+---
+
+## Pre-Workshop Preparation {.unnumbered}
+
+::: {.callout-important}
+### Required Before the Workshop
+
+Please install the following **before** joining the session:
+
+1. **Tropy** — [https://tropy.org](https://tropy.org/download) *(Windows, macOS, Linux)*
+2. **Create an Arvest account** — [https://arvest.app](https://arvest.app/register)
+3. **Prepare a small folder** of images from your research (10–30 photos or scans)
+:::
+
+::: {.callout-tip}
+### Optional but Useful
+
+- Browse the [IIIF Cookbook](https://iiif.io/api/cookbook/) for examples
+- Explore [Europeana](https://europeana.eu) to find IIIF images in your research area
+:::
+
+---
+
+## About the Tools {.unnumbered}
+
+:::: {.tool-card}
+### Tropy
+
+**Tropy** is a free, open-source desktop application developed by the Roy Rosenzweig Center for History and New Media (George Mason University) and the Luxembourg Centre for Contemporary and Digital History (C²DH). It allows researchers to import, organize, describe, and annotate the photos they take during archival research.
+
+🔗 [tropy.org](https://tropy.org) · [Documentation](https://docs.tropy.org) · [GitHub](https://github.com/tropy/tropy)
+::::
+
+:::: {.tool-card}
+### Arvest
+
+**Arvest** is a web platform for working with IIIF image collections. It allows importing images (locally or via IIIF manifests), collaborative annotation, and exposing data through APIs for further analysis — including machine learning applications.
+
+🔗 [arvest.app](https://arvest.app) · [Documentation](https://docs.arvest.app)
+::::
+
+---
+
+::: {.callout-note icon="false"}
+### CC BY 4.0 License
+
+All workshop materials are released under a [Creative Commons Attribution 4.0](https://creativecommons.org/licenses/by/4.0/) license. You are free to use, modify, and share them with attribution.
+:::

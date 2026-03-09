@@ -1,0 +1,65 @@
+---
+title: "Arvest Resources"
+subtitle: "Documentation, API and use cases"
+---
+
+## Official Resources
+
+- **Website**: [arvest.app](https://arvest.app)
+- **Documentation**: [docs.arvest.app](https://docs.arvest.app)
+- **Register**: [arvest.app/register](https://arvest.app/register)
+
+---
+
+## Importing Images
+
+### Local Images
+1. Create a workspace
+2. Click *Import → Upload files*
+3. Supported formats: JPEG, PNG, TIFF, WebP
+
+### IIIF Manifests
+1. Find a Manifest URL (Europeana, Nakala, Omeka S, Gallica, etc.)
+2. Click *Import → IIIF Manifest URL*
+3. Paste the URL → Arvest imports all canvases
+
+---
+
+## W3C Web Annotation Standard
+
+Arvest uses the [W3C Web Annotation Data Model](https://www.w3.org/TR/annotation-model/) for all annotations, ensuring interoperability with other tools.
+
+Key concepts:
+
+- **Annotation** — the annotation itself (with creator, date, motivation)
+- **Target** — what is being annotated (a canvas region, specified as a URI fragment)
+- **Body** — the content of the annotation (text, tag, linked data URI)
+
+---
+
+## API Access
+
+The Arvest REST API allows programmatic access to your workspace data:
+
+```bash
+# Get all manifests in a workspace
+GET https://api.arvest.app/v1/workspaces/{id}/manifests
+
+# Get all annotations
+GET https://api.arvest.app/v1/workspaces/{id}/annotations
+
+# Get annotations for a specific canvas
+GET https://api.arvest.app/v1/manifests/{id}/annotations
+```
+
+Consult the full API documentation at [docs.arvest.app/api](https://docs.arvest.app).
+
+---
+
+## Use Cases in the Humanities
+
+- **Iconographic analysis**: annotate depicted figures, symbols, scenes
+- **Historical geography**: tag depicted places with GeoNames URIs
+- **Text transcription**: annotate visible text passages
+- **Comparative analysis**: compare the same motif across multiple images in a corpus
+- **ML dataset preparation**: create annotated training sets for computer vision models
