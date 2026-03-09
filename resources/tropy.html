@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Tropy Resources – Organizing and Curating Image Corpora</title>
+<title>Tropy – Organizing and Curating Image Corpora</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -43,9 +43,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-10d6bfaa2f8bcb121088c7d3a1816829.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-2a85f02c1f4579c27568fb6b482a5c84.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-2a85f02c1f4579c27568fb6b482a5c84.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-2a85f02c1f4579c27568fb6b482a5c84.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-452c1f8d2763ffdce7a54600e1ba0cb5.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-452c1f8d2763ffdce7a54600e1ba0cb5.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-452c1f8d2763ffdce7a54600e1ba0cb5.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -206,11 +206,45 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#official-resources" id="toc-official-resources" class="nav-link active" data-scroll-target="#official-resources">Official Resources</a></li>
+  <li><a href="#what-is-tropy" id="toc-what-is-tropy" class="nav-link active" data-scroll-target="#what-is-tropy">What is Tropy?</a></li>
+  <li><a href="#creating-a-project" id="toc-creating-a-project" class="nav-link" data-scroll-target="#creating-a-project">Creating a Project</a>
+  <ul class="collapse">
+  <li><a href="#project-types" id="toc-project-types" class="nav-link" data-scroll-target="#project-types">Project Types</a></li>
+  </ul></li>
+  <li><a href="#the-three-levels-of-description" id="toc-the-three-levels-of-description" class="nav-link" data-scroll-target="#the-three-levels-of-description">The Three Levels of Description</a>
+  <ul class="collapse">
+  <li><a href="#item" id="toc-item" class="nav-link" data-scroll-target="#item">📁 Item</a></li>
+  <li><a href="#photo" id="toc-photo" class="nav-link" data-scroll-target="#photo">🖼️ Photo</a></li>
+  <li><a href="#selection" id="toc-selection" class="nav-link" data-scroll-target="#selection">🔍 Selection</a></li>
+  </ul></li>
+  <li><a href="#metadata-templates" id="toc-metadata-templates" class="nav-link" data-scroll-target="#metadata-templates">Metadata Templates</a>
+  <ul class="collapse">
+  <li><a href="#built-in-templates" id="toc-built-in-templates" class="nav-link" data-scroll-target="#built-in-templates">Built-in Templates</a></li>
+  <li><a href="#creating-or-customizing-a-template" id="toc-creating-or-customizing-a-template" class="nav-link" data-scroll-target="#creating-or-customizing-a-template">Creating or Customizing a Template</a></li>
+  <li><a href="#importing-external-vocabularies" id="toc-importing-external-vocabularies" class="nav-link" data-scroll-target="#importing-external-vocabularies">Importing External Vocabularies</a></li>
+  </ul></li>
+  <li><a href="#importing-photos" id="toc-importing-photos" class="nav-link" data-scroll-target="#importing-photos">Importing Photos</a>
+  <ul class="collapse">
+  <li><a href="#supported-formats" id="toc-supported-formats" class="nav-link" data-scroll-target="#supported-formats">Supported Formats</a></li>
+  <li><a href="#methods" id="toc-methods" class="nav-link" data-scroll-target="#methods">Methods</a></li>
+  <li><a href="#importing-from-a-iiif-manifest" id="toc-importing-from-a-iiif-manifest" class="nav-link" data-scroll-target="#importing-from-a-iiif-manifest">Importing from a IIIF Manifest</a></li>
+  <li><a href="#importing-from-a-csv-spreadsheet" id="toc-importing-from-a-csv-spreadsheet" class="nav-link" data-scroll-target="#importing-from-a-csv-spreadsheet">Importing from a CSV Spreadsheet</a></li>
+  </ul></li>
+  <li><a href="#exporting" id="toc-exporting" class="nav-link" data-scroll-target="#exporting">Exporting</a>
+  <ul class="collapse">
+  <li><a href="#built-in-export" id="toc-built-in-export" class="nav-link" data-scroll-target="#built-in-export">Built-in Export</a></li>
+  <li><a href="#export-plugins" id="toc-export-plugins" class="nav-link" data-scroll-target="#export-plugins">Export Plugins</a></li>
+  </ul></li>
+  <li><a href="#full-plugins-reference" id="toc-full-plugins-reference" class="nav-link" data-scroll-target="#full-plugins-reference">Full Plugins Reference</a></li>
+  <li><a href="#depositing-images-in-nakala" id="toc-depositing-images-in-nakala" class="nav-link" data-scroll-target="#depositing-images-in-nakala">Depositing Images in Nakala</a></li>
+  <li><a href="#official-channels" id="toc-official-channels" class="nav-link" data-scroll-target="#official-channels">Official Channels</a></li>
+  <li><a href="#tutorials-further-reading" id="toc-tutorials-further-reading" class="nav-link" data-scroll-target="#tutorials-further-reading">Tutorials &amp; Further Reading</a>
+  <ul class="collapse">
   <li><a href="#video-tutorials" id="toc-video-tutorials" class="nav-link" data-scroll-target="#video-tutorials">Video Tutorials</a></li>
-  <li><a href="#key-plugins" id="toc-key-plugins" class="nav-link" data-scroll-target="#key-plugins">Key Plugins</a></li>
-  <li><a href="#vocabularies-for-tropy-templates" id="toc-vocabularies-for-tropy-templates" class="nav-link" data-scroll-target="#vocabularies-for-tropy-templates">Vocabularies for Tropy Templates</a></li>
-  <li><a href="#selected-publications" id="toc-selected-publications" class="nav-link" data-scroll-target="#selected-publications">Selected Publications</a></li>
+  <li><a href="#written-tutorials" id="toc-written-tutorials" class="nav-link" data-scroll-target="#written-tutorials">Written Tutorials</a></li>
+  <li><a href="#selected-blog-posts" id="toc-selected-blog-posts" class="nav-link" data-scroll-target="#selected-blog-posts">Selected Blog Posts</a></li>
+  </ul></li>
+  <li><a href="#previous-workshop-french" id="toc-previous-workshop-french" class="nav-link" data-scroll-target="#previous-workshop-french">Previous Workshop (French)</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/ujubib/ed-tropy-arvest/blob/main/resources/tropy.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/ujubib/ed-tropy-arvest/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -219,8 +253,8 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../resources/semantic-web.html">Resources</a></li><li class="breadcrumb-item"><a href="../resources/tropy.html">Tropy</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Tropy Resources</h1>
-<p class="subtitle lead">Tutorials, plugins, and community</p>
+<h1 class="title">Tropy</h1>
+<p class="subtitle lead">Organize and describe your research photographs</p>
 </div>
 
 
@@ -237,77 +271,450 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="official-resources" class="level2">
-<h2 class="anchored" data-anchor-id="official-resources">Official Resources</h2>
+<section id="what-is-tropy" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-tropy">What is Tropy?</h2>
+<p><a href="https://tropy.org"><strong>Tropy</strong></a> is a free, open-source desktop application designed to help researchers organize, describe, and annotate photographs taken during archival research.</p>
+<p>It was developed by the <a href="https://digitalscholar.org/">Digital Scholar</a> foundation — the same organization behind <a href="https://www.zotero.org/">Zotero</a> and <a href="https://omeka.org/">Omeka</a> — and is primarily used in the humanities and social sciences, though it is also popular among amateur genealogists and archive users.</p>
+<p>Tropy allows you to:</p>
 <ul>
-<li><strong>Website</strong>: <a href="https://tropy.org">tropy.org</a></li>
-<li><strong>Documentation</strong>: <a href="https://docs.tropy.org">docs.tropy.org</a></li>
-<li><strong>GitHub</strong>: <a href="https://github.com/tropy/tropy">github.com/tropy/tropy</a></li>
-<li><strong>Community forum</strong>: <a href="https://community.tropy.org">community.tropy.org</a></li>
-<li><strong>Plugins</strong>: <a href="https://tropy.org/plugins">tropy.org/plugins</a></li>
+<li><strong>Organize</strong> photos into projects, lists, and tagged collections</li>
+<li><strong>Describe</strong> items with rich, linked metadata (Dublin Core, CIDOC-CRM, or custom schemas)</li>
+<li><strong>Annotate</strong> photos and crop selections (regions of interest)</li>
+<li><strong>Export</strong> data as JSON-LD (Linked Data), CSV, PDF, or push directly to Omeka S or Zotero</li>
 </ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Tropy is <em>not</em>:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>A photo editor (<em>Photoshop</em>, Lightroom…)</li>
+<li>A bibliographic reference manager (<em>Zotero</em> handles that)</li>
+<li>A writing platform</li>
+<li>An online publishing platform (<em>Omeka</em> does that)</li>
+</ul>
+<p>It is the <strong>missing link</strong> between your camera roll and your structured research data.</p>
+</div>
+</div>
 <hr>
 </section>
-<section id="video-tutorials" class="level2">
-<h2 class="anchored" data-anchor-id="video-tutorials">Video Tutorials</h2>
-<ul>
-<li>Tropy official Vimeo channel: <a href="https://vimeo.com/user104478141">vimeo.com/user104478141</a></li>
-<li>Tropy YouTube: <a href="https://www.youtube.com/@tropyorg">youtube.com/<span class="citation" data-cites="tropyorg">@tropyorg</span></a></li>
-</ul>
+<section id="creating-a-project" class="level2">
+<h2 class="anchored" data-anchor-id="creating-a-project">Creating a Project</h2>
+<p>Go to <strong>File → New → Project</strong> (<code>Ctrl+Shift+P</code> / <code>Cmd+Shift+P</code>).</p>
+<p>You will be asked to:</p>
+<ol type="1">
+<li>Give the project a <strong>name</strong></li>
+<li>Choose a <strong>project type</strong></li>
+<li>Choose a <strong>location</strong> on your computer</li>
+</ol>
+<section id="project-types" class="level3">
+<h3 class="anchored" data-anchor-id="project-types">Project Types</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>Behaviour</th>
+<th>Best for</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Standard</strong></td>
+<td>Copies photos <em>into</em> the project folder on import</td>
+<td>Archival fieldwork — portable, self-contained</td>
+</tr>
+<tr class="even">
+<td><strong>Advanced</strong></td>
+<td>Stores a thumbnail and links to the original file location</td>
+<td>Large collections already organized on disk</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For most research use cases, <strong>Standard</strong> is the safer choice. If you move or rename your files, an Advanced project will lose track of them.</p>
+<p><strong>Suggested folder structure:</strong><br>
+<code>Images / Tropy / ProjectName /</code></p>
+</div>
+</div>
 <hr>
 </section>
-<section id="key-plugins" class="level2">
-<h2 class="anchored" data-anchor-id="key-plugins">Key Plugins</h2>
+</section>
+<section id="the-three-levels-of-description" class="level2">
+<h2 class="anchored" data-anchor-id="the-three-levels-of-description">The Three Levels of Description</h2>
+<p>Tropy structures your work in three nested levels, each with its own metadata:</p>
+<section id="item" class="level3">
+<h3 class="anchored" data-anchor-id="item">📁 Item</h3>
+<p>The <strong>primary unit</strong> of description. An item groups one or more photos that belong together logically.</p>
+<p><em>Example:</em> A two-page archival document photographed as recto and verso = 1 item, 2 photos.</p>
+<p>Typical metadata: title, date, archive name, box/folder reference, shelfmark.</p>
+</section>
+<section id="photo" class="level3">
+<h3 class="anchored" data-anchor-id="photo">🖼️ Photo</h3>
+<p>One image file. Metadata at this level covers technical properties: filename, dimensions, date taken.</p>
+<p>You rarely need to describe photos individually — description happens at the item level.</p>
+</section>
+<section id="selection" class="level3">
+<h3 class="anchored" data-anchor-id="selection">🔍 Selection</h3>
+<p>A cropped region within a photo. Selections are useful for isolating details: a seal, a signature, an inscription, a decorative motif, a face.</p>
+<p>Each selection can have its own title, notes, and tags, and is linked to pixel coordinates in the parent image.</p>
+<hr>
+</section>
+</section>
+<section id="metadata-templates" class="level2">
+<h2 class="anchored" data-anchor-id="metadata-templates">Metadata Templates</h2>
+<p>A <strong>template</strong> defines which metadata fields appear in the description panel for an item, photo, or selection. Each field corresponds to a <strong>property</strong> from a vocabulary (Dublin Core, CIDOC-CRM, etc.).</p>
+<section id="built-in-templates" class="level3">
+<h3 class="anchored" data-anchor-id="built-in-templates">Built-in Templates</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Template</th>
+<th>Type</th>
+<th>Based on</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><em>Tropy Generic</em></td>
+<td>Item</td>
+<td>Dublin Core</td>
+</tr>
+<tr class="even">
+<td><em>Tropy Correspondence</em></td>
+<td>Item</td>
+<td>Dublin Core (event-oriented)</td>
+</tr>
+<tr class="odd">
+<td><em>Dublin Core</em></td>
+<td>Item</td>
+<td>Dublin Core</td>
+</tr>
+<tr class="even">
+<td><em>Tropy Photo</em></td>
+<td>Photo</td>
+<td>EXIF + Dublin Core</td>
+</tr>
+<tr class="odd">
+<td><em>Tropy Selection</em></td>
+<td>Selection</td>
+<td>Dublin Core</td>
+</tr>
+</tbody>
+</table>
+<p>Built-in templates cannot be deleted or overwritten.</p>
+</section>
+<section id="creating-or-customizing-a-template" class="level3">
+<h3 class="anchored" data-anchor-id="creating-or-customizing-a-template">Creating or Customizing a Template</h3>
+<p>Go to <strong>Edit → Preferences → Templates</strong>:</p>
+<ol type="1">
+<li>Clear the <em>Template</em> field and enter a <strong>Name</strong></li>
+<li>Choose the <strong>Type</strong> (Item, Photo, or Selection)</li>
+<li>Fill in <em>Creator</em> and <em>Description</em></li>
+<li>Click <strong>Create</strong></li>
+<li>Add, remove, or reorder <strong>properties</strong> using the property editor</li>
+</ol>
+<p>To modify an existing template without altering the original, click the <strong>Duplicate</strong> icon first.</p>
+</section>
+<section id="importing-external-vocabularies" class="level3">
+<h3 class="anchored" data-anchor-id="importing-external-vocabularies">Importing External Vocabularies</h3>
+<p>Tropy can import any RDF/OWL vocabulary published as JSON-LD or Turtle, making its properties available in your templates:</p>
+<p><strong>Edit → Preferences → Vocabularies → Import</strong></p>
+<p>Pre-packaged schemas are available on the <a href="https://github.com/tropy/tropy/tree/main/db/vocabularies">Tropy GitHub</a>, including CIDOC-CRM, Schema.org, and others.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Once you have imported the CIDOC-CRM vocabulary, you can build event-oriented templates using properties like <code>P138_represents</code>, <code>P7_took_place_at</code>, or <code>P14_carried_out_by</code>.</p>
+</div>
+</div>
+<hr>
+</section>
+</section>
+<section id="importing-photos" class="level2">
+<h2 class="anchored" data-anchor-id="importing-photos">Importing Photos</h2>
+<section id="supported-formats" class="level3">
+<h3 class="anchored" data-anchor-id="supported-formats">Supported Formats</h3>
+<p>JPG/JPEG · PNG · SVG · TIFF · GIF · <strong>PDF</strong> · JPEG 2000 · WebP · HEIC · AVIF</p>
+</section>
+<section id="methods" class="level3">
+<h3 class="anchored" data-anchor-id="methods">Methods</h3>
+<p><strong>File menu:</strong> <code>File → Import → Photos</code> or <code>File → Import → Folder</code></p>
+<p><strong>Drag and drop:</strong> from your file manager directly into the Tropy project view</p>
+<p><strong>Watch folder:</strong> <code>Edit → Preferences → Project → Watch folder…</code> — Tropy will automatically import any new files added to a monitored folder</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Before importing, set your <strong>default template</strong> in <code>Edit → Preferences → Settings</code>. All imported items will use that template automatically.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Caution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Standard project:</strong> files are copied into the project folder on import — this may double your disk usage.<br>
+<strong>Advanced project:</strong> only a thumbnail is stored; the project links to the original file. Moving or deleting the original will break the link.</p>
+</div>
+</div>
+</section>
+<section id="importing-from-a-iiif-manifest" class="level3">
+<h3 class="anchored" data-anchor-id="importing-from-a-iiif-manifest">Importing from a IIIF Manifest</h3>
+<p>With the <a href="https://github.com/tropy/tropy-plugin-iiif">IIIF plugin</a> installed:</p>
+<ol type="1">
+<li>Download a <code>manifest.json</code> file from a IIIF-compatible source (Europeana, Gallica, Nakala, Omeka S, Biblissima…)</li>
+<li>In Tropy: <code>File → Import → [IIIF profile name]</code> → select the manifest file</li>
+<li>Tropy maps the manifest metadata to your template properties automatically</li>
+</ol>
+<p>A curated list of IIIF-compatible collections is maintained at <a href="https://iiif.io/guides/finding_resources/">iiif.io/guides/finding_resources/</a>.</p>
+</section>
+<section id="importing-from-a-csv-spreadsheet" class="level3">
+<h3 class="anchored" data-anchor-id="importing-from-a-csv-spreadsheet">Importing from a CSV Spreadsheet</h3>
+<p>With the <a href="https://github.com/tropy/tropy-plugin-csv">CSV plugin</a>:</p>
+<ol type="1">
+<li>Define an import profile in <code>Edit → Preferences → Plugins</code></li>
+<li><code>File → Import → [CSV profile name]</code> → select your <code>.csv</code> file</li>
+</ol>
+<hr>
+</section>
+</section>
+<section id="exporting" class="level2">
+<h2 class="anchored" data-anchor-id="exporting">Exporting</h2>
+<section id="built-in-export" class="level3">
+<h3 class="anchored" data-anchor-id="built-in-export">Built-in Export</h3>
+<p><code>File → Export</code>:</p>
+<ul>
+<li><strong>JSON-LD</strong> — Linked Data, the richest and most interoperable format</li>
+<li><strong>PDF</strong> — for printing or archiving a selection of items</li>
+</ul>
+</section>
+<section id="export-plugins" class="level3">
+<h3 class="anchored" data-anchor-id="export-plugins">Export Plugins</h3>
 <table class="caption-top table">
 <thead>
 <tr class="header">
 <th>Plugin</th>
 <th>Function</th>
-<th>Link</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>Omeka S Export</strong></td>
-<td>Push items to Omeka S</td>
-<td><a href="https://github.com/tropy">github.com/tropy</a></td>
+<td><a href="https://github.com/tropy/tropy-plugin-omeka">Omeka S</a></td>
+<td>Push items (metadata + photos) to an Omeka S instance</td>
 </tr>
 <tr class="even">
-<td><strong>Omeka S Import</strong></td>
-<td>Pull items from Omeka S</td>
-<td><a href="https://github.com/tropy">github.com/tropy</a></td>
+<td><a href="https://github.com/tropy/tropy-plugin-csv">CSV</a></td>
+<td>Export metadata as a spreadsheet</td>
 </tr>
 <tr class="odd">
-<td><strong>IIIF Export</strong></td>
-<td>Generate IIIF Manifests</td>
-<td><a href="https://github.com/tropy">github.com/tropy</a></td>
+<td><a href="https://github.com/tropy/tropy-plugin-csl">CSL / Zotero</a></td>
+<td>Export items to Zotero as CSL/JSON</td>
 </tr>
 <tr class="even">
-<td><strong>CSV Import</strong></td>
-<td>Import records from spreadsheets</td>
-<td><a href="https://github.com/tropy">github.com/tropy</a></td>
+<td><a href="https://github.com/tropy/tropy-plugin-archive">Archive</a></td>
+<td>Export as a <code>.zip</code> (metadata + photo files)</td>
 </tr>
 </tbody>
 </table>
 <hr>
 </section>
-<section id="vocabularies-for-tropy-templates" class="level2">
-<h2 class="anchored" data-anchor-id="vocabularies-for-tropy-templates">Vocabularies for Tropy Templates</h2>
-<p>Pre-packaged vocabulary schemas for import into Tropy:</p>
+</section>
+<section id="full-plugins-reference" class="level2">
+<h2 class="anchored" data-anchor-id="full-plugins-reference">Full Plugins Reference</h2>
+<p>All official plugins are listed at <a href="https://tropy.org/plugins">tropy.org/plugins</a>.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Plugin</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="https://github.com/tropy/tropy-plugin-iiif">tropy-plugin-iiif</a></td>
+<td>Import photos from a IIIF Manifest</td>
+</tr>
+<tr class="even">
+<td><a href="https://github.com/tropy/tropy-plugin-omeka">tropy-plugin-omeka</a></td>
+<td>Import from / export to Omeka S</td>
+</tr>
+<tr class="odd">
+<td><a href="https://github.com/tropy/tropy-plugin-csv">tropy-plugin-csv</a></td>
+<td>Import from / export to CSV</td>
+</tr>
+<tr class="even">
+<td><a href="https://github.com/tropy/tropy-plugin-csl">tropy-plugin-csl</a></td>
+<td>Export to Zotero (CSL/JSON)</td>
+</tr>
+<tr class="odd">
+<td><a href="https://github.com/tropy/tropy-plugin-archive">tropy-plugin-archive</a></td>
+<td>Export as ZIP archive</td>
+</tr>
+</tbody>
+</table>
+<p>To install: download the <code>.zip</code> from GitHub → <code>Edit → Preferences → Plugins → Install plugin</code>.</p>
+<hr>
+</section>
+<section id="depositing-images-in-nakala" class="level2">
+<h2 class="anchored" data-anchor-id="depositing-images-in-nakala">Depositing Images in Nakala</h2>
+<p>If you cite your research photos in publications, or want to share and preserve them long-term, consider depositing them in a <strong>research data repository</strong>.</p>
+<p><a href="https://nakala.fr"><strong>Nakala</strong></a> is the data repository operated by <a href="https://www.huma-num.fr">Huma-Num</a> (CNRS). It provides:</p>
 <ul>
-<li><strong>Dublin Core</strong>: built-in</li>
-<li><strong>Dublin Core Terms</strong>: built-in</li>
-<li><strong>CIDOC-CRM</strong>: <a href="https://github.com/tropy/tropy/tree/main/db/vocabularies">github.com/tropy/tropy/tree/main/db/vocabularies</a></li>
-<li><strong>Schema.org</strong>: importable from <a href="https://schema.org/version/latest/schemaorg-current-https.jsonld">schema.org/version/latest/schemaorg-current-https.jsonld</a></li>
+<li>Stable <strong>DOIs</strong> for your datasets</li>
+<li>Automatic <strong>IIIF image serving</strong> for all deposited images</li>
+<li><strong>API access</strong> to metadata and files</li>
+<li>Public and private deposit modes</li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Tropy → Nakala → Arvest workflow
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Describe your photos in Tropy with a template aligned with Nakala’s metadata schema</li>
+<li>Export as JSON-LD or push via the Omeka S plugin</li>
+<li>Deposit images in Nakala → receive a DOI and a IIIF Manifest URL</li>
+<li>Import the Manifest into Arvest for collaborative annotation and exposure</li>
+</ol>
+<p>→ A complete, <strong>FAIR-compliant</strong> pipeline for image corpora.</p>
+</div>
+</div>
+<p>Huma-Num provides a detailed <strong><a href="https://documentation.huma-num.fr/nakala-guide-de-description/">Guide for describing data in Nakala</a></strong> and a printable <a href="https://documentation.huma-num.fr/media/nakala/Guide_depot_Nakala_mars-2024.pdf">deposit checklist (PDF, March 2024)</a>.</p>
+<hr>
+</section>
+<section id="official-channels" class="level2">
+<h2 class="anchored" data-anchor-id="official-channels">Official Channels</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Resource</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Website</td>
+<td><a href="https://tropy.org">tropy.org</a></td>
+</tr>
+<tr class="even">
+<td>Documentation</td>
+<td><a href="https://docs.tropy.org">docs.tropy.org</a></td>
+</tr>
+<tr class="odd">
+<td>Community forum</td>
+<td><a href="https://community.tropy.org">community.tropy.org</a></td>
+</tr>
+<tr class="even">
+<td>GitHub</td>
+<td><a href="https://github.com/tropy">github.com/tropy</a></td>
+</tr>
+<tr class="odd">
+<td>YouTube</td>
+<td><a href="https://www.youtube.com/@tropy">youtube.com/<span class="citation" data-cites="tropy">@tropy</span></a></td>
+</tr>
+<tr class="even">
+<td>Vimeo</td>
+<td><a href="https://vimeo.com/user73164761">vimeo.com/user73164761</a></td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="tutorials-further-reading" class="level2">
+<h2 class="anchored" data-anchor-id="tutorials-further-reading">Tutorials &amp; Further Reading</h2>
+<section id="video-tutorials" class="level3">
+<h3 class="anchored" data-anchor-id="video-tutorials">Video Tutorials</h3>
+<ul>
+<li><strong>Tropy 101 webinar</strong> (Abby Mullen, 2020, 1h05) — <a href="https://www.youtube.com/watch?v=jWjP90EWHkQ">YouTube</a></li>
+<li><strong>Metadata Templates in Tropy</strong> (Tropy official channel, 10 min) — <a href="https://www.youtube.com/watch?v=Hk5APGD6200">YouTube</a></li>
+<li><strong>Managing Research Images with Tropy</strong> — <a href="https://guides.library.harvard.edu/c.php?g=833532&amp;p=5990005">Harvard Library Research Guide</a></li>
+</ul>
+</section>
+<section id="written-tutorials" class="level3">
+<h3 class="anchored" data-anchor-id="written-tutorials">Written Tutorials</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Author</th>
+<th>Resource</th>
+<th>Language</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>B. Lailler</td>
+<td><a href="https://zenodo.org/records/3381981">Tutoriel Tropy</a></td>
+<td>🇫🇷 French</td>
+</tr>
+<tr class="even">
+<td>Stretching numérique</td>
+<td><a href="https://zenodo.org/records/10939791">Gérer ses photos d’archives avec Tropy</a></td>
+<td>🇫🇷 French</td>
+</tr>
+<tr class="odd">
+<td>BULAC</td>
+<td><a href="https://www.bulac.fr/document/gerer-ses-ressources-iconographiques-avec-tropy-mai-2024">Gérer ses ressources iconographiques avec Tropy</a></td>
+<td>🇫🇷 French</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="selected-blog-posts" class="level3">
+<h3 class="anchored" data-anchor-id="selected-blog-posts">Selected Blog Posts</h3>
+<ul>
+<li>E. Mourlon-Druol — <a href="https://www.e-mourlon-druol.com/six-months-of-using-tropy/">Six months of using Tropy</a> (2019, 🇬🇧 English)</li>
+<li>E. Lee — <a href="https://digitalorientalist.com/2021/03/16/personal-image-management-software-rec-from-an-art-historian-tropy/">Personal image management software rec from an art historian: Tropy</a> — <em>The Digital Orientalist</em> (2021, 🇬🇧 English)</li>
+<li>F. Heimburger — <a href="http://www.boiteaoutils.info/2017/10/gerer-ses-photos-darchives-avec-tropy/">Gérer ses photos d’archives avec Tropy</a> — <em>La boîte à outils des historien·ne·s</em> (2017, 🇫🇷 French)</li>
+<li>Tropy Blog — <a href="https://tropy.org/blog/new-project-types-in-tropy-1-13">New Project Types in Tropy 1.13</a> (2023, 🇬🇧 English)</li>
 </ul>
 <hr>
 </section>
-<section id="selected-publications" class="level2">
-<h2 class="anchored" data-anchor-id="selected-publications">Selected Publications</h2>
-<ul>
-<li>Putnam, L. (2016). <em>The Transnational and the Text-Searchable</em>. American Historical Review. — context for digital archival research</li>
-<li>The Programming Historian has several lessons using Tropy: <a href="https://programminghistorian.org">programminghistorian.org</a> (search “Tropy”)</li>
-</ul>
+</section>
+<section id="previous-workshop-french" class="level2">
+<h2 class="anchored" data-anchor-id="previous-workshop-french">Previous Workshop (French)</h2>
+<p>This page draws on the <strong>2024–2025 ED 481 SSH Tropy workshop</strong> delivered in French at UPPA. The full companion guide (Quarto book) is available at:</p>
+<p>🔗 <a href="https://uju.quarto.pub/tropy/">uju.quarto.pub/tropy/</a></p>
 
 
 </section>
