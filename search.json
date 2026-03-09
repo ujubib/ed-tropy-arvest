@@ -4,29 +4,18 @@
     "href": "slides.html#agenda",
     "title": "Organizing and Curating Image Corpora",
     "section": "Agenda",
-    "text": "Agenda\n\n\nPart 1 · Conceptual Foundations\n\nIntroduction to the Semantic Web\nTriples & URIs\nMetadata schemas\n\nDublin Core\nCIDOC-CRM\n\nControlled vocabularies\n\nGeoNames · Pactols · Openthéso\n\n\n\nPart 2 · IIIF\n\nThe IIIF standard\nIIIF in the wild\n\nPart 3 · Tools\n\nTropy — organize your research photos\nArvest — work with IIIF collections",
+    "text": "Agenda\n\n\nPart 1 — Conceptual Foundations\n\nThe Semantic Web\nTriples & URIs\nMetadata schemas — Dublin Core · CIDOC-CRM\nControlled vocabularies — GeoNames · Pactols · Openthéso\n\n\nPart 2 — IIIF\n\nWhat is IIIF?\nIIIF in Europeana, Omeka S, Nakala\n\nPart 3 — Tools\n\nTropy — organize your research photos\nArvest — work with IIIF collections",
     "crumbs": [
       "Workshop",
       "Slides"
     ]
   },
   {
-    "objectID": "slides.html#the-semantic-web-linked-data",
-    "href": "slides.html#the-semantic-web-linked-data",
+    "objectID": "slides.html#the-document-web-vs.-the-semantic-web",
+    "href": "slides.html#the-document-web-vs.-the-semantic-web",
     "title": "Organizing and Curating Image Corpora",
-    "section": "The Semantic Web & Linked Data",
-    "text": "The Semantic Web & Linked Data",
-    "crumbs": [
-      "Workshop",
-      "Slides"
-    ]
-  },
-  {
-    "objectID": "slides.html#the-web-we-know-vs.-the-semantic-web",
-    "href": "slides.html#the-web-we-know-vs.-the-semantic-web",
-    "title": "Organizing and Curating Image Corpora",
-    "section": "The Web We Know vs. The Semantic Web",
-    "text": "The Web We Know vs. The Semantic Web\n\n\nThe Document Web\n\nPages written for humans\nSearch engines index words\nNo shared understanding of meaning\nLinks connect documents, not data\n\n\nThe Semantic Web\n\nData written for machines (and humans)\nMachines can infer meaning\nA global, interconnected knowledge graph\nLinks connect things, not just documents\n\n\n\nTim Berners-Lee (inventor of the Web) coined the term in 2001.\nThe goal: make the Web a universal medium for data exchange.",
+    "section": "The Document Web vs. The Semantic Web",
+    "text": "The Document Web vs. The Semantic Web\n\n\nThe Web we know\n\nPages written for humans\nSearch engines index words\nLinks connect documents\nNo shared understanding of meaning\n\n\nThe Semantic Web\n\nData readable by machines\nLinks connect things (not pages)\nA global knowledge graph\nShared, unambiguous meaning\n\n\n\n\n\n\n\n\nNote\n\n\nTim Berners-Lee coined the term in 2001. The goal: make the Web a universal medium for data exchange, not just document retrieval.",
     "crumbs": [
       "Workshop",
       "Slides"
@@ -37,73 +26,62 @@
     "href": "slides.html#the-core-idea-triples",
     "title": "Organizing and Curating Image Corpora",
     "section": "The Core Idea: Triples",
-    "text": "The Core Idea: Triples\nEverything in the Semantic Web is expressed as a triple:\n\n\n\nSubject\nWhat are we talking about?\n\n\n\nPredicate\nWhat property?\n\n\n\nObject\nWhat value?\n\n\n\n&lt;Photo_001&gt; &lt;dc:creator&gt; “Julien Rabaud”\n\n\n&lt;Photo_001&gt; &lt;dc:subject&gt; &lt;geonames:2988507&gt; (Paris)\n\n\n&lt;Photo_001&gt; &lt;cidoc:P138_represents&gt; &lt;wd:Q90&gt;\n\n\n\n💡 Triples form a graph — each resource can be both subject and object, creating a web of interconnected knowledge.",
+    "text": "The Core Idea: Triples\nEverything in the Semantic Web is a triple: Subject — Predicate — Object\n&lt;Photo_001&gt;   dc:creator             \"Julien Rabaud\"\n&lt;Photo_001&gt;   dc:subject             &lt;geonames:2988507&gt;     # Paris\n&lt;Photo_001&gt;   cidoc:P138_represents  &lt;wd:Q5783414&gt;          # the building\n\n\n\n\n\n\nTip\n\n\nTriples form a graph — each resource can be both subject and object.\nThis creates a web of interconnected knowledge.",
     "crumbs": [
       "Workshop",
       "Slides"
     ]
   },
   {
-    "objectID": "slides.html#uris-uniform-resource-identifiers",
-    "href": "slides.html#uris-uniform-resource-identifiers",
+    "objectID": "slides.html#uris-naming-things-on-the-web",
+    "href": "slides.html#uris-naming-things-on-the-web",
     "title": "Organizing and Curating Image Corpora",
-    "section": "URIs — Uniform Resource Identifiers",
-    "text": "URIs — Uniform Resource Identifiers\n\n\nA URI is a unique, global identifier for any thing — a person, a place, a concept, a document.\nUnlike a URL (which locates a web page), a URI names a resource.\nhttps://sws.geonames.org/2988507/   # Paris\nhttps://www.wikidata.org/entity/Q937  # Marie Curie\nhttp://vocab.getty.edu/page/aat/300015646  # photographs\nhttps://pactols.frantiq.fr/opentheso/?idt=TH_1&idc=7\n\n\nWhy URIs?\n\nGlobally unique\nPersistent (stable over time)\nDereferenceable (can be looked up)\nLanguage-independent\n\n\n\n\n\n\n\n\n\n\nIn practice\n\n\nWhen you assign a GeoNames URI to a location field in Tropy, you’re not just typing a string — you’re linking your data to a global knowledge graph.",
+    "section": "URIs — Naming Things on the Web",
+    "text": "URIs — Naming Things on the Web\nA URI is a unique, global, persistent identifier for any thing — a person, a place, a concept.\nhttps://sws.geonames.org/2988507/          →  Paris\nhttps://www.wikidata.org/entity/Q937       →  Marie Curie\nhttp://vocab.getty.edu/page/aat/300015646  →  photographs\n\n\nUnlike a URL (which locates a web page), a URI names a resource — in any language, forever.\n\nWhy URIs?\n\nGlobally unique\nPersistent\nLanguage-independent\nDereferenceable\n\n\n\n\n\n\n\n\nTip\n\n\nWhen you put a GeoNames URI in a Tropy field, you’re linking your data to a global knowledge graph — not just typing a string.",
     "crumbs": [
       "Workshop",
       "Slides"
     ]
   },
   {
-    "objectID": "slides.html#rdf-the-language-of-triples",
-    "href": "slides.html#rdf-the-language-of-triples",
+    "objectID": "slides.html#rdf-expressing-triples",
+    "href": "slides.html#rdf-expressing-triples",
     "title": "Organizing and Curating Image Corpora",
-    "section": "RDF — The Language of Triples",
-    "text": "RDF — The Language of Triples\nRDF (Resource Description Framework) is the W3C standard for expressing triples.\n\n\nTurtle syntax (human-readable):\n@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .\n@prefix geo: &lt;https://sws.geonames.org/&gt; .\n\n&lt;https://myarchive.org/photo/001&gt;\n  dc:title \"Cloister of Santo Domingo\" ;\n  dc:creator \"Julien Rabaud\" ;\n  dc:date \"2024-09-15\" ;\n  dc:spatial geo:3117735 .\n\nJSON-LD (used by Tropy!):\n{\n  \"@context\": {\n    \"dc\": \"http://purl.org/dc/elements/1.1/\"\n  },\n  \"@id\": \"https://myarchive.org/photo/001\",\n  \"dc:title\": \"Cloister of Santo Domingo\",\n  \"dc:creator\": \"Julien Rabaud\"\n}\n\n\nTropy stores metadata as JSON-LD internally — your descriptions are already Linked Data.",
+    "section": "RDF — Expressing Triples",
+    "text": "RDF — Expressing Triples\nRDF (Resource Description Framework) is the W3C standard for expressing triples.\n\n\nTurtle — human-readable:\n@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .\n\n&lt;https://myarchive.org/photo/001&gt;\n  dc:title   \"Cloister of Santo Domingo\" ;\n  dc:creator \"Julien Rabaud\" ;\n  dc:date    \"2024-09-15\" .\n\nJSON-LD — used by Tropy:\n{\n  \"@context\": {\n    \"dc\": \"http://purl.org/dc/elements/1.1/\"\n  },\n  \"@id\": \"https://myarchive.org/photo/001\",\n  \"dc:title\": \"Cloister of Santo Domingo\",\n  \"dc:creator\": \"Julien Rabaud\"\n}\n\n\n\n\n\n\n\nNote\n\n\nTropy stores all metadata as JSON-LD internally — your descriptions are already Linked Data.",
     "crumbs": [
       "Workshop",
       "Slides"
     ]
   },
   {
-    "objectID": "slides.html#metadata-schemas-properties",
-    "href": "slides.html#metadata-schemas-properties",
+    "objectID": "slides.html#dublin-core-15-universal-elements",
+    "href": "slides.html#dublin-core-15-universal-elements",
     "title": "Organizing and Curating Image Corpora",
-    "section": "Metadata Schemas: Properties",
-    "text": "Metadata Schemas: Properties\nHow do we describe what we see?",
+    "section": "Dublin Core — 15 Universal Elements",
+    "text": "Dublin Core — 15 Universal Elements\nThe simplest and most widespread metadata standard. Works for any resource type.\n\n\n\n\n\nProperty\nUsage\n\n\n\n\ndc:title\nTitle\n\n\ndc:creator\nPhotographer / author\n\n\ndc:date\nDate of creation\n\n\ndc:subject\nTopic / theme\n\n\ndc:description\nFree-text note\n\n\ndc:type\nphotograph, drawing…\n\n\ndc:rights\nLicense / copyright\n\n\n\n\n\n\n\nProperty\nUsage\n\n\n\n\ndc:format\nJPEG, TIFF…\n\n\ndc:identifier\nShelfmark / ID\n\n\ndc:source\nArchive, repository\n\n\ndc:language\nLanguage of visible text\n\n\ndc:relation\nRelated items\n\n\ndc:coverage\nPlace or period\n\n\ndc:publisher\nInstitution\n\n\n\n\n\n\n🔗 dublincore.org · Namespace: http://purl.org/dc/elements/1.1/",
     "crumbs": [
       "Workshop",
       "Slides"
     ]
   },
   {
-    "objectID": "slides.html#dublin-core",
-    "href": "slides.html#dublin-core",
+    "objectID": "slides.html#dublin-core-terms-dcterms",
+    "href": "slides.html#dublin-core-terms-dcterms",
     "title": "Organizing and Curating Image Corpora",
-    "section": "Dublin Core",
-    "text": "Dublin Core\nThe simplest and most widespread metadata standard. 15 core elements, usable for any resource type.\n\n\n\n\n\nProperty\nUsage\n\n\n\n\ndc:title\nTitle of the image\n\n\ndc:creator\nPhotographer / author\n\n\ndc:date\nDate of creation\n\n\ndc:subject\nSubject / topic\n\n\ndc:description\nFree text description\n\n\ndc:type\nType (photograph, drawing…)\n\n\n\n\n\n\n\nProperty\nUsage\n\n\n\n\ndc:format\nFile format (JPEG, TIFF…)\n\n\ndc:identifier\nUnique ID / shelfmark\n\n\ndc:source\nArchive, repository\n\n\ndc:language\nLanguage of text visible\n\n\ndc:rights\nLicence / copyright\n\n\ndc:relation\nRelated resources\n\n\n\n\n\n🔗 dublincore.org · Namespace: http://purl.org/dc/elements/1.1/",
+    "section": "Dublin Core Terms (DCTERMS)",
+    "text": "Dublin Core Terms (DCTERMS)\ndcterms: provides richer, typed versions — plus extra properties.\n\n\n# Basic DC — untyped string\ndc:date \"2024-09-15\"\n\n# DCTERMS — typed, linkable\ndcterms:created    \"2024-09-15\"^^xsd:date\ndcterms:spatial    &lt;geonames:3117735&gt;\ndcterms:license    &lt;https://creativecommons.org/licenses/by/4.0/&gt;\ndcterms:isPartOf   &lt;myArchive:collection_42&gt;\n\nKey extras:\n\ndcterms:spatial — place URI\ndcterms:temporal — time period\ndcterms:license — explicit license URI\ndcterms:isPartOf — collection hierarchy\ndcterms:abstract — extended description\n\n\n\n\nBoth dc: and dcterms: are available as Tropy template vocabularies.",
     "crumbs": [
       "Workshop",
       "Slides"
     ]
   },
   {
-    "objectID": "slides.html#dublin-core-extended-dcterms",
-    "href": "slides.html#dublin-core-extended-dcterms",
+    "objectID": "slides.html#cidoc-crm-cultural-heritage-standard",
+    "href": "slides.html#cidoc-crm-cultural-heritage-standard",
     "title": "Organizing and Curating Image Corpora",
-    "section": "Dublin Core Extended (DCTERMS)",
-    "text": "Dublin Core Extended (DCTERMS)\nDublin Core Terms (dcterms:) provides richer, typed versions of the 15 elements plus additional properties.\n\n\n# Basic DC\ndc:date \"2024-09-15\"\n\n# Richer DCTERMS\ndcterms:created \"2024-09-15\"^^xsd:date\ndcterms:spatial &lt;geonames:3117735&gt;\ndcterms:license &lt;https://creativecommons.org/licenses/by/4.0/&gt;\ndcterms:isPartOf &lt;myArchive:collection_42&gt;\n\n\nKey extras in DCTERMS:\n\ndcterms:spatial — geographic coverage\ndcterms:temporal — time period covered\ndcterms:license — explicit license URI\ndcterms:isPartOf / hasPart — collection hierarchy\ndcterms:abstract — extended description\n\n\n\n\n🔗 Namespace: http://purl.org/dc/terms/ · Both dc: and dcterms: are available as Tropy templates",
-    "crumbs": [
-      "Workshop",
-      "Slides"
-    ]
-  },
-  {
-    "objectID": "slides.html#cidoc-crm",
-    "href": "slides.html#cidoc-crm",
-    "title": "Organizing and Curating Image Corpora",
-    "section": "CIDOC-CRM",
-    "text": "CIDOC-CRM\n\n\nThe Conceptual Reference Model of the CIDOC (International Committee for Documentation) — the international standard for cultural heritage data.\nUnlike Dublin Core (which describes documents), CIDOC-CRM describes events, actors, places, and objects and their relationships.\n\n\nKey insight: In CIDOC-CRM, everything important happens.\nA painting wasn’t just created — it was created by a person, at a place, during a period, using materials, and was later moved, acquired, exhibited…\n\n\n\n\nCore classes:\n\nE1 Thing\nE18 Physical Thing\nE22 Human-Made Object\nE31 Document / Photograph\nE53 Place\nE52 Time-Span\nE39 Actor\nE65 Creation\n\n\n\n\n🔗 cidoc-crm.org · Used in Europeana, museum databases, and Nakala",
+    "section": "CIDOC-CRM — Cultural Heritage Standard",
+    "text": "CIDOC-CRM — Cultural Heritage Standard\n\n\nThe Conceptual Reference Model of the CIDOC — international standard for cultural heritage data (Europeana, museums, major archives).\nUnlike Dublin Core (which describes documents), CIDOC-CRM models events, actors, places, and objects.\n\n\n\n\n\n\nNote\n\n\nKey insight: In CIDOC-CRM, everything important happens.\nA photograph wasn’t just taken — it was taken by someone, somewhere, at a moment, of something.\n\n\n\n\nCore classes:\n\n\n\nClass\nMeaning\n\n\n\n\nE22\nHuman-Made Object\n\n\nE31\nDocument / Photograph\n\n\nE39\nActor (person/group)\n\n\nE52\nTime-Span\n\n\nE53\nPlace\n\n\nE65\nCreation event\n\n\n\n\n\n\n🔗 cidoc-crm.org",
     "crumbs": [
       "Workshop",
       "Slides"
@@ -114,18 +92,7 @@
     "href": "slides.html#cidoc-crm-in-practice",
     "title": "Organizing and Curating Image Corpora",
     "section": "CIDOC-CRM in Practice",
-    "text": "CIDOC-CRM in Practice\n\n&lt;Photo_001&gt; rdf:type cidoc:E31_Document\n\n\n&lt;Photo_001&gt; cidoc:P138_represents &lt;wd:Q5783414&gt; (the depicted building)\n\n\n&lt;Creation_event&gt; rdf:type cidoc:E65_Creation\n\n\n&lt;Creation_event&gt; cidoc:P14_carried_out_by &lt;orcid:0000-0002-6604-9777&gt;\n\n\n&lt;Creation_event&gt; cidoc:P4_has_time-span &lt;2024-09-15&gt;\n\n\n&lt;Creation_event&gt; cidoc:P7_took_place_at &lt;geonames:3117735&gt;\n\n\n\n\n\n\n\n\nNote\n\n\nFor Tropy users: The Tropy Generic template approximates Dublin Core. The Tropy Correspondence template is more event-oriented. You can import a CIDOC-CRM-aligned template via the JSON-LD schema import feature.",
-    "crumbs": [
-      "Workshop",
-      "Slides"
-    ]
-  },
-  {
-    "objectID": "slides.html#controlled-vocabularies-values",
-    "href": "slides.html#controlled-vocabularies-values",
-    "title": "Organizing and Curating Image Corpora",
-    "section": "Controlled Vocabularies: Values",
-    "text": "Controlled Vocabularies: Values\nConsistent, linked values for your metadata fields",
+    "text": "CIDOC-CRM in Practice\n&lt;Photo_001&gt;     rdf:type               cidoc:E31_Document\n&lt;Photo_001&gt;     cidoc:P138_represents  &lt;wd:Q5783414&gt;           # the depicted building\n\n&lt;Creation_001&gt;  rdf:type               cidoc:E65_Creation\n&lt;Creation_001&gt;  cidoc:P14_carried_out_by  &lt;orcid:0000-0002-6604-9777&gt;\n&lt;Creation_001&gt;  cidoc:P4_has_time-span    &lt;2024-09-15&gt;\n&lt;Creation_001&gt;  cidoc:P7_took_place_at    &lt;geonames:3117735&gt;\n\n\n\n\n\n\nTip\n\n\nIn Tropy, you can import the CIDOC-CRM vocabulary and build event-oriented templates.\nThe Tropy Correspondence template is already structured around events.",
     "crumbs": [
       "Workshop",
       "Slides"
@@ -136,7 +103,7 @@
     "href": "slides.html#why-controlled-vocabularies",
     "title": "Organizing and Curating Image Corpora",
     "section": "Why Controlled Vocabularies?",
-    "text": "Why Controlled Vocabularies?\n\n\nThe problem with free text:\n\n“Paris” / “paris” / “PARIS” / “Paris, France” — all different strings\n“19th century” / “1800s” / “XIX century”\nNo way to query across datasets\nNo multilingual support\n\n\nThe solution — URIs as values:\ndc:spatial &lt;geonames:2988507&gt;\n# → always Paris, in any language\n# → machine-readable coordinates\n# → links to 11M other GeoNames entries\n\n\n\nControlled vocabularies = shared dictionaries\nWhen we all use the same URI for Paris, our datasets become interoperable — they can be merged, queried, and compared.",
+    "text": "Why Controlled Vocabularies?\n\n\nThe free-text problem:\n\n“Paris” / “paris” / “Paris, France” → 3 different strings\n“19th century” / “1800s” / “XIX c.” → no shared meaning\nNo multilingual support\nNo machine-readable links\n\n\nThe URI solution:\ndcterms:spatial &lt;geonames:2988507&gt;\n→ Always Paris, in any language\n→ With coordinates and hierarchy\n→ Linked to millions of other places\n\n\n\n\n\n\n\nNote\n\n\nControlled vocabularies = shared dictionaries.\nWhen we all use the same URI for Paris, our datasets become interoperable.",
     "crumbs": [
       "Workshop",
       "Slides"
@@ -147,40 +114,18 @@
     "href": "slides.html#geonames",
     "title": "Organizing and Curating Image Corpora",
     "section": "GeoNames",
-    "text": "GeoNames\n\n\nGeoNames is a geographical database covering all countries, with over 12 million place names, all with stable URIs.\nhttps://sws.geonames.org/2988507/   → Paris\nhttps://sws.geonames.org/3117735/   → Salamanca\nhttps://sws.geonames.org/6440564/   → Anglet\nEach entry includes: - Names in multiple languages - Coordinates (latitude/longitude) - Administrative hierarchy (city → region → country) - Feature type (mountain, river, church…)\n\n\nIn Tropy:\nUse GeoNames URIs in the dc:spatial or dcterms:spatial field.\nThis makes your geographic metadata globally interoperable!\n\n\n\n🔗 geonames.org · Search: geonames.org/search.html",
+    "text": "GeoNames\n12+ million geographic names, all with stable URIs.\nhttps://sws.geonames.org/2988507/  →  Paris, France\nhttps://sws.geonames.org/3117735/  →  Salamanca, Spain\nhttps://sws.geonames.org/6440564/  →  Anglet, France\nEach entry: names in 20+ languages · coordinates · administrative hierarchy · feature type.\n\n\n\n\n\n\nTip\n\n\nIn Tropy: use GeoNames URIs in the dcterms:spatial field of your template.\n🔗 geonames.org/search.html",
     "crumbs": [
       "Workshop",
       "Slides"
     ]
   },
   {
-    "objectID": "slides.html#pactols",
-    "href": "slides.html#pactols",
+    "objectID": "slides.html#pactols-openthéso",
+    "href": "slides.html#pactols-openthéso",
     "title": "Organizing and Curating Image Corpora",
-    "section": "Pactols",
-    "text": "Pactols\n\n\nPACTOLS is a multilingual thesaurus for Archaeology, Classical Studies and Oriental Studies, maintained by the Frantiq network (French research infrastructure).\nCovers subjects like: - Archaeological periods and cultures - Object types and materials - Geographic places (ancient and modern) - Historical persons and mythological figures - Techniques and practices\n\nhttps://pactols.frantiq.fr/opentheso/?idt=TH_1&idc=12345\n# → a specific archaeological period\n\n\n\nWhy Pactols?\nEspecially relevant for researchers working on:\n\nClassical antiquity\nMedieval heritage\nMediterranean archaeology\nRomance language cultures (CHORAL!)\n\n\n\n\n🔗 frantiq.fr · Thesaurus: opentheso.frantiq.fr",
-    "crumbs": [
-      "Workshop",
-      "Slides"
-    ]
-  },
-  {
-    "objectID": "slides.html#huma-num-openthéso",
-    "href": "slides.html#huma-num-openthéso",
-    "title": "Organizing and Curating Image Corpora",
-    "section": "Huma-Num Openthéso",
-    "text": "Huma-Num Openthéso\n\n\nOpenthéso is an open-source thesaurus management platform developed by Huma-Num (French national infrastructure for Digital Humanities).\nIt hosts numerous discipline-specific thesauri:\n\nPACTOLS (Archaeology)\nThésaurus de la désignation des œuvres architecturales (MHFA)\nVocabulaire des arts de la scène\n… and many others\n\nEach term has a stable URI (ARK identifier) and SKOS representation.\n\n\nKey feature: SKOS\nTerms are expressed in SKOS (Simple Knowledge Organization System):\n\nskos:prefLabel (preferred label)\nskos:altLabel (synonyms)\nskos:broader / skos:narrower\nskos:exactMatch (links to other thesauri!)\n\n\n\n\n🔗 opentheso.huma-num.fr · Docs: opentheso.github.io",
-    "crumbs": [
-      "Workshop",
-      "Slides"
-    ]
-  },
-  {
-    "objectID": "slides.html#iiif-the-international-image-interoperability-framework",
-    "href": "slides.html#iiif-the-international-image-interoperability-framework",
-    "title": "Organizing and Curating Image Corpora",
-    "section": "IIIF — The International Image Interoperability Framework",
-    "text": "IIIF — The International Image Interoperability Framework",
+    "section": "Pactols & Openthéso",
+    "text": "Pactols & Openthéso\n\n\nPACTOLS — multilingual thesaurus for Archaeology, Classical and Oriental Studies (Frantiq network).\nCovers: periods · object types · materials · ancient places · historical figures\nEspecially relevant for CHORAL research (Romance cultures, Mediterranean heritage).\n🔗 opentheso.frantiq.fr\n\nHuma-Num Openthéso — platform hosting many discipline-specific vocabularies.\nTerms use ARK identifiers and SKOS:\n\nskos:prefLabel — preferred label\nskos:altLabel — synonyms\nskos:broader / skos:narrower\nskos:exactMatch — links to other thesauri\n\n🔗 opentheso.huma-num.fr",
     "crumbs": [
       "Workshop",
       "Slides"
@@ -191,73 +136,51 @@
     "href": "slides.html#what-is-iiif",
     "title": "Organizing and Curating Image Corpora",
     "section": "What is IIIF?",
-    "text": "What is IIIF?\n\n\nIIIF (pronounced “triple-eye-eff”) is a set of open standards that enable rich access to digitized images from cultural heritage institutions.\nDeveloped since 2011 by a community of libraries, archives, and museums (including BnF, British Library, Harvard, Stanford, Europeana…).\n\n\nThe core promise:\nAny IIIF-compliant viewer can display any IIIF-compliant image, regardless of where it’s hosted.\n\n\n\nIIIF enables:\n\n🔍 Deep zoom on high-resolution images\n📐 Requesting specific regions, sizes, rotations\n📋 Structured collections (Manifests)\n🔗 Linking and embedding across institutions\n💬 Shared annotation layers\n🤝 Multi-institutional exhibitions\n\n\n\n🔗 iiif.io · Community: iiif.io/community",
+    "text": "What is IIIF?\n\n\nA set of open standards for rich access to digitized images from cultural heritage institutions.\nDeveloped since 2011 by libraries, archives, and museums (BnF, British Library, Harvard, Europeana…).\n\n\n\n\n\n\nNote\n\n\nThe core promise:\nAny IIIF-compliant viewer can display any IIIF-compliant image — regardless of where it is hosted.\n\n\n\n\nIIIF enables:\n\n🔍 Deep zoom on high-res images\n📐 Request regions, sizes, rotations\n📋 Structured collections (Manifests)\n🔗 Embedding across institutions\n💬 Shared annotation layers\n🤝 Multi-institutional exhibitions\n\n\n\n\n🔗 iiif.io",
     "crumbs": [
       "Workshop",
       "Slides"
     ]
   },
   {
-    "objectID": "slides.html#the-key-iiif-apis",
-    "href": "slides.html#the-key-iiif-apis",
+    "objectID": "slides.html#the-two-core-apis",
+    "href": "slides.html#the-two-core-apis",
     "title": "Organizing and Curating Image Corpora",
-    "section": "The Key IIIF APIs",
-    "text": "The Key IIIF APIs\n\n\nImage API\nStandardizes how images are served.\nURL pattern:\n{server}/{prefix}/{identifier}\n  /{region}/{size}/{rotation}\n  /{quality}.{format}\nExample:\nhttps://example.org/iiif/img01\n  /full/800,/0/default.jpg\n→ Enables deep zoom, cropping, resizing — all server-side\n\nPresentation API (Manifests)\nStandardizes how image collections are described.\nA Manifest is a JSON-LD document that says: - What images belong to this object/collection - In what order - With what labels and metadata - With what annotations\n{\n  \"@context\": \"http://iiif.io/api/presentation/3/context.json\",\n  \"id\": \"https://example.org/manifest/1\",\n  \"type\": \"Manifest\",\n  \"label\": { \"en\": [\"My Archive\"] }\n}",
+    "section": "The Two Core APIs",
+    "text": "The Two Core APIs\n\n\nImage API\nHow images are served.\n{server}/{identifier}\n  /{region}/{size}/{rotation}\n  /{quality}.{format}\n\n# 800px-wide version:\nhttps://example.org/iiif/photo001\n  /full/800,/0/default.jpg\n→ Deep zoom, cropping, resizing — server-side\n\nPresentation API\nHow collections are described.\nA Manifest is a JSON-LD document:\n\nWhich images belong together\nTheir order and structure\nLabels and metadata\nAnnotations\n\n{\n  \"type\": \"Manifest\",\n  \"label\": { \"en\": [\"My Photo Series\"] },\n  \"items\": [...]\n}",
     "crumbs": [
       "Workshop",
       "Slides"
     ]
   },
   {
-    "objectID": "slides.html#the-manifest-heart-of-iiif",
-    "href": "slides.html#the-manifest-heart-of-iiif",
+    "objectID": "slides.html#the-manifest-structure",
+    "href": "slides.html#the-manifest-structure",
     "title": "Organizing and Curating Image Corpora",
-    "section": "The Manifest — Heart of IIIF",
-    "text": "The Manifest — Heart of IIIF\nManifest (Collection or single object)\n  └── Canvas (= a \"page\" or \"view\")\n       ├── Annotation Page\n       │    └── Annotation (painting role → the image)\n       └── Annotation Page\n            └── Annotation (commenting role → your notes!)\n\n\nThink of a Manifest as a virtual object:\nA manuscript has 200 pages → 200 Canvases.\nA photo series has 50 images → 50 Canvases.\nA painted altarpiece has front, back, details → multiple Canvases.\n\n\n\n\n\n\n\n\n\nTip\n\n\nFor Arvest users: When you import a IIIF Manifest in Arvest, you’re importing the entire structure — all canvases, their images, their metadata, and any existing annotations.",
+    "section": "The Manifest Structure",
+    "text": "The Manifest Structure\nManifest\n  └── Canvas  (= one \"view\" or \"page\")\n       ├── Annotation Page → Annotation [painting]   →  the image\n       └── Annotation Page → Annotation [commenting] →  your notes\n\n\n\n\n\n\nTip\n\n\nThink of a Manifest as a virtual object:\n\nA manuscript → 1 Manifest, 200 Canvases\nA photo series → 1 Manifest, 50 Canvases\nAn altarpiece → 1 Manifest, front + back + details\n\nWhen you import a Manifest in Arvest, you get the full structure — images, metadata, and any existing annotations.",
     "crumbs": [
       "Workshop",
       "Slides"
     ]
   },
   {
-    "objectID": "slides.html#europeana-iiif",
-    "href": "slides.html#europeana-iiif",
+    "objectID": "slides.html#iiif-sources-europeana",
+    "href": "slides.html#iiif-sources-europeana",
     "title": "Organizing and Curating Image Corpora",
-    "section": "Europeana IIIF",
-    "text": "Europeana IIIF\n\n\nEuropeana aggregates cultural heritage from 3,000+ institutions across Europe and provides IIIF access to millions of items.\nFinding IIIF content: - Browse europeana.eu - Look for the IIIF icon on item pages - Or use the Europeana API with iiif=true\nhttps://iiif.europeana.eu/presentation/\n  {collection}/{recordId}/manifest\n\n\nFor CHORAL researchers:\nSearch Europeana for: - Heritage from Spain, Portugal, France, Italy, Romania - Manuscripts in Romance languages - Historical photographs and maps - Museum objects with provenance data\n\n\n\n🔗 europeana.eu · API: pro.europeana.eu/apis",
+    "section": "IIIF Sources: Europeana",
+    "text": "IIIF Sources: Europeana\nEuropeana aggregates heritage from 3,000+ institutions, with IIIF access to millions of items.\n\n\nFinding IIIF content:\n\nBrowse europeana.eu → look for the IIIF icon\nManifest URL pattern:\n\nhttps://iiif.europeana.eu/presentation/\n  {collection}/{recordId}/manifest\n\n\n\n\n\n\n\nNote\n\n\nFor CHORAL researchers:\nSearch for heritage from Spain, Portugal, France, Italy, Romania — manuscripts, photographs, maps, objects.\n\n\n\n\n\n\n🔗 europeana.eu · API: pro.europeana.eu/apis",
     "crumbs": [
       "Workshop",
       "Slides"
     ]
   },
   {
-    "objectID": "slides.html#omeka-s-iiif",
-    "href": "slides.html#omeka-s-iiif",
+    "objectID": "slides.html#iiif-sources-omeka-s-nakala",
+    "href": "slides.html#iiif-sources-omeka-s-nakala",
     "title": "Organizing and Curating Image Corpora",
-    "section": "Omeka S & IIIF",
-    "text": "Omeka S & IIIF\n\n\nOmeka S (used by UPPA) natively generates IIIF Manifests for its items and media.\nAny item with an image in your Omeka S instance has a IIIF endpoint:\nhttps://omeka.univ-pau.fr/iiif/3/{itemId}/manifest\nAnd a media endpoint:\nhttps://omeka.univ-pau.fr/iiif/3/media/{mediaId}/canvas/p1\n\n\nUPPA Omeka S\n\nInternal research collections\nPublic heritage exhibitions\nMetadata aligned with Dublin Core and CIDOC-CRM\nAuto-generated IIIF Manifests\n\n→ Directly importable in Arvest!\n\n\n\n🔗 omeka.org · Module: iiif.io Omeka module",
-    "crumbs": [
-      "Workshop",
-      "Slides"
-    ]
-  },
-  {
-    "objectID": "slides.html#nakala-huma-num-data-repository",
-    "href": "slides.html#nakala-huma-num-data-repository",
-    "title": "Organizing and Curating Image Corpora",
-    "section": "Nakala — Huma-Num Data Repository",
-    "text": "Nakala — Huma-Num Data Repository\n\n\nNakala is a research data repository for the Humanities, operated by Huma-Num (CNRS).\nIt provides: - Stable storage with DOIs for datasets - IIIF image serving for all deposited images - API access to metadata and files - Public and private data modes\nAny image deposited in Nakala gets a IIIF Image API endpoint automatically.\n\n\nFor your research:\n\nDeposit photos/scans in Nakala\nGet a persistent DOI + IIIF URL\nImport the Manifest into Arvest\nAnnotate and expose for collaborators\n\n→ A complete, FAIR-compliant workflow!\n\n\n\n🔗 nakala.fr · Docs: documentation.huma-num.fr/nakala",
-    "crumbs": [
-      "Workshop",
-      "Slides"
-    ]
-  },
-  {
-    "objectID": "slides.html#tools-for-working-with-image-corpora",
-    "href": "slides.html#tools-for-working-with-image-corpora",
-    "title": "Organizing and Curating Image Corpora",
-    "section": "Tools for Working with Image Corpora",
-    "text": "Tools for Working with Image Corpora",
+    "section": "IIIF Sources: Omeka S & Nakala",
+    "text": "IIIF Sources: Omeka S & Nakala\n\n\nOmeka S (UPPA instance) auto-generates IIIF Manifests:\nhttps://omeka.univ-pau.fr/iiif/3/\n  {itemId}/manifest\n\nAny item with an image → IIIF Manifest\nDublin Core / CIDOC-CRM metadata\n→ Directly importable in Arvest\n\n\nNakala (Huma-Num) — research data repository:\n\nStable DOIs for datasets\nAuto-generates IIIF endpoints for all images\nPublic and private modes\n\n\nDeposit images → get DOI + IIIF URL\nImport Manifest in Arvest\nAnnotate with collaborators\n\n\n\n\n🔗 nakala.fr · omeka.org/s",
     "crumbs": [
       "Workshop",
       "Slides"
@@ -268,7 +191,7 @@
     "href": "slides.html#what-is-tropy",
     "title": "Organizing and Curating Image Corpora",
     "section": "What is Tropy?",
-    "text": "What is Tropy?\n\n\nTropy is a free, open-source desktop application for organizing and describing research photographs.\nThink of it as a research photo manager built specifically for historians, art historians, and humanists — not a generic photo app.\n\nThe core workflow:\n\nImport photos from your archival sessions\nGroup related photos into items\nDescribe with rich metadata (any schema)\nAnnotate regions of interest\nExport as JSON-LD, CSV, or to Omeka S\n\n\n\n\nHistory & Links\n\nCreated by Roy Rosenzweig Center for History and New Media (George Mason U.) & C²DH (U. Luxembourg)\nFirst release: 2017\nCurrent version: 2.x\nLicense: AGPL-3.0\n\n🔗 tropy.org\n📦 github.com/tropy/tropy\n📚 docs.tropy.org",
+    "text": "What is Tropy?\n\n\nA free, open-source desktop app for organizing and describing research photographs.\nNot a generic photo manager — built for historians, art historians, and humanists.\nCore workflow:\n\nImport photos from your archival sessions\nGroup related photos into items\nDescribe with rich metadata\nAnnotate regions of interest\nExport as JSON-LD, CSV, or to Omeka S\n\n\nAbout Tropy:\nCreated by RRCHNM (George Mason U.) & C²DH (U. Luxembourg). First release: 2017.\n🔗 tropy.org\n📚 docs.tropy.org\n💬 community.tropy.org",
     "crumbs": [
       "Workshop",
       "Slides"
@@ -279,7 +202,7 @@
     "href": "slides.html#the-tropy-interface",
     "title": "Organizing and Curating Image Corpora",
     "section": "The Tropy Interface",
-    "text": "The Tropy Interface\n\n\nMain areas:\n\nProject Panel (left) — lists, tags, saved searches\nItem Grid/Table (center) — browse all items\nMetadata Panel (right) — describe the selected item or photo\nViewer (bottom/center) — view and annotate photos\n\n\n\nTwo project modes:\nStandard project — copies files to project folder → portable, self-contained\nAdvanced project — links to original files → lighter, but path-dependent\n→ For archival work: Standard is safer\n\n\n\n\n\n\n\n\n\nTip\n\n\nGood practice: Create one Tropy project per research trip or archive collection.",
+    "text": "The Tropy Interface\n\n\n4 main panels:\n\nProject (left) — lists, tags, saved searches\nItem grid / table (center) — browse all items\nMetadata panel (right) — describe the selected item\nViewer — view and annotate photos\n\n\n\n\n\n\n\nTip\n\n\nOne Tropy project per research trip or archive collection.\n\n\n\n\nTwo project modes:\n\n\n\nMode\nDescription\n\n\n\n\nStandard\nCopies files → portable\n\n\nAdvanced\nLinks to originals → lighter\n\n\n\nFor archival work: Standard is safer.",
     "crumbs": [
       "Workshop",
       "Slides"
@@ -290,40 +213,40 @@
     "href": "slides.html#the-three-levels-of-description",
     "title": "Organizing and Curating Image Corpora",
     "section": "The Three Levels of Description",
-    "text": "The Three Levels of Description\nTropy structures data in three nested levels, each with its own metadata:\n\n\n\n📁 Item\nGroups logically related photos\nExample:\nA multi-page document photographed front and back → 1 item, 2 photos\nMetadata: title, date, archive reference, box/folder number\n\n\n\n🖼️ Photo\nOne image file\nMetadata: filename, dimensions, date taken, camera settings\nNote: you rarely describe photos individually — the item is the unit of description\n\n\n\n🔍 Selection (Detail)\nA cropped region of a photo\nExample:\nA detail of a seal, a signature, an inscription, a decorative motif\nMetadata: its own title, notes, tags — linked to coordinates in the image",
+    "text": "The Three Levels of Description\n\n\n📁 Item\nGroups logically related photos.\nExample: a document photographed recto/verso = 1 item, 2 photos.\nMain unit of metadata: title, date, archive reference.\n\n🖼️ Photo\nOne image file.\nMetadata: filename, dimensions, date taken.\nYou rarely describe photos individually — the item is the primary unit.\n\n🔍 Selection\nA cropped region of a photo.\nExamples: a seal, a signature, an inscription.\nHas its own title, notes, tags — linked to pixel coordinates.",
     "crumbs": [
       "Workshop",
       "Slides"
     ]
   },
   {
-    "objectID": "slides.html#templates-defining-your-metadata-schema",
-    "href": "slides.html#templates-defining-your-metadata-schema",
+    "objectID": "slides.html#templates-schemas",
+    "href": "slides.html#templates-schemas",
     "title": "Organizing and Curating Image Corpora",
-    "section": "Templates — Defining Your Metadata Schema",
-    "text": "Templates — Defining Your Metadata Schema\nA template in Tropy defines which fields appear in the metadata panel for an item.\nEach field is a property from a vocabulary (Dublin Core, CIDOC-CRM, custom, etc.).\n\n\nBuilt-in templates:\n\nTropy Generic — Dublin Core-based\nTropy Correspondence — letters and correspondence\nTropy Audio / Tropy Video\nTropy Photo — photo-level metadata\n\nCustom templates:\n\nCreate your own via Edit → Templates\nAdd/remove/reorder properties\nSet default values and required fields\n\n\nImporting external schemas:\nTropy can import vocabulary schemas from the web:\n\nAny RDF/OWL vocabulary published as JSON-LD or Turtle\nThen use those properties in your templates\n\nEdit → Preferences → Vocabularies → Import\n\nPre-packaged schemas: github.com/tropy/tropy/tree/main/db/vocabularies",
+    "section": "Templates & Schemas",
+    "text": "Templates & Schemas\nA template defines which metadata fields appear for an item.\n\n\nBuilt-in templates:\n\nTropy Generic — Dublin Core-based\nTropy Correspondence — for letters\nTropy Audio / Video\nTropy Photo — photo-level metadata\n\n\nImporting external vocabularies:\nEdit → Preferences → Vocabularies → Import\n→ Any RDF/OWL schema (JSON-LD or Turtle)\n→ Then use those properties in your templates\n\n\n\n\n\n\n\nNote\n\n\nYou can build a CIDOC-CRM-aligned template by importing the CIDOC-CRM vocabulary and selecting relevant properties (P138_represents, P7_took_place_at…).",
     "crumbs": [
       "Workshop",
       "Slides"
     ]
   },
   {
-    "objectID": "slides.html#useful-tropy-plugins",
-    "href": "slides.html#useful-tropy-plugins",
+    "objectID": "slides.html#plugins",
+    "href": "slides.html#plugins",
     "title": "Organizing and Curating Image Corpora",
-    "section": "Useful Tropy Plugins",
-    "text": "Useful Tropy Plugins\n\n\nImport Plugins\nCSL/CSV Import — import records from a spreadsheet\nOmeka S Import — pull items from your Omeka S instance into Tropy (metadata + images)\nIIIF Import — import photos from a IIIF Manifest directly into a Tropy project\n\nExport Plugins\nOmeka S Export — push items with metadata and photos to Omeka S\nIIIF Export — generate IIIF Manifests from your Tropy items\nCSV Export — export metadata as a spreadsheet\n\n\nFinding plugins:\n🔗 tropy.org/plugins\n🔗 github.com/tropy (search for tropy-plugin-*)",
+    "section": "Plugins",
+    "text": "Plugins\n\n\nImport:\n\nCSV Import — from a spreadsheet\nOmeka S Import — pull items from Omeka S\nIIIF Import — from a IIIF Manifest URL\n\n\nExport:\n\nOmeka S Export — push to Omeka S\nIIIF Export — generate Manifests\nCSV Export — spreadsheet\n\n\n🔗 tropy.org/plugins",
     "crumbs": [
       "Workshop",
       "Slides"
     ]
   },
   {
-    "objectID": "slides.html#learning-tropy",
-    "href": "slides.html#learning-tropy",
+    "objectID": "slides.html#learning-resources",
+    "href": "slides.html#learning-resources",
     "title": "Organizing and Curating Image Corpora",
-    "section": "Learning Tropy",
-    "text": "Learning Tropy\n\n\nOfficial documentation:\n📚 docs.tropy.org\nVideo tutorials:\n▶️ vimeo.com/user104478141 (Tropy official Vimeo)\n▶️ youtube.com/@tropyorg\nCommunity:\n💬 community.tropy.org (active forum!)\n\nIn French:\n📄 programmation-pist.huma-num.fr (Huma-Num guide)\nUPPA resources:\n📄 Contact Julien Rabaud for UPPA-specific templates and workflow guides tailored to your discipline.\njulien.rabaud@univ-pau.fr",
+    "section": "Learning Resources",
+    "text": "Learning Resources\n\n\nEnglish:\n📚 docs.tropy.org\n▶️ vimeo.com/user104478141\n▶️ youtube.com/@tropyorg\n💬 community.tropy.org\n\nFrench / UPPA support:\n📄 programmation-pist.huma-num.fr\n📧 julien.rabaud@univ-pau.fr",
     "crumbs": [
       "Workshop",
       "Slides"
@@ -334,7 +257,7 @@
     "href": "slides.html#hands-on-tropy-demo",
     "title": "Organizing and Curating Image Corpora",
     "section": "Hands-On: Tropy Demo",
-    "text": "Hands-On: Tropy Demo\n\n\n\n\n\n\nWe will now explore:\n\n\n\nCreating a new project and importing a folder of photos\nCreating an item from multiple photos (e.g., recto/verso of a document)\nApplying a template and filling in metadata\nCreating a selection on a detail of interest\nUsing tags and saved searches\nExporting as JSON-LD\n\n\n\n\n\n\nFeel free to use your own research photos — or use the sample images provided on the workshop page.",
+    "text": "Hands-On: Tropy Demo\n\n\n\n\n\n\nWe will explore together:\n\n\n\nCreate a new project and import a folder of photos\nCreate an item from multiple photos (recto / verso)\nApply a template and fill in metadata\nCreate a selection on a detail of interest\nUse tags and saved searches\nExport as JSON-LD\n\n\n\n\nUse your own research photos, or the sample images from the workshop page.",
     "crumbs": [
       "Workshop",
       "Slides"
@@ -345,18 +268,18 @@
     "href": "slides.html#what-is-arvest",
     "title": "Organizing and Curating Image Corpora",
     "section": "What is Arvest?",
-    "text": "What is Arvest?\n\n\nArvest (arvest.app) is a web-based platform for working with IIIF image collections.\nIt was developed by the IIIF community and designed for digital humanities researchers who want to:\n\nWork with images from multiple sources (local, institutional repositories, Europeana…)\nAnnotate images individually or collaboratively\nExpose their curated collections via APIs\nUse image collections as input for machine learning pipelines\n\n\n\nKey features:\n\nIIIF Manifest import (URL or file)\nLocal image upload → auto-IIIF\nWeb annotation (W3C standard)\nCollaborative workspaces\nREST API for data access\nML-ready data export\n\n\n\n\n🔗 arvest.app · Docs: docs.arvest.app",
+    "text": "What is Arvest?\n\n\nA web platform for working with IIIF image collections.\nKey features:\n\nImport local images or IIIF Manifests\nAnnotate with W3C Web Annotation standard\nCollaborative workspaces with roles\nREST API for data access\nExport for machine learning pipelines\n\n\n\n\n\n\n\n\nNote\n\n\nNo installation needed — works in your browser.\n🔗 arvest.app\n📚 docs.arvest.app",
     "crumbs": [
       "Workshop",
       "Slides"
     ]
   },
   {
-    "objectID": "slides.html#importing-images-into-arvest",
-    "href": "slides.html#importing-images-into-arvest",
+    "objectID": "slides.html#importing-images",
+    "href": "slides.html#importing-images",
     "title": "Organizing and Curating Image Corpora",
-    "section": "Importing Images into Arvest",
-    "text": "Importing Images into Arvest\n\n\nFrom Local Files\n\nLogin to arvest.app\nCreate a new Workspace\nClick Import → Upload files\nSelect images from your computer\nArvest generates a IIIF Manifest automatically\n\n\nSupports: JPEG, PNG, TIFF, WebP\n\n\nFrom a IIIF Source\n\nFind a IIIF Manifest URL\n\nFrom Europeana, Nakala, Omeka S, BnF Gallica, Wellcome…\n\nClick Import → IIIF Manifest URL\nPaste the Manifest URL\nArvest imports all canvases and metadata\n\n\nExamples:\nhttps://gallica.bnf.fr/iiif/ark:/12148/btv1b8452439r/manifest.json\nhttps://nakala.fr/10.34847/nkl.xxx/manifest",
+    "section": "Importing Images",
+    "text": "Importing Images\n\n\nFrom local files:\n\nCreate a workspace\nImport → Upload files\nArvest generates a IIIF Manifest automatically\n\nSupported: JPEG, PNG, TIFF, WebP\n\nFrom a IIIF Manifest URL:\n\nFind a Manifest (Europeana, Nakala, Omeka S…)\nImport → IIIF Manifest URL\nPaste → all canvases imported\n\nhttps://gallica.bnf.fr/iiif/ark:/12148/\n  btv1b8452439r/manifest.json",
     "crumbs": [
       "Workshop",
       "Slides"
@@ -367,7 +290,7 @@
     "href": "slides.html#annotating-in-arvest",
     "title": "Organizing and Curating Image Corpora",
     "section": "Annotating in Arvest",
-    "text": "Annotating in Arvest\nArvest uses the W3C Web Annotation standard — the same standard as IIIF annotation layers.\n\n\nAnnotation types:\n\nRegion annotations — draw a box or polygon on the image\nPoint annotations — mark a specific location\nFull-canvas annotations — notes for the whole image\n\nEach annotation can have: - A body (text, tag, linked URI) - A motivation (describing, tagging, assessing…) - Creator and date metadata\n\n\nPractical uses:\n\nIdentify depicted persons, places, objects\nTranscribe visible text (inscriptions, captions)\nTag iconographic themes\nLink regions to controlled vocabulary terms\nCompare details across images in your corpus",
+    "text": "Annotating in Arvest\n\n\nUses the W3C Web Annotation standard.\nAnnotation types:\n\nRegion — box or polygon on the image\nPoint — mark a specific location\nFull-canvas — note on the whole image\n\nEach annotation: body (text, tag, URI) · motivation · creator + date.\n\nUses in humanities research:\n\nIdentify depicted persons, places, objects\nTranscribe inscriptions or captions\nTag iconographic themes\nLink regions to controlled vocabulary URIs\nCompare motifs across a corpus",
     "crumbs": [
       "Workshop",
       "Slides"
@@ -378,40 +301,40 @@
     "href": "slides.html#collaborating-in-arvest",
     "title": "Organizing and Curating Image Corpora",
     "section": "Collaborating in Arvest",
-    "text": "Collaborating in Arvest\n\n\nShared Workspaces:\n\nInvite collaborators via email\nAssign roles: viewer, annotator, editor, admin\nSee all annotations from all collaborators\nComment threads on annotations\nActivity log\n\n\n\n\n\n\n\n\nTip\n\n\nFor CHORAL projects:\nCreate a shared workspace → invite partners across institutions → annotate the same corpus collaboratively — even across national borders!\n\n\n\n\n\nAnnotation workflows:\n\nLead researcher imports corpus + sets annotation guidelines\nCollaborators annotate independently\nReview — annotation conflicts flagged\nConsensus — approved annotations marked final\nExport for publication or ML",
+    "text": "Collaborating in Arvest\n\n\nShared workspaces:\n\nInvite collaborators by email\nRoles: viewer · annotator · editor · admin\nAll annotations visible to the team\nComment threads · activity log\n\n\nWorkflow:\n\nImport corpus + set guidelines\nCollaborators annotate independently\nReview — conflicts flagged\nConsensus — annotations finalized\nExport for publication or ML\n\n\n\n\n\n\n\n\nTip\n\n\nFor CHORAL: invite partners across institutions to annotate the same corpus — across national borders.",
     "crumbs": [
       "Workshop",
       "Slides"
     ]
   },
   {
-    "objectID": "slides.html#exposing-data-via-api",
-    "href": "slides.html#exposing-data-via-api",
+    "objectID": "slides.html#exposing-data-api-ml",
+    "href": "slides.html#exposing-data-api-ml",
     "title": "Organizing and Curating Image Corpora",
-    "section": "Exposing Data via API",
-    "text": "Exposing Data via API\nArvest provides a REST API to expose your curated workspace data:\n\n\nGET /api/v1/workspaces/{id}/manifests\n→ All IIIF Manifests in workspace\n\nGET /api/v1/workspaces/{id}/annotations\n→ All annotations (W3C format)\n\nGET /api/v1/manifests/{id}/canvas/{n}\n→ Specific canvas with annotations\n→ Your annotated corpus becomes a queryable dataset\n\n\nFor Machine Learning:\nArvest can export your annotated regions as:\n\nCOCO format — for object detection\nCSV/JSON — for text classification\nIIIF + W3C annotations — for ML pipelines that work natively with IIIF\n\n→ Annotate once, reuse everywhere.\n\n\n\nConsult docs.arvest.app/api for full API documentation",
+    "section": "Exposing Data: API & ML",
+    "text": "Exposing Data: API & ML\n\n\nREST API:\nGET /api/v1/workspaces/{id}/manifests\nGET /api/v1/workspaces/{id}/annotations\nGET /api/v1/manifests/{id}/canvas/{n}\n→ Your annotated corpus becomes a queryable dataset\n\nFor Machine Learning:\nExport annotated regions as:\n\nCOCO — object detection\nCSV / JSON — text classification\nIIIF + W3C — ML pipelines\n\n→ Annotate once, reuse everywhere.\n\n\n\n🔗 docs.arvest.app",
     "crumbs": [
       "Workshop",
       "Slides"
     ]
   },
   {
-    "objectID": "slides.html#the-full-workflow-putting-it-all-together",
-    "href": "slides.html#the-full-workflow-putting-it-all-together",
+    "objectID": "slides.html#the-full-workflow",
+    "href": "slides.html#the-full-workflow",
     "title": "Organizing and Curating Image Corpora",
-    "section": "The Full Workflow — Putting It All Together",
-    "text": "The Full Workflow — Putting It All Together\n\n\n\n\n\nflowchart LR\n    A[📷 Archival Photos] --&gt; B[Tropy\\nOrganize & Describe]\n    B -- \"JSON-LD\\nmetadata\" --&gt; C[Omeka S\\nor Nakala]\n    C -- \"IIIF\\nManifest\" --&gt; D[Arvest\\nAnnotate & Collaborate]\n    D -- \"REST API\\nor Export\" --&gt; E[Publication\\nor ML Pipeline]\n    F[Europeana\\nBnF · Other IIIF] --&gt; D\n    G[GeoNames\\nPactols · Openthéso] --&gt; B\n    G --&gt; D\n\n\n\n\n\n\n\n\nEach step adds value:\nTropy → structured metadata · Omeka/Nakala → persistent, IIIF-enabled storage · Arvest → collaborative annotation and machine-readable output",
+    "section": "The Full Workflow",
+    "text": "The Full Workflow\n\n\n\n\n\nflowchart LR\n    A[\"📷 Archival\\nPhotos\"] --&gt; B[\"Tropy\\nOrganize & Describe\"]\n    B -- \"JSON-LD\" --&gt; C[\"Omeka S\\nor Nakala\"]\n    C -- \"IIIF Manifest\" --&gt; D[\"Arvest\\nAnnotate & Collaborate\"]\n    D -- \"API / Export\" --&gt; E[\"Publication\\nor ML\"]\n    F[\"Europeana\\nGallica…\"] --&gt; D\n    G[\"GeoNames · Pactols\\nOpenthéso\"] --&gt; B & D\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\nTropy → structured metadata · Omeka/Nakala → persistent IIIF storage · Arvest → collaborative annotation and machine-readable output.",
     "crumbs": [
       "Workshop",
       "Slides"
     ]
   },
   {
-    "objectID": "slides.html#summary-key-takeaways",
-    "href": "slides.html#summary-key-takeaways",
+    "objectID": "slides.html#summary",
+    "href": "slides.html#summary",
     "title": "Organizing and Curating Image Corpora",
-    "section": "Summary & Key Takeaways",
-    "text": "Summary & Key Takeaways\n\n\nConceptual foundations:\n\n✅ Use URIs instead of free text for people, places, concepts\n✅ Choose a metadata schema appropriate to your sources (DC, CIDOC-CRM)\n✅ Link to controlled vocabularies (GeoNames, Pactols, Openthéso)\n✅ Understand IIIF as the interoperability layer for images\n\nTools:\n\n✅ Tropy for the desktop: organization, description, annotation\n✅ Arvest for the web: IIIF import, collaboration, exposure\n\n\nNext steps:\n\nInstall Tropy and create your first project\nCreate an Arvest account\nFind IIIF content from Europeana or Nakala relevant to your research\nDeposit your first images in Nakala\nSet up a collaborative workspace in Arvest\n\n\nReach out!\nIndividual support available for UPPA doctoral students:\njulien.rabaud@univ-pau.fr",
+    "section": "Summary",
+    "text": "Summary\n\n\nRemember:\n\nUse URIs instead of free text\nChoose a metadata schema suited to your sources\nLink to controlled vocabularies\nIIIF is the interoperability layer for images\n\n\nNext steps:\n\nInstall Tropy → create your first project\nRegister on Arvest\nFind IIIF content on Europeana\nDeposit images in Nakala\nSet up a collaborative workspace\n\n📧 julien.rabaud@univ-pau.fr",
     "crumbs": [
       "Workshop",
       "Slides"
@@ -422,18 +345,18 @@
     "href": "slides.html#q-a",
     "title": "Organizing and Curating Image Corpora",
     "section": "Q & A",
-    "text": "Q & A\n\nQuestions?\n\n\nJulien Rabaud\nResearch Library · UPPA\nPôle Numérique · Research Data Management\n📧 julien.rabaud@univ-pau.fr\n🐦 @ujubib\n🔗 orcid.org/0000-0002-6604-9777\n\n\nSlides available at: ujubib.github.io/tropy-arvest",
+    "text": "Q & A\n\nQuestions?\n\n\nJulien Rabaud · UPPA · Pôle Numérique\n📧 julien.rabaud@univ-pau.fr\n🔗 orcid.org/0000-0002-6604-9777\n\n\nujubib.github.io/ed-tropy-arvest/slides.html ·",
     "crumbs": [
       "Workshop",
       "Slides"
     ]
   },
   {
-    "objectID": "slides.html#references-further-reading",
-    "href": "slides.html#references-further-reading",
+    "objectID": "slides.html#references",
+    "href": "slides.html#references",
     "title": "Organizing and Curating Image Corpora",
-    "section": "References & Further Reading",
-    "text": "References & Further Reading\n\nSemantic Web & Linked Data: - Berners-Lee, T. et al. (2001). The Semantic Web. Scientific American. doi.org/10.1038/scientificamerican0501-34 - W3C RDF Primer: w3.org/TR/rdf11-primer\nDublin Core: - dublincore.org/specifications/dublin-core/\nCIDOC-CRM: - cidoc-crm.org · Le Bœuf, P. et al. (2015). A New Standard for the Semantic Annotation of Cultural Heritage\nIIIF: - iiif.io/get-started · IIIF Cookbook: iiif.io/api/cookbook\nTropy: - docs.tropy.org · Pfanzelter, E. et al. (2019). Tropy in Use. doi.org/10.5281/zenodo.2643509\nNakala: - nakala.fr · documentation.huma-num.fr/nakala\nGeoNames: - geonames.org\nPactols / Openthéso: - frantiq.fr · opentheso.huma-num.fr",
+    "section": "References",
+    "text": "References\nSemantic Web & RDF: w3.org/TR/rdf11-primer · Berners-Lee et al. (2001), The Semantic Web, Scientific American\nDublin Core: dublincore.org\nCIDOC-CRM: cidoc-crm.org\nGeoNames: geonames.org\nPactols / Openthéso: frantiq.fr · opentheso.huma-num.fr\nIIIF: iiif.io · iiif.io/api/cookbook\nTropy: docs.tropy.org · community.tropy.org\nNakala: nakala.fr · documentation.huma-num.fr/nakala\nArvest: arvest.app · docs.arvest.app",
     "crumbs": [
       "Workshop",
       "Slides"
