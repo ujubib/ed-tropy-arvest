@@ -1,6 +1,6 @@
 meta:
   name: "UPPA - Organizing and Curating Image Corpora"
-  link: https://ujubib.github.io/tropy-arvest/
+  link: https://ujubib.github.io/ed-tropy-arvest/
 
 color:
   palette:
@@ -23,22 +23,21 @@ color:
 
 typography:
   fonts:
-    - family: "Source Sans Pro"
-      source: google
-    - family: "Source Code Pro"
-      source: google
-    - family: "Playfair Display"
-      source: google
-  base-size: 16px
+    - family: Amaranth
+      source: bunny
+    - family: Arsenal # Alegreya Sans, B612
+      source: bunny
+    - family: B612 Mono
+      source: bunny
   headings:
-    family: "Playfair Display"
+    family: Amaranth
     weight: 700
     style: normal
   monospace:
-    family: "Source Code Pro"
+    family: B612 Mono
     size: 0.9em
-  body:
-    family: "Source Sans Pro"
+  base:
+    family: Arsenal
     weight: 400
     line-height: 1.6
 
