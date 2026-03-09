@@ -2,7 +2,7 @@
 
 Workshop materials for doctoral students — UPPA & CHORAL (Unita)
 
-- **Website:** https://ujubib.github.io/tropy-arvest/
+- **Website:** https://ujubib.github.io/ed-tropy-arvest/
 - **Audience:** ED 481 SSH doctoral students · CHORAL programme
 - **Format:** Online (visio)
 - **Language:** English
