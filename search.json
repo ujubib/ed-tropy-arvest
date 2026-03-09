@@ -616,6 +616,17 @@
     ]
   },
   {
+    "objectID": "resources/arvest.html#video-tutorials",
+    "href": "resources/arvest.html#video-tutorials",
+    "title": "Arvest Resources",
+    "section": "Video Tutorials",
+    "text": "Video Tutorials\nOfficial tutorial series produced by the From Stage to Data research programme (Université Rennes 2 / Huma-Num), which initiated the development of Arvest.\nThe full playlist is available on YouTube: 🔗 Arvest Tutorial Playlist\n\n\nQuickstart Guide (13 min)\nA compact end-to-end walkthrough covering everything needed to start using Arvest: creating an account, setting up a first workspace, importing images, and making a basic annotation. The fastest way to get up and running before diving into the full tutorial series.\n\n\n\n\nTutorial 1/6 — Introduction & Overview (15 min)\nOpens the six-part series with a broad overview of what Arvest is, what it is designed for, and the key concepts that run through all the tutorials: workspaces, media, manifests, projects, and annotations. A useful orientation before engaging with the more detailed episodes.\n\n\n\n\nTutorial 2/6 — Media (22 min)\nCovers the two main ways to bring images into Arvest: uploading local files directly from your computer, and linking to remote media already hosted elsewhere. Explains how Arvest handles different file types, how uploaded files are stored, and how to manage your media library within a workspace.\n\n\n\n\nTutorial 3/6 — Manifests (25 min)\nThe longest tutorial in the series, dedicated to IIIF Manifests — the core data structure in Arvest. Explains how to create a Manifest from uploaded media, how to import an existing Manifest from an external IIIF source (Europeana, Nakala, Gallica, Omeka S…), and how Canvases and sequences are organised within a Manifest.\n\n\n\n\nTutorial 4/6 — Projects (33 min)\nThe most comprehensive episode. Covers the full project lifecycle in Arvest: creating a project, configuring its settings and access levels, inviting collaborators, assigning roles (viewer, annotator, editor, admin), and sharing a finished project with the outside world. Essential for anyone using Arvest for collaborative or team-based research.\n\n\n\n\nTutorial 5/6 — Annotations (22 min)\nA complete tour of Arvest’s annotation capabilities. Demonstrates all available annotation types — rectangular and polygonal regions, points, and full-canvas notes — as well as how to add textual bodies, tags, and linked data URIs. Also covers annotation layers, filtering, and exporting annotations in W3C Web Annotation format.\n\n\n\n\n\n\n\nNote\n\n\n\nTutorial 6/6 (covering additional advanced features) has not yet been published. The series continues with two further playlists also available on the same channel: one dedicated to the Arvest API (3 videos) and one on machine learning workflows with Python (4 videos) — both particularly relevant for researchers looking to integrate Arvest into computational pipelines.",
+    "crumbs": [
+      "Resources",
+      "Arvest"
+    ]
+  },
+  {
     "objectID": "resources/arvest.html#use-cases-in-the-humanities",
     "href": "resources/arvest.html#use-cases-in-the-humanities",
     "title": "Arvest Resources",
