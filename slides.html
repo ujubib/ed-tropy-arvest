@@ -1,0 +1,1696 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<link href="./img/favicon.png" rel="icon" type="image/png">
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-html/tabby.min.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-065a5179aebd64318d7ea99d77b64a9e.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.25">
+
+  <meta name="author" content="Julien Rabaud">
+  <meta name="dcterms.date" content="2026-03-09">
+  <title>Organizing and Curating Image Corpora</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+      }
+    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+    div.sourceCode
+      { color: #24292e;  }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #24292e; } /* Normal */
+    code span.al { color: #ff5555; font-weight: bold; } /* Alert */
+    code span.an { color: #6a737d; } /* Annotation */
+    code span.at { color: #d73a49; } /* Attribute */
+    code span.bn { color: #005cc5; } /* BaseN */
+    code span.bu { color: #d73a49; } /* BuiltIn */
+    code span.cf { color: #d73a49; } /* ControlFlow */
+    code span.ch { color: #032f62; } /* Char */
+    code span.cn { color: #005cc5; } /* Constant */
+    code span.co { color: #6a737d; } /* Comment */
+    code span.cv { color: #6a737d; } /* CommentVar */
+    code span.do { color: #6a737d; } /* Documentation */
+    code span.dt { color: #d73a49; } /* DataType */
+    code span.dv { color: #005cc5; } /* DecVal */
+    code span.er { color: #ff5555; text-decoration: underline; } /* Error */
+    code span.ex { color: #d73a49; font-weight: bold; } /* Extension */
+    code span.fl { color: #005cc5; } /* Float */
+    code span.fu { color: #6f42c1; } /* Function */
+    code span.im { color: #032f62; } /* Import */
+    code span.in { color: #6a737d; } /* Information */
+    code span.kw { color: #d73a49; } /* Keyword */
+    code span.op { color: #24292e; } /* Operator */
+    code span.ot { color: #6f42c1; } /* Other */
+    code span.pp { color: #d73a49; } /* Preprocessor */
+    code span.re { color: #6a737d; } /* RegionMarker */
+    code span.sc { color: #005cc5; } /* SpecialChar */
+    code span.ss { color: #032f62; } /* SpecialString */
+    code span.st { color: #032f62; } /* String */
+    code span.va { color: #e36209; } /* Variable */
+    code span.vs { color: #032f62; } /* VerbatimString */
+    code span.wa { color: #ff5555; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-4e17e2164ba974f1861d4354e1fa86e6.css">
+  <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+  <script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+  <script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+  <link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" data-background-gradient="linear-gradient(135deg, #003865 0%, #0070B8 100%)" class="quarto-title-block center">
+  <h1 class="title">Organizing and Curating Image Corpora</h1>
+  <p class="subtitle">with Tropy and Arvest</p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Julien Rabaud <a href="https://orcid.org/0000-0002-6604-9777" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a>
+</div>
+        <p class="quarto-title-affiliation">
+            UPPA · Pôle Numérique · ED 481 SSH
+          </p>
+    </div>
+</div>
+
+  <p class="date">March 9, 2026</p>
+</section>
+<section id="agenda" class="slide level2 scrollable" data-background-color="#003865">
+<h2>Agenda</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Part 1 · Conceptual Foundations</strong></p>
+<ol type="1">
+<li>Introduction to the Semantic Web</li>
+<li>Triples &amp; URIs</li>
+<li>Metadata schemas
+<ul>
+<li>Dublin Core</li>
+<li>CIDOC-CRM</li>
+</ul></li>
+<li>Controlled vocabularies
+<ul>
+<li>GeoNames · Pactols · Openthéso</li>
+</ul></li>
+</ol>
+</div><div class="column" style="width:50%;">
+<p><strong>Part 2 · IIIF</strong></p>
+<ol start="5" type="1">
+<li>The IIIF standard</li>
+<li>IIIF in the wild</li>
+</ol>
+<p><strong>Part 3 · Tools</strong></p>
+<ol start="7" type="1">
+<li><strong>Tropy</strong> — organize your research photos</li>
+<li><strong>Arvest</strong> — work with IIIF collections</li>
+</ol>
+</div></div>
+</section>
+<section class="slide level2">
+
+</section>
+<section>
+<section id="part-1" class="title-slide slide level1 center" data-background-gradient="linear-gradient(135deg, #003865 0%, #0070B8 100%)">
+<h1>Part 1</h1>
+
+</section>
+<section id="the-semantic-web-linked-data" class="slide level2">
+<h2>The Semantic Web &amp; Linked Data</h2>
+</section>
+<section id="the-web-we-know-vs.-the-semantic-web" class="slide level2">
+<h2>The Web We Know vs.&nbsp;The Semantic Web</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="the-document-web">The Document Web</h3>
+<ul>
+<li>Pages written <strong>for humans</strong></li>
+<li>Search engines index <em>words</em></li>
+<li>No shared understanding of <strong>meaning</strong></li>
+<li>Links connect documents, not <em>data</em></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<h3 id="the-semantic-web">The Semantic Web</h3>
+<ul>
+<li>Data written <strong>for machines</strong> (and humans)</li>
+<li>Machines can infer <strong>meaning</strong></li>
+<li>A global, interconnected <strong>knowledge graph</strong></li>
+<li>Links connect <em>things</em>, not just documents</li>
+</ul>
+</div></div>
+<div class="box-gold">
+<p><strong>Tim Berners-Lee</strong> (inventor of the Web) coined the term in 2001.<br>
+The goal: make the Web a universal medium for data exchange.</p>
+</div>
+</section>
+<section id="the-core-idea-triples" class="slide level2">
+<h2>The Core Idea: Triples</h2>
+<p>Everything in the Semantic Web is expressed as a <strong>triple</strong>:</p>
+<div class="columns">
+<div class="column" style="width:33%;">
+<div class="box-blue">
+<p><strong>Subject</strong><br>
+<em>What are we talking about?</em></p>
+</div>
+</div><div class="column" style="width:33%;">
+<div class="box-gold">
+<p><strong>Predicate</strong><br>
+<em>What property?</em></p>
+</div>
+</div><div class="column" style="width:33%;">
+<div class="box-green">
+<p><strong>Object</strong><br>
+<em>What value?</em></p>
+</div>
+</div></div>
+<div class="triple">
+<p>&lt;Photo_001&gt; &lt;dc:creator&gt; “Julien Rabaud”</p>
+</div>
+<div class="triple">
+<p>&lt;Photo_001&gt; &lt;dc:subject&gt; &lt;geonames:2988507&gt; <em>(Paris)</em></p>
+</div>
+<div class="triple">
+<p>&lt;Photo_001&gt; &lt;cidoc:P138_represents&gt; &lt;wd:Q90&gt;</p>
+</div>
+<div class="fragment">
+<div class="box-blue">
+<p>💡 Triples form a <strong>graph</strong> — each resource can be both subject and object, creating a web of interconnected knowledge.</p>
+</div>
+</div>
+</section>
+<section id="uris-uniform-resource-identifiers" class="slide level2">
+<h2>URIs — Uniform Resource Identifiers</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p>A <strong>URI</strong> is a unique, global identifier for <em>any thing</em> — a person, a place, a concept, a document.</p>
+<p>Unlike a URL (which locates a web page), a URI <strong>names</strong> a resource.</p>
+<pre><code>https://sws.geonames.org/2988507/   # Paris
+https://www.wikidata.org/entity/Q937  # Marie Curie
+http://vocab.getty.edu/page/aat/300015646  # photographs
+https://pactols.frantiq.fr/opentheso/?idt=TH_1&amp;idc=7</code></pre>
+</div><div class="column" style="width:40%;">
+<div class="box-gold">
+<p><strong>Why URIs?</strong></p>
+<ul>
+<li>Globally unique</li>
+<li>Persistent (stable over time)</li>
+<li>Dereferenceable (can be looked up)</li>
+<li>Language-independent</li>
+</ul>
+</div>
+</div></div>
+<div class="fragment">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>In practice</strong></p>
+</div>
+<div class="callout-content">
+<p>When you assign a <strong>GeoNames URI</strong> to a location field in Tropy, you’re not just typing a string — you’re linking your data to a global knowledge graph.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="rdf-the-language-of-triples" class="slide level2">
+<h2>RDF — The Language of Triples</h2>
+<p><strong>RDF</strong> (Resource Description Framework) is the W3C standard for expressing triples.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Turtle syntax</strong> (human-readable):</p>
+<pre class="turtle"><code>@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
+@prefix geo: &lt;https://sws.geonames.org/&gt; .
+
+&lt;https://myarchive.org/photo/001&gt;
+  dc:title "Cloister of Santo Domingo" ;
+  dc:creator "Julien Rabaud" ;
+  dc:date "2024-09-15" ;
+  dc:spatial geo:3117735 .</code></pre>
+</div><div class="column" style="width:50%;">
+<p><strong>JSON-LD</strong> (used by Tropy!):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="dt">"@context"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb3-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="dt">"dc"</span><span class="fu">:</span> <span class="st">"http://purl.org/dc/elements/1.1/"</span></span>
+<span id="cb3-4"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">},</span></span>
+<span id="cb3-5"><a aria-hidden="true" tabindex="-1"></a>  <span class="dt">"@id"</span><span class="fu">:</span> <span class="st">"https://myarchive.org/photo/001"</span><span class="fu">,</span></span>
+<span id="cb3-6"><a aria-hidden="true" tabindex="-1"></a>  <span class="dt">"dc:title"</span><span class="fu">:</span> <span class="st">"Cloister of Santo Domingo"</span><span class="fu">,</span></span>
+<span id="cb3-7"><a aria-hidden="true" tabindex="-1"></a>  <span class="dt">"dc:creator"</span><span class="fu">:</span> <span class="st">"Julien Rabaud"</span></span>
+<span id="cb3-8"><a aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div></div>
+<div class="small">
+<p>Tropy stores metadata as <strong>JSON-LD</strong> internally — your descriptions are already Linked Data.</p>
+</div>
+</section>
+<section id="metadata-schemas-properties" class="slide level2" data-background-color="#003865">
+<h2>Metadata Schemas: Properties</h2>
+<p><em>How do we describe what we see?</em></p>
+</section>
+<section id="dublin-core" class="slide level2">
+<h2>Dublin Core</h2>
+<p>The simplest and most widespread metadata standard. 15 core elements, usable for <strong>any</strong> resource type.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Property</th>
+<th>Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>dc:title</code></td>
+<td>Title of the image</td>
+</tr>
+<tr class="even">
+<td><code>dc:creator</code></td>
+<td>Photographer / author</td>
+</tr>
+<tr class="odd">
+<td><code>dc:date</code></td>
+<td>Date of creation</td>
+</tr>
+<tr class="even">
+<td><code>dc:subject</code></td>
+<td>Subject / topic</td>
+</tr>
+<tr class="odd">
+<td><code>dc:description</code></td>
+<td>Free text description</td>
+</tr>
+<tr class="even">
+<td><code>dc:type</code></td>
+<td>Type (photograph, drawing…)</td>
+</tr>
+</tbody>
+</table>
+</div><div class="column" style="width:50%;">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Property</th>
+<th>Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>dc:format</code></td>
+<td>File format (JPEG, TIFF…)</td>
+</tr>
+<tr class="even">
+<td><code>dc:identifier</code></td>
+<td>Unique ID / shelfmark</td>
+</tr>
+<tr class="odd">
+<td><code>dc:source</code></td>
+<td>Archive, repository</td>
+</tr>
+<tr class="even">
+<td><code>dc:language</code></td>
+<td>Language of text visible</td>
+</tr>
+<tr class="odd">
+<td><code>dc:rights</code></td>
+<td>Licence / copyright</td>
+</tr>
+<tr class="even">
+<td><code>dc:relation</code></td>
+<td>Related resources</td>
+</tr>
+</tbody>
+</table>
+</div></div>
+<div class="small">
+<p>🔗 <a href="https://dublincore.org">dublincore.org</a> · Namespace: <code>http://purl.org/dc/elements/1.1/</code></p>
+</div>
+</section>
+<section id="dublin-core-extended-dcterms" class="slide level2">
+<h2>Dublin Core Extended (DCTERMS)</h2>
+<p><strong>Dublin Core Terms</strong> (<code>dcterms:</code>) provides richer, typed versions of the 15 elements plus additional properties.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<pre class="turtle"><code># Basic DC
+dc:date "2024-09-15"
+
+# Richer DCTERMS
+dcterms:created "2024-09-15"^^xsd:date
+dcterms:spatial &lt;geonames:3117735&gt;
+dcterms:license &lt;https://creativecommons.org/licenses/by/4.0/&gt;
+dcterms:isPartOf &lt;myArchive:collection_42&gt;</code></pre>
+</div><div class="column" style="width:50%;">
+<div class="box-blue">
+<p><strong>Key extras in DCTERMS:</strong></p>
+<ul>
+<li><code>dcterms:spatial</code> — geographic coverage</li>
+<li><code>dcterms:temporal</code> — time period covered</li>
+<li><code>dcterms:license</code> — explicit license URI</li>
+<li><code>dcterms:isPartOf</code> / <code>hasPart</code> — collection hierarchy</li>
+<li><code>dcterms:abstract</code> — extended description</li>
+</ul>
+</div>
+</div></div>
+<div class="small">
+<p>🔗 Namespace: <code>http://purl.org/dc/terms/</code> · Both <code>dc:</code> and <code>dcterms:</code> are available as Tropy templates</p>
+</div>
+</section>
+<section id="cidoc-crm" class="slide level2">
+<h2>CIDOC-CRM</h2>
+<div class="columns">
+<div class="column" style="width:65%;">
+<p>The <strong>Conceptual Reference Model</strong> of the CIDOC (International Committee for Documentation) — the international standard for <strong>cultural heritage</strong> data.</p>
+<p>Unlike Dublin Core (which describes <em>documents</em>), CIDOC-CRM describes <strong>events, actors, places, and objects</strong> and their relationships.</p>
+<div class="fragment">
+<div class="box-gold">
+<p><strong>Key insight:</strong> In CIDOC-CRM, everything important <em>happens</em>.<br>
+A painting wasn’t just <em>created</em> — it was created <strong>by a person</strong>, <strong>at a place</strong>, <strong>during a period</strong>, <strong>using materials</strong>, and was later <strong>moved</strong>, <strong>acquired</strong>, <strong>exhibited</strong>…</p>
+</div>
+</div>
+</div><div class="column" style="width:35%;">
+<div class="box-blue">
+<p><strong>Core classes:</strong></p>
+<ul>
+<li><code>E1</code> Thing</li>
+<li><code>E18</code> Physical Thing</li>
+<li><code>E22</code> Human-Made Object</li>
+<li><code>E31</code> Document / <strong>Photograph</strong></li>
+<li><code>E53</code> Place</li>
+<li><code>E52</code> Time-Span</li>
+<li><code>E39</code> Actor</li>
+<li><code>E65</code> Creation</li>
+</ul>
+</div>
+</div></div>
+<div class="small">
+<p>🔗 <a href="https://cidoc-crm.org">cidoc-crm.org</a> · Used in <strong>Europeana</strong>, <strong>museum databases</strong>, and <strong>Nakala</strong></p>
+</div>
+</section>
+<section id="cidoc-crm-in-practice" class="slide level2">
+<h2>CIDOC-CRM in Practice</h2>
+<div class="triple">
+<p>&lt;Photo_001&gt; <strong>rdf:type</strong> cidoc:E31_Document</p>
+</div>
+<div class="triple">
+<p>&lt;Photo_001&gt; <strong>cidoc:P138_represents</strong> &lt;wd:Q5783414&gt; <em>(the depicted building)</em></p>
+</div>
+<div class="triple">
+<p>&lt;Creation_event&gt; <strong>rdf:type</strong> cidoc:E65_Creation</p>
+</div>
+<div class="triple">
+<p>&lt;Creation_event&gt; <strong>cidoc:P14_carried_out_by</strong> &lt;orcid:0000-0002-6604-9777&gt;</p>
+</div>
+<div class="triple">
+<p>&lt;Creation_event&gt; <strong>cidoc:P4_has_time-span</strong> &lt;2024-09-15&gt;</p>
+</div>
+<div class="triple">
+<p>&lt;Creation_event&gt; <strong>cidoc:P7_took_place_at</strong> &lt;geonames:3117735&gt;</p>
+</div>
+<div class="fragment">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p><strong>For Tropy users:</strong> The <em>Tropy Generic</em> template approximates Dublin Core. The <em>Tropy Correspondence</em> template is more event-oriented. You can <strong>import a CIDOC-CRM-aligned template</strong> via the JSON-LD schema import feature.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="controlled-vocabularies-values" class="slide level2" data-background-color="#003865">
+<h2>Controlled Vocabularies: Values</h2>
+<p><em>Consistent, linked values for your metadata fields</em></p>
+</section>
+<section id="why-controlled-vocabularies" class="slide level2">
+<h2>Why Controlled Vocabularies?</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>The problem with free text:</strong></p>
+<ul>
+<li>“Paris” / “paris” / “PARIS” / “Paris, France” — all different strings</li>
+<li>“19th century” / “1800s” / “XIX century”</li>
+<li>No way to query across datasets</li>
+<li>No multilingual support</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>The solution — URIs as values:</strong></p>
+<pre><code>dc:spatial &lt;geonames:2988507&gt;
+# → always Paris, in any language
+# → machine-readable coordinates
+# → links to 11M other GeoNames entries</code></pre>
+</div></div>
+<div class="fragment">
+<div class="box-gold">
+<p><strong>Controlled vocabularies = shared dictionaries</strong><br>
+When we all use the same URI for Paris, our datasets become <strong>interoperable</strong> — they can be merged, queried, and compared.</p>
+</div>
+</div>
+</section>
+<section id="geonames" class="slide level2">
+<h2>GeoNames</h2>
+<div class="columns">
+<div class="column" style="width:65%;">
+<p><strong>GeoNames</strong> is a geographical database covering all countries, with over <strong>12 million</strong> place names, all with stable URIs.</p>
+<pre><code>https://sws.geonames.org/2988507/   → Paris
+https://sws.geonames.org/3117735/   → Salamanca
+https://sws.geonames.org/6440564/   → Anglet</code></pre>
+<p><strong>Each entry includes:</strong> - Names in multiple languages - Coordinates (latitude/longitude) - Administrative hierarchy (city → region → country) - Feature type (mountain, river, church…)</p>
+</div><div class="column" style="width:35%;">
+<div class="box-blue">
+<p><strong>In Tropy:</strong></p>
+<p>Use GeoNames URIs in the <code>dc:spatial</code> or <code>dcterms:spatial</code> field.</p>
+<p>This makes your geographic metadata globally interoperable!</p>
+</div>
+</div></div>
+<div class="small">
+<p>🔗 <a href="https://www.geonames.org">geonames.org</a> · Search: <a href="https://www.geonames.org/search.html">geonames.org/search.html</a></p>
+</div>
+</section>
+<section id="pactols" class="slide level2">
+<h2>Pactols</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><strong>PACTOLS</strong> is a multilingual thesaurus for <strong>Archaeology, Classical Studies and Oriental Studies</strong>, maintained by the <strong>Frantiq network</strong> (French research infrastructure).</p>
+<p>Covers subjects like: - Archaeological periods and cultures - Object types and materials - Geographic places (ancient and modern) - Historical persons and mythological figures - Techniques and practices</p>
+<div class="fragment">
+<pre><code>https://pactols.frantiq.fr/opentheso/?idt=TH_1&amp;idc=12345
+# → a specific archaeological period</code></pre>
+</div>
+</div><div class="column" style="width:40%;">
+<div class="box-gold">
+<p><strong>Why Pactols?</strong></p>
+<p>Especially relevant for researchers working on:</p>
+<ul>
+<li>Classical antiquity</li>
+<li>Medieval heritage</li>
+<li>Mediterranean archaeology</li>
+<li>Romance language cultures (CHORAL!)</li>
+</ul>
+</div>
+</div></div>
+<div class="small">
+<p>🔗 <a href="https://frantiq.fr">frantiq.fr</a> · Thesaurus: <a href="https://opentheso.frantiq.fr">opentheso.frantiq.fr</a></p>
+</div>
+</section>
+<section id="huma-num-openthéso" class="slide level2">
+<h2>Huma-Num Openthéso</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><strong>Openthéso</strong> is an open-source <strong>thesaurus management platform</strong> developed by <strong>Huma-Num</strong> (French national infrastructure for Digital Humanities).</p>
+<p>It hosts numerous discipline-specific thesauri:</p>
+<ul>
+<li>PACTOLS (Archaeology)</li>
+<li><strong>Thésaurus de la désignation des œuvres architecturales</strong> (MHFA)</li>
+<li>Vocabulaire des arts de la scène</li>
+<li>… and many others</li>
+</ul>
+<p>Each term has a <strong>stable URI</strong> (ARK identifier) and <strong>SKOS</strong> representation.</p>
+</div><div class="column" style="width:40%;">
+<div class="box-blue">
+<p><strong>Key feature: SKOS</strong></p>
+<p>Terms are expressed in <strong>SKOS</strong> (Simple Knowledge Organization System):</p>
+<ul>
+<li><code>skos:prefLabel</code> (preferred label)</li>
+<li><code>skos:altLabel</code> (synonyms)</li>
+<li><code>skos:broader</code> / <code>skos:narrower</code></li>
+<li><code>skos:exactMatch</code> (links to other thesauri!)</li>
+</ul>
+</div>
+</div></div>
+<div class="small">
+<p>🔗 <a href="https://opentheso.huma-num.fr">opentheso.huma-num.fr</a> · Docs: <a href="https://opentheso.github.io">opentheso.github.io</a></p>
+</div>
+</section>
+<section class="slide level2">
+
+</section></section>
+<section>
+<section id="part-2" class="title-slide slide level1 center" data-background-gradient="linear-gradient(135deg, #003865 0%, #0070B8 100%)">
+<h1>Part 2</h1>
+
+</section>
+<section id="iiif-the-international-image-interoperability-framework" class="slide level2">
+<h2>IIIF — The International Image Interoperability Framework</h2>
+</section>
+<section id="what-is-iiif" class="slide level2">
+<h2>What is IIIF?</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><strong>IIIF</strong> (pronounced <em>“triple-eye-eff”</em>) is a set of open standards that enable <strong>rich access to digitized images</strong> from cultural heritage institutions.</p>
+<p>Developed since 2011 by a community of libraries, archives, and museums (including BnF, British Library, Harvard, Stanford, Europeana…).</p>
+<div class="fragment">
+<div class="box-gold">
+<p><strong>The core promise:</strong><br>
+Any IIIF-compliant viewer can display any IIIF-compliant image, <em>regardless of where it’s hosted</em>.</p>
+</div>
+</div>
+</div><div class="column" style="width:40%;">
+<p><strong>IIIF enables:</strong></p>
+<ul>
+<li>🔍 Deep zoom on high-resolution images</li>
+<li>📐 Requesting specific regions, sizes, rotations</li>
+<li>📋 Structured collections (Manifests)</li>
+<li>🔗 Linking and embedding across institutions</li>
+<li>💬 Shared annotation layers</li>
+<li>🤝 Multi-institutional exhibitions</li>
+</ul>
+</div></div>
+<div class="small">
+<p>🔗 <a href="https://iiif.io">iiif.io</a> · Community: <a href="https://iiif.io/community/">iiif.io/community</a></p>
+</div>
+</section>
+<section id="the-key-iiif-apis" class="slide level2">
+<h2>The Key IIIF APIs</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="image-api">Image API</h3>
+<p>Standardizes <strong>how images are served</strong>.</p>
+<p>URL pattern:</p>
+<pre><code>{server}/{prefix}/{identifier}
+  /{region}/{size}/{rotation}
+  /{quality}.{format}</code></pre>
+<p>Example:</p>
+<pre><code>https://example.org/iiif/img01
+  /full/800,/0/default.jpg</code></pre>
+<p>→ Enables <strong>deep zoom</strong>, cropping, resizing — all server-side</p>
+</div><div class="column" style="width:50%;">
+<h3 id="presentation-api-manifests">Presentation API (Manifests)</h3>
+<p>Standardizes <strong>how image collections are described</strong>.</p>
+<p>A <strong>Manifest</strong> is a JSON-LD document that says: - What images belong to this object/collection - In what order - With what labels and metadata - With what annotations</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb10-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb10-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="dt">"@context"</span><span class="fu">:</span> <span class="st">"http://iiif.io/api/presentation/3/context.json"</span><span class="fu">,</span></span>
+<span id="cb10-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="dt">"id"</span><span class="fu">:</span> <span class="st">"https://example.org/manifest/1"</span><span class="fu">,</span></span>
+<span id="cb10-4"><a aria-hidden="true" tabindex="-1"></a>  <span class="dt">"type"</span><span class="fu">:</span> <span class="st">"Manifest"</span><span class="fu">,</span></span>
+<span id="cb10-5"><a aria-hidden="true" tabindex="-1"></a>  <span class="dt">"label"</span><span class="fu">:</span> <span class="fu">{</span> <span class="dt">"en"</span><span class="fu">:</span> <span class="ot">[</span><span class="st">"My Archive"</span><span class="ot">]</span> <span class="fu">}</span></span>
+<span id="cb10-6"><a aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div></div>
+</section>
+<section id="the-manifest-heart-of-iiif" class="slide level2">
+<h2>The Manifest — Heart of IIIF</h2>
+<pre><code>Manifest (Collection or single object)
+  └── Canvas (= a "page" or "view")
+       ├── Annotation Page
+       │    └── Annotation (painting role → the image)
+       └── Annotation Page
+            └── Annotation (commenting role → your notes!)</code></pre>
+<div class="fragment">
+<div class="box-blue">
+<p><strong>Think of a Manifest as a virtual object:</strong><br>
+A manuscript has 200 pages → 200 Canvases.<br>
+A photo series has 50 images → 50 Canvases.<br>
+A painted altarpiece has front, back, details → multiple Canvases.</p>
+</div>
+</div>
+<div class="fragment">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tip</strong></p>
+</div>
+<div class="callout-content">
+<p><strong>For Arvest users:</strong> When you import a IIIF Manifest in Arvest, you’re importing the entire structure — all canvases, their images, their metadata, and any existing annotations.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="europeana-iiif" class="slide level2">
+<h2>Europeana IIIF</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><strong>Europeana</strong> aggregates cultural heritage from <strong>3,000+ institutions</strong> across Europe and provides <strong>IIIF access</strong> to millions of items.</p>
+<p><strong>Finding IIIF content:</strong> - Browse <a href="https://europeana.eu">europeana.eu</a> - Look for the IIIF icon on item pages - Or use the <strong>Europeana API</strong> with <code>iiif=true</code></p>
+<pre><code>https://iiif.europeana.eu/presentation/
+  {collection}/{recordId}/manifest</code></pre>
+</div><div class="column" style="width:40%;">
+<div class="box-gold">
+<p><strong>For CHORAL researchers:</strong></p>
+<p>Search Europeana for: - Heritage from Spain, Portugal, France, Italy, Romania - Manuscripts in Romance languages - Historical photographs and maps - Museum objects with provenance data</p>
+</div>
+</div></div>
+<div class="small">
+<p>🔗 <a href="https://europeana.eu">europeana.eu</a> · API: <a href="https://pro.europeana.eu/apis">pro.europeana.eu/apis</a></p>
+</div>
+</section>
+<section id="omeka-s-iiif" class="slide level2">
+<h2>Omeka S &amp; IIIF</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><strong>Omeka S</strong> (used by UPPA) natively generates <strong>IIIF Manifests</strong> for its items and media.</p>
+<p>Any item with an image in your Omeka S instance has a IIIF endpoint:</p>
+<pre><code>https://omeka.univ-pau.fr/iiif/3/{itemId}/manifest</code></pre>
+<p>And a media endpoint:</p>
+<pre><code>https://omeka.univ-pau.fr/iiif/3/media/{mediaId}/canvas/p1</code></pre>
+</div><div class="column" style="width:40%;">
+<div class="box-blue">
+<p><strong>UPPA Omeka S</strong></p>
+<ul>
+<li>Internal research collections</li>
+<li>Public heritage exhibitions</li>
+<li>Metadata aligned with Dublin Core and CIDOC-CRM</li>
+<li>Auto-generated IIIF Manifests</li>
+</ul>
+<p>→ <strong>Directly importable in Arvest!</strong></p>
+</div>
+</div></div>
+<div class="small">
+<p>🔗 <a href="https://omeka.org/s/">omeka.org</a> · Module: <a href="https://omeka.org/s/modules/IiifSearch">iiif.io Omeka module</a></p>
+</div>
+</section>
+<section id="nakala-huma-num-data-repository" class="slide level2 scrollable">
+<h2>Nakala — Huma-Num Data Repository</h2>
+<div class="columns">
+<div class="column" style="width:65%;">
+<p><strong>Nakala</strong> is a research data repository for the Humanities, operated by <strong>Huma-Num</strong> (CNRS).</p>
+<p>It provides: - <strong>Stable storage</strong> with DOIs for datasets - <strong>IIIF image serving</strong> for all deposited images - <strong>API access</strong> to metadata and files - <strong>Public and private</strong> data modes</p>
+<p>Any image deposited in Nakala gets a IIIF Image API endpoint automatically.</p>
+</div><div class="column" style="width:35%;">
+<div class="box-gold">
+<p><strong>For your research:</strong></p>
+<ol type="1">
+<li>Deposit photos/scans in Nakala</li>
+<li>Get a persistent DOI + IIIF URL</li>
+<li>Import the Manifest into Arvest</li>
+<li>Annotate and expose for collaborators</li>
+</ol>
+<p>→ A complete, FAIR-compliant workflow!</p>
+</div>
+</div></div>
+<div class="small">
+<p>🔗 <a href="https://nakala.fr">nakala.fr</a> · Docs: <a href="https://documentation.huma-num.fr/nakala">documentation.huma-num.fr/nakala</a></p>
+</div>
+</section>
+<section class="slide level2">
+
+</section></section>
+<section>
+<section id="part-3" class="title-slide slide level1 center" data-background-gradient="linear-gradient(135deg, #003865 0%, #0070B8 100%)">
+<h1>Part 3</h1>
+
+</section>
+<section id="tools-for-working-with-image-corpora" class="slide level2">
+<h2>Tools for Working with Image Corpora</h2>
+</section>
+<section class="slide level2">
+
+</section></section>
+<section>
+<section id="tropy" class="title-slide slide level1 center" data-background-color="#003865">
+<h1>Tropy</h1>
+<p><em>From archival photos to structured, linked research data</em></p>
+</section>
+<section id="what-is-tropy" class="slide level2 scrollable">
+<h2>What is Tropy?</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><strong>Tropy</strong> is a <strong>free, open-source desktop application</strong> for organizing and describing research photographs.</p>
+<p>Think of it as a <em>research photo manager</em> built specifically for historians, art historians, and humanists — not a generic photo app.</p>
+<div class="fragment">
+<p><strong>The core workflow:</strong></p>
+<ol type="1">
+<li><strong>Import</strong> photos from your archival sessions</li>
+<li><strong>Group</strong> related photos into <em>items</em></li>
+<li><strong>Describe</strong> with rich metadata (any schema)</li>
+<li><strong>Annotate</strong> regions of interest</li>
+<li><strong>Export</strong> as JSON-LD, CSV, or to Omeka S</li>
+</ol>
+</div>
+</div><div class="column" style="width:40%;">
+<div class="box-blue">
+<p><strong>History &amp; Links</strong></p>
+<ul>
+<li>Created by <strong>Roy Rosenzweig Center for History and New Media</strong> (George Mason U.) &amp; <strong>C²DH</strong> (U. Luxembourg)</li>
+<li>First release: 2017</li>
+<li>Current version: 2.x</li>
+<li>License: <strong>AGPL-3.0</strong></li>
+</ul>
+<p>🔗 <a href="https://tropy.org">tropy.org</a><br>
+📦 <a href="https://github.com/tropy/tropy">github.com/tropy/tropy</a><br>
+📚 <a href="https://docs.tropy.org">docs.tropy.org</a></p>
+</div>
+</div></div>
+</section>
+<section id="the-tropy-interface" class="slide level2">
+<h2>The Tropy Interface</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Main areas:</strong></p>
+<ul>
+<li><strong>Project Panel</strong> (left) — lists, tags, saved searches</li>
+<li><strong>Item Grid/Table</strong> (center) — browse all items</li>
+<li><strong>Metadata Panel</strong> (right) — describe the selected item or photo</li>
+<li><strong>Viewer</strong> (bottom/center) — view and annotate photos</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="box-gold">
+<p><strong>Two project modes:</strong></p>
+<p><strong>Standard project</strong> — copies files to project folder → portable, self-contained</p>
+<p><strong>Advanced project</strong> — links to original files → lighter, but path-dependent</p>
+<p>→ For archival work: <strong>Standard</strong> is safer</p>
+</div>
+</div></div>
+<div class="fragment">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tip</strong></p>
+</div>
+<div class="callout-content">
+<p><strong>Good practice:</strong> Create one Tropy project per research trip or archive collection.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="the-three-levels-of-description" class="slide level2">
+<h2>The Three Levels of Description</h2>
+<p>Tropy structures data in <strong>three nested levels</strong>, each with its own metadata:</p>
+<div class="columns">
+<div class="column" style="width:33%;">
+<div class="box-blue">
+<p><strong>📁 Item</strong></p>
+<p>Groups <em>logically related</em> photos</p>
+<p><em>Example:</em><br>
+A multi-page document photographed front and back → 1 item, 2 photos</p>
+<p>Metadata: title, date, archive reference, box/folder number</p>
+</div>
+</div><div class="column" style="width:33%;">
+<div class="box-gold">
+<p><strong>🖼️ Photo</strong></p>
+<p>One image file</p>
+<p>Metadata: filename, dimensions, date taken, camera settings</p>
+<p><em>Note: you rarely describe photos individually — the item is the unit of description</em></p>
+</div>
+</div><div class="column" style="width:33%;">
+<div class="box-green">
+<p><strong>🔍 Selection (Detail)</strong></p>
+<p>A cropped region of a photo</p>
+<p><em>Example:</em><br>
+A detail of a seal, a signature, an inscription, a decorative motif</p>
+<p>Metadata: its own title, notes, tags — linked to coordinates in the image</p>
+</div>
+</div></div>
+</section>
+<section id="templates-defining-your-metadata-schema" class="slide level2">
+<h2>Templates — Defining Your Metadata Schema</h2>
+<p>A <strong>template</strong> in Tropy defines which <strong>fields</strong> appear in the metadata panel for an item.</p>
+<p>Each field is a <strong>property</strong> from a vocabulary (Dublin Core, CIDOC-CRM, custom, etc.).</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Built-in templates:</strong></p>
+<ul>
+<li><em>Tropy Generic</em> — Dublin Core-based</li>
+<li><em>Tropy Correspondence</em> — letters and correspondence</li>
+<li><em>Tropy Audio</em> / <em>Tropy Video</em></li>
+<li><em>Tropy Photo</em> — photo-level metadata</li>
+</ul>
+<p><strong>Custom templates:</strong></p>
+<ul>
+<li>Create your own via <em>Edit → Templates</em></li>
+<li>Add/remove/reorder properties</li>
+<li>Set default values and required fields</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>Importing external schemas:</strong></p>
+<p>Tropy can <strong>import vocabulary schemas</strong> from the web:</p>
+<ul>
+<li>Any RDF/OWL vocabulary published as JSON-LD or Turtle</li>
+<li>Then use those properties in your templates</li>
+</ul>
+<p><em>Edit → Preferences → Vocabularies → Import</em></p>
+<div class="small">
+<p>Pre-packaged schemas: <a href="https://github.com/tropy/tropy/tree/main/db/vocabularies">github.com/tropy/tropy/tree/main/db/vocabularies</a></p>
+</div>
+</div></div>
+</section>
+<section id="useful-tropy-plugins" class="slide level2">
+<h2>Useful Tropy Plugins</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="import-plugins">Import Plugins</h3>
+<p><strong>CSL/CSV Import</strong> — import records from a spreadsheet</p>
+<p><strong>Omeka S Import</strong> — pull items from your Omeka S instance into Tropy (metadata + images)</p>
+<p><strong>IIIF Import</strong> — import photos from a IIIF Manifest directly into a Tropy project</p>
+</div><div class="column" style="width:50%;">
+<h3 id="export-plugins">Export Plugins</h3>
+<p><strong>Omeka S Export</strong> — push items with metadata and photos to Omeka S</p>
+<p><strong>IIIF Export</strong> — generate IIIF Manifests from your Tropy items</p>
+<p><strong>CSV Export</strong> — export metadata as a spreadsheet</p>
+</div></div>
+<div class="box-blue">
+<p><strong>Finding plugins:</strong><br>
+🔗 <a href="https://tropy.org/plugins">tropy.org/plugins</a><br>
+🔗 <a href="https://github.com/tropy">github.com/tropy</a> (search for <code>tropy-plugin-*</code>)</p>
+</div>
+</section>
+<section id="learning-tropy" class="slide level2">
+<h2>Learning Tropy</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Official documentation:</strong></p>
+<p>📚 <a href="https://docs.tropy.org">docs.tropy.org</a></p>
+<p><strong>Video tutorials:</strong></p>
+<p>▶️ <a href="https://vimeo.com/user104478141">vimeo.com/user104478141</a> (Tropy official Vimeo)</p>
+<p>▶️ <a href="https://www.youtube.com/@tropyorg">youtube.com/<span class="citation" data-cites="tropyorg">@tropyorg</span></a></p>
+<p><strong>Community:</strong></p>
+<p>💬 <a href="https://community.tropy.org">community.tropy.org</a> (active forum!)</p>
+</div><div class="column" style="width:50%;">
+<p><strong>In French:</strong></p>
+<p>📄 <a href="https://programmation-pist.huma-num.fr">programmation-pist.huma-num.fr</a> (Huma-Num guide)</p>
+<p><strong>UPPA resources:</strong></p>
+<p>📄 Contact Julien Rabaud for UPPA-specific templates and workflow guides tailored to your discipline.</p>
+<p><a href="mailto:julien.rabaud@univ-pau.fr">julien.rabaud@univ-pau.fr</a></p>
+</div></div>
+</section>
+<section id="hands-on-tropy-demo" class="slide level2 scrollable">
+<h2>Hands-On: Tropy Demo</h2>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>We will now explore:</strong></p>
+</div>
+<div class="callout-content">
+<ol type="1">
+<li><strong>Creating a new project</strong> and importing a folder of photos</li>
+<li><strong>Creating an item</strong> from multiple photos (e.g., recto/verso of a document)</li>
+<li><strong>Applying a template</strong> and filling in metadata</li>
+<li><strong>Creating a selection</strong> on a detail of interest</li>
+<li><strong>Using tags</strong> and saved searches</li>
+<li><strong>Exporting</strong> as JSON-LD</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="box-gold">
+<p><em>Feel free to use your own research photos — or use the sample images provided on the workshop page.</em></p>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+</section></section>
+<section>
+<section id="arvest" class="title-slide slide level1 center" data-background-color="#003865">
+<h1>Arvest</h1>
+<p><em>Working with IIIF collections: annotate, collaborate, expose</em></p>
+</section>
+<section id="what-is-arvest" class="slide level2">
+<h2>What is Arvest?</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><strong>Arvest</strong> (<a href="https://arvest.app">arvest.app</a>) is a <strong>web-based platform</strong> for working with IIIF image collections.</p>
+<p>It was developed by the <strong>IIIF community</strong> and designed for digital humanities researchers who want to:</p>
+<ul>
+<li>Work with images from <strong>multiple sources</strong> (local, institutional repositories, Europeana…)</li>
+<li><strong>Annotate</strong> images individually or collaboratively</li>
+<li><strong>Expose</strong> their curated collections via APIs</li>
+<li>Use image collections as input for <strong>machine learning</strong> pipelines</li>
+</ul>
+</div><div class="column" style="width:40%;">
+<div class="box-blue">
+<p><strong>Key features:</strong></p>
+<ul>
+<li>IIIF Manifest import (URL or file)</li>
+<li>Local image upload → auto-IIIF</li>
+<li>Web annotation (W3C standard)</li>
+<li>Collaborative workspaces</li>
+<li>REST API for data access</li>
+<li>ML-ready data export</li>
+</ul>
+</div>
+</div></div>
+<div class="small">
+<p>🔗 <a href="https://arvest.app/fr">arvest.app</a> · Docs: <a href="https://docs.arvest.app">docs.arvest.app</a></p>
+</div>
+</section>
+<section id="importing-images-into-arvest" class="slide level2 scrollable">
+<h2>Importing Images into Arvest</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="from-local-files">From Local Files</h3>
+<ol type="1">
+<li>Login to <a href="https://arvest.app">arvest.app</a></li>
+<li>Create a new <strong>Workspace</strong></li>
+<li>Click <em>Import</em> → <em>Upload files</em></li>
+<li>Select images from your computer</li>
+<li>Arvest generates a IIIF Manifest automatically</li>
+</ol>
+<div class="small">
+<p>Supports: JPEG, PNG, TIFF, WebP</p>
+</div>
+</div><div class="column" style="width:50%;">
+<h3 id="from-a-iiif-source">From a IIIF Source</h3>
+<ol type="1">
+<li>Find a IIIF Manifest URL
+<ul>
+<li>From Europeana, Nakala, Omeka S, BnF Gallica, Wellcome…</li>
+</ul></li>
+<li>Click <em>Import</em> → <em>IIIF Manifest URL</em></li>
+<li>Paste the Manifest URL</li>
+<li>Arvest imports all canvases and metadata</li>
+</ol>
+<div class="box-gold">
+<p><strong>Examples:</strong></p>
+<pre><code>https://gallica.bnf.fr/iiif/ark:/12148/btv1b8452439r/manifest.json
+https://nakala.fr/10.34847/nkl.xxx/manifest</code></pre>
+</div>
+</div></div>
+</section>
+<section id="annotating-in-arvest" class="slide level2">
+<h2>Annotating in Arvest</h2>
+<p>Arvest uses the <strong>W3C Web Annotation</strong> standard — the same standard as IIIF annotation layers.</p>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><strong>Annotation types:</strong></p>
+<ul>
+<li><strong>Region annotations</strong> — draw a box or polygon on the image</li>
+<li><strong>Point annotations</strong> — mark a specific location</li>
+<li><strong>Full-canvas annotations</strong> — notes for the whole image</li>
+</ul>
+<p>Each annotation can have: - A <strong>body</strong> (text, tag, linked URI) - A <strong>motivation</strong> (describing, tagging, assessing…) - <strong>Creator</strong> and <strong>date</strong> metadata</p>
+</div><div class="column" style="width:40%;">
+<div class="box-blue">
+<p><strong>Practical uses:</strong></p>
+<ul>
+<li>Identify depicted persons, places, objects</li>
+<li>Transcribe visible text (inscriptions, captions)</li>
+<li>Tag iconographic themes</li>
+<li>Link regions to controlled vocabulary terms</li>
+<li>Compare details across images in your corpus</li>
+</ul>
+</div>
+</div></div>
+</section>
+<section id="collaborating-in-arvest" class="slide level2 scrollable">
+<h2>Collaborating in Arvest</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Shared Workspaces:</strong></p>
+<ul>
+<li>Invite collaborators via email</li>
+<li>Assign <strong>roles</strong>: viewer, annotator, editor, admin</li>
+<li>See all annotations from all collaborators</li>
+<li>Comment threads on annotations</li>
+<li>Activity log</li>
+</ul>
+<div class="fragment">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tip</strong></p>
+</div>
+<div class="callout-content">
+<p><strong>For CHORAL projects:</strong><br>
+Create a shared workspace → invite partners across institutions → annotate the same corpus collaboratively — even across national borders!</p>
+</div>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<p><strong>Annotation workflows:</strong></p>
+<ol type="1">
+<li><strong>Lead researcher</strong> imports corpus + sets annotation guidelines</li>
+<li><strong>Collaborators</strong> annotate independently</li>
+<li><strong>Review</strong> — annotation conflicts flagged</li>
+<li><strong>Consensus</strong> — approved annotations marked final</li>
+<li><strong>Export</strong> for publication or ML</li>
+</ol>
+</div></div>
+</section>
+<section id="exposing-data-via-api" class="slide level2">
+<h2>Exposing Data via API</h2>
+<p>Arvest provides a <strong>REST API</strong> to expose your curated workspace data:</p>
+<div class="columns">
+<div class="column" style="width:55%;">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb16-1"><a aria-hidden="true" tabindex="-1"></a><span class="er">GET</span> <span class="er">/api/v1/workspaces/</span><span class="fu">{</span><span class="er">id</span><span class="fu">}</span><span class="er">/manifests</span></span>
+<span id="cb16-2"><a aria-hidden="true" tabindex="-1"></a><span class="er">→</span> <span class="er">All</span> <span class="er">IIIF</span> <span class="er">Manifests</span> <span class="er">in</span> <span class="er">workspace</span></span>
+<span id="cb16-3"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-4"><a aria-hidden="true" tabindex="-1"></a><span class="er">GET</span> <span class="er">/api/v1/workspaces/</span><span class="fu">{</span><span class="er">id</span><span class="fu">}</span><span class="er">/annotations</span></span>
+<span id="cb16-5"><a aria-hidden="true" tabindex="-1"></a><span class="er">→</span> <span class="er">All</span> <span class="er">annotations</span> <span class="er">(W3C</span> <span class="er">format)</span></span>
+<span id="cb16-6"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-7"><a aria-hidden="true" tabindex="-1"></a><span class="er">GET</span> <span class="er">/api/v1/manifests/</span><span class="fu">{</span><span class="er">id</span><span class="fu">}</span><span class="er">/canvas/</span><span class="fu">{</span><span class="er">n</span><span class="fu">}</span></span>
+<span id="cb16-8"><a aria-hidden="true" tabindex="-1"></a><span class="er">→</span> <span class="er">Specific</span> <span class="er">canvas</span> <span class="er">with</span> <span class="er">annotations</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>→ Your annotated corpus becomes a <strong>queryable dataset</strong></p>
+</div><div class="column" style="width:45%;">
+<div class="box-gold">
+<p><strong>For Machine Learning:</strong></p>
+<p>Arvest can export your annotated regions as:</p>
+<ul>
+<li><strong>COCO format</strong> — for object detection</li>
+<li><strong>CSV/JSON</strong> — for text classification</li>
+<li><strong>IIIF + W3C annotations</strong> — for ML pipelines that work natively with IIIF</li>
+</ul>
+<p>→ Annotate once, reuse everywhere.</p>
+</div>
+</div></div>
+<div class="small">
+<p>Consult <a href="https://docs.arvest.app">docs.arvest.app/api</a> for full API documentation</p>
+</div>
+</section>
+<section id="the-full-workflow-putting-it-all-together" class="slide level2">
+<h2>The Full Workflow — Putting It All Together</h2>
+<div class="cell" data-reveal="true" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+    A[📷 Archival Photos] --&gt; B[Tropy\nOrganize &amp; Describe]
+    B -- "JSON-LD\nmetadata" --&gt; C[Omeka S\nor Nakala]
+    C -- "IIIF\nManifest" --&gt; D[Arvest\nAnnotate &amp; Collaborate]
+    D -- "REST API\nor Export" --&gt; E[Publication\nor ML Pipeline]
+    F[Europeana\nBnF · Other IIIF] --&gt; D
+    G[GeoNames\nPactols · Openthéso] --&gt; B
+    G --&gt; D
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="box-blue">
+<p><strong>Each step adds value:</strong><br>
+Tropy → structured metadata · Omeka/Nakala → persistent, IIIF-enabled storage · Arvest → collaborative annotation and machine-readable output</p>
+</div>
+</div>
+</section>
+<section id="summary-key-takeaways" class="slide level2 scrollable">
+<h2>Summary &amp; Key Takeaways</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Conceptual foundations:</strong></p>
+<ul>
+<li>✅ Use <strong>URIs</strong> instead of free text for people, places, concepts</li>
+<li>✅ Choose a <strong>metadata schema</strong> appropriate to your sources (DC, CIDOC-CRM)</li>
+<li>✅ Link to <strong>controlled vocabularies</strong> (GeoNames, Pactols, Openthéso)</li>
+<li>✅ Understand <strong>IIIF</strong> as the interoperability layer for images</li>
+</ul>
+<p><strong>Tools:</strong></p>
+<ul>
+<li>✅ <strong>Tropy</strong> for the desktop: organization, description, annotation</li>
+<li>✅ <strong>Arvest</strong> for the web: IIIF import, collaboration, exposure</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>Next steps:</strong></p>
+<ol type="1">
+<li>Install Tropy and create your first project</li>
+<li>Create an Arvest account</li>
+<li>Find IIIF content from Europeana or Nakala relevant to your research</li>
+<li>Deposit your first images in Nakala</li>
+<li>Set up a collaborative workspace in Arvest</li>
+</ol>
+<div class="box-gold">
+<p><strong>Reach out!</strong><br>
+Individual support available for UPPA doctoral students:<br>
+<a href="mailto:julien.rabaud@univ-pau.fr">julien.rabaud@univ-pau.fr</a></p>
+</div>
+</div></div>
+</section>
+<section id="q-a" class="slide level2" data-background-gradient="linear-gradient(135deg, #003865 0%, #0070B8 100%)">
+<h2>Q &amp; A</h2>
+<div style="text-align: center; font-size: 1.4em; color: white; margin-top: 2rem;">
+<p>Questions?</p>
+</div>
+<div style="text-align: center; margin-top: 2rem;">
+<p><strong>Julien Rabaud</strong><br>
+Research Library · UPPA<br>
+Pôle Numérique · Research Data Management</p>
+<p>📧 <a href="mailto:julien.rabaud@univ-pau.fr">julien.rabaud@univ-pau.fr</a><br>
+🐦 <a href="https://twitter.com/ujubib"><span class="citation" data-cites="ujubib">@ujubib</span></a><br>
+🔗 <a href="https://orcid.org/0000-0002-6604-9777">orcid.org/0000-0002-6604-9777</a></p>
+</div>
+<div style="text-align: center; font-size: 0.7em; color: rgba(255,255,255,0.6); margin-top: 2rem;">
+<p>Slides available at: <a href="https://ujubib.github.io/tropy-arvest/slides.html">ujubib.github.io/tropy-arvest</a><br>
+<a href="https://creativecommons.org/licenses/by/4.0/"><img data-src="https://licensebuttons.net/l/by/4.0/80x15.png" alt="CC BY 4.0"></a></p>
+</div>
+</section>
+<section id="references-further-reading" class="slide level2">
+<h2>References &amp; Further Reading</h2>
+<div class="small">
+<p><strong>Semantic Web &amp; Linked Data:</strong> - Berners-Lee, T. et al.&nbsp;(2001). <em>The Semantic Web</em>. Scientific American. <a href="https://doi.org/10.1038/scientificamerican0501-34">doi.org/10.1038/scientificamerican0501-34</a> - W3C RDF Primer: <a href="https://www.w3.org/TR/rdf11-primer/">w3.org/TR/rdf11-primer</a></p>
+<p><strong>Dublin Core:</strong> - <a href="https://dublincore.org/specifications/dublin-core/">dublincore.org/specifications/dublin-core/</a></p>
+<p><strong>CIDOC-CRM:</strong> - <a href="https://cidoc-crm.org">cidoc-crm.org</a> · Le Bœuf, P. et al.&nbsp;(2015). <em>A New Standard for the Semantic Annotation of Cultural Heritage</em></p>
+<p><strong>IIIF:</strong> - <a href="https://iiif.io/get-started/how-iiif-works/">iiif.io/get-started</a> · IIIF Cookbook: <a href="https://iiif.io/api/cookbook/">iiif.io/api/cookbook</a></p>
+<p><strong>Tropy:</strong> - <a href="https://docs.tropy.org">docs.tropy.org</a> · Pfanzelter, E. et al.&nbsp;(2019). <em>Tropy in Use</em>. <a href="https://doi.org/10.5281/zenodo.2643509">doi.org/10.5281/zenodo.2643509</a></p>
+<p><strong>Nakala:</strong> - <a href="https://nakala.fr">nakala.fr</a> · <a href="https://documentation.huma-num.fr/nakala">documentation.huma-num.fr/nakala</a></p>
+<p><strong>GeoNames:</strong> - <a href="https://geonames.org">geonames.org</a></p>
+<p><strong>Pactols / Openthéso:</strong> - <a href="https://frantiq.fr">frantiq.fr</a> · <a href="https://opentheso.huma-num.fr">opentheso.huma-num.fr</a></p>
+</div>
+
+
+</section></section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<p><img src="img/logoUPPA-RepFr.png" class="slide-logo"></p>
+<div class="footer footer-default">
+<p>UPPA · ED 481 SSH · CHORAL — <em>Organizing and Curating Image Corpora</em></p>
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': false,
+'previewLinksAuto': true,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'bottom-right',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1280,
+
+        height: 720,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+                // target, if specified
+                link.setAttribute("target", "_blank");
+                if (link.getAttribute("rel") === null) {
+                  link.setAttribute("rel", "noopener");
+                }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>
