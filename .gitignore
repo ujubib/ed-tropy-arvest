@@ -1,5 +1,4 @@
 /.quarto/
-/_site/
 *.~lock*
 .DS_Store
 Thumbs.db

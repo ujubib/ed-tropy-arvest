@@ -1,221 +1,91 @@
 /*-- scss:defaults --*/
 
-// UPPA Color Palette
-$uppa-blue: #003865;
-$uppa-light-blue: #0070B8;
-$uppa-gold: #C8A951;
-$uppa-gray: #6c757d;
-$white: #ffffff;
-$light-bg: #f8f9fa;
+// UPPA colors
+$primary: #003D7A;
+$secondary: #2297D4;
+$success: #27AE60;
+$info: #3498DB;
+$warning: #F39C12;
 
-// Override Bootstrap defaults
-$primary: $uppa-blue;
-$secondary: $uppa-light-blue;
-$headings-color: $uppa-blue;
-$link-color: $uppa-light-blue;
-$font-family-sans-serif: "Source Sans Pro", system-ui, sans-serif;
-$headings-font-family: "Playfair Display", Georgia, serif;
-$code-font-size: 0.85em;
+// Spacing
+$spacer: 1rem;
 
 /*-- scss:rules --*/
 
-/* ===== WEBSITE STYLES ===== */
-
-.navbar {
-  border-bottom: 3px solid $uppa-gold;
+// Callouts
+.callout {
+  border-left-width: 5px;
+  border-left-color: $primary;
+  margin: 1.5rem 0;
+}
+.callout-tip {
+  border-left-color: $success;
+}
+.callout-warning {
+  border-left-color: $warning;
+}
+.callout-important {
+  border-left-color: $secondary;
+}
+.callout-note {
+  border-left-color: $info;
 }
 
-.navbar-brand img {
-  height: 40px;
+// Tables
+table {
+  font-size: 0.9rem;
+  thead {
+    background-color: $primary;
+    color: white;
+  }
+  tbody tr:nth-child(even) {
+    background-color: rgba(0, 61, 122, 0.05);
+  }
 }
 
-h1, h2, h3 {
-  color: $uppa-blue;
+// Code blocks
+pre {
+  border-left: 3px solid $primary;
+  background-color: #f8f9fa;
 }
 
+// Links
 a {
+  color: $primary;
   text-decoration: none;
   &:hover {
+    color: darken($primary, 15%);
     text-decoration: underline;
-    color: $uppa-gold;
   }
 }
 
-.callout-note {
-  border-left-color: $uppa-light-blue;
+// Navbar
+.navbar {
+  box-shadow: 0 2px 4px rgba(0,0,0,.1);
 }
 
-.callout-important {
-  border-left-color: $uppa-gold;
-}
-
-.callout-tip {
-  border-left-color: #28a745;
-}
-
-/* Tool cards */
-.tool-card {
-  border: 1px solid #dee2e6;
-  border-radius: 8px;
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
-  border-top: 4px solid $uppa-blue;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.08);
-  transition: box-shadow 0.2s ease;
+// Sidebar
+.sidebar-item {
+  padding: 0.5rem 1rem;
   &:hover {
-    box-shadow: 0 4px 12px rgba(0,56,101,0.15);
+    background-color: rgba(0, 61, 122, 0.05);
   }
 }
 
-.badge-uppa {
-  background-color: $uppa-blue;
-  color: white;
-  padding: 2px 8px;
-  border-radius: 12px;
-  font-size: 0.75em;
-  font-weight: 600;
+// Grid
+.grid {
+  gap: 2rem;
 }
 
-/* ===== REVEAL.JS SLIDE STYLES ===== */
-
-.reveal {
-
-  .slide-background-content {
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-  }
-
-  h1, h2 {
-    color: $uppa-blue;
-    font-family: "Playfair Display", Georgia, serif;
-  }
-
-  h3 {
-    color: $uppa-light-blue;
-  }
-
-  .title-slide {
-    h1 {
-      color: $white;
-      font-size: 1.8em;
-    }
-    .subtitle {
-      color: rgba(255,255,255,0.88);
-      font-size: 1em;
-    }
-    .author, .date {
-      color: rgba(255,255,255,0.75);
-    }
-  }
-
-  .slide-number {
-    color: $uppa-gold;
-  }
-
-  .footer {
-    color: rgba(255,255,255,0.7);
-    font-size: 0.6em;
-  }
-
-  /* Section title slides */
-  .section-slide {
-    background: linear-gradient(135deg, $uppa-blue 0%, $uppa-light-blue 100%);
-    h2 {
-      color: $white !important;
-      font-size: 2em;
-    }
-  }
-
-  /* Code blocks */
-  pre code {
-    font-size: 0.75em;
-  }
-
-  /* Callouts in slides */
-  .callout {
-    border-radius: 6px;
-    font-size: 0.85em;
-    margin: 0.5em 0;
-  }
-
-  /* Two-column layout */
-  .columns {
-    gap: 2rem;
-  }
-
-  /* Highlight boxes */
-  .box-blue {
-    background: rgba(0, 56, 101, 0.08);
-    border-left: 4px solid $uppa-blue;
-    border-radius: 4px;
-    padding: 0.75rem 1rem;
-    margin: 0.5rem 0;
-  }
-
-  .box-gold {
-    background: rgba(200, 169, 81, 0.12);
-    border-left: 4px solid $uppa-gold;
-    border-radius: 4px;
-    padding: 0.75rem 1rem;
-    margin: 0.5rem 0;
-  }
-
-  .box-green {
-    background: rgba(40, 167, 69, 0.08);
-    border-left: 4px solid #28a745;
-    border-radius: 4px;
-    padding: 0.75rem 1rem;
-    margin: 0.5rem 0;
-  }
-
-  /* URI/triple display */
-  .triple {
-    font-family: "Source Code Pro", monospace;
-    background: #f1f3f5;
-    border-radius: 4px;
-    padding: 0.5rem 0.75rem;
-    font-size: 0.8em;
-    margin: 0.3rem 0;
-    border-left: 3px solid $uppa-light-blue;
-  }
-
-  /* Tool logo */
-  .tool-logo {
-    text-align: center;
-    img {
-      max-height: 80px;
-      margin-bottom: 0.5rem;
-    }
-  }
-
-  /* Fragment styling */
-  .fragment.highlight-current-blue.current-fragment {
-    color: $uppa-light-blue;
-  }
-
-  /* Small text helper */
-  .small {
-    font-size: 0.75em;
-    color: $uppa-gray;
-  }
-
-  /* Icon labels */
-  .icon-label {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin: 0.3rem 0;
-  }
+// iframes
+iframe {
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 }
 
-/* Title slide background */
-#title-slide {
-  background: linear-gradient(135deg, $uppa-blue 0%, darken($uppa-light-blue, 10%) 100%) !important;
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-    opacity: 0.5;
-    pointer-events: none;
+// Print
+@media print {
+  .navbar, .sidebar, .page-footer {
+    display: none;
   }
 }

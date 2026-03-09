@@ -1,46 +1,35 @@
-meta:
-  name: "UPPA - Organizing and Curating Image Corpora"
-  link: https://ujubib.github.io/ed-tropy-arvest/
-
 color:
-  palette:
-    uppa-blue: "#003865"
-    uppa-light-blue: "#0070B8"
-    uppa-gold: "#C8A951"
-    uppa-gray: "#6C757D"
-    white: "#FFFFFF"
-    light-bg: "#F8F9FA"
-  foreground: "#1A1A2E"
-  background: "#FFFFFF"
-  primary: "#003865"
-  secondary: "#0070B8"
-  success: "#28a745"
-  info: "#17a2b8"
-  warning: "#C8A951"
-  danger: "#dc3545"
-  light: "#F8F9FA"
-  dark: "#1A1A2E"
+  background: FloralWhite
+  foreground: black
+
+logo: 
+  medium: img/logoUPPA-RepFr.png
+  small: img/logoUPPA-RepFr.png
 
 typography:
   fonts:
     - family: Amaranth
       source: bunny
-    - family: Arsenal # Alegreya Sans, B612
+    - family: Arsenal
       source: bunny
     - family: B612 Mono
       source: bunny
-  headings:
-    family: Amaranth
-    weight: 700
-    style: normal
-  monospace:
-    family: B612 Mono
-    size: 0.9em
-  base:
-    family: Arsenal
-    weight: 400
-    line-height: 1.6
+  base: Arsenal
+  headings: Amaranth
+  monospace: B612 Mono
 
-logo:
-  small: img/logoUPPA-RepFr.png
-  medium: img/logoUPPA-RepFr.png
+defaults: 
+  bootstrap:
+    rules: |
+      .navbar {
+        background-color: #2297D4;
+      }
+      .nav-link {
+        color: #ccd1d5;
+      }
+      .navbar-brand {
+        color: linen;
+      }
+      .navbar-logo {
+        display: none;
+      }
