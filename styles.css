@@ -16,6 +16,9 @@ figcaption{
     border-radius: 12px;
     padding-bottom: 1.4em;
 }
+section#title-slide p.subtitle {
+    font-family: Amaranth, sans-serif;
+}
 .quarto-title-meta-heading {
     text-transform: none !important;
     color: grey;
