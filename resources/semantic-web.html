@@ -43,9 +43,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-10d6bfaa2f8bcb121088c7d3a1816829.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-ebb4dd22795105675af042b6f07c28a6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-ebb4dd22795105675af042b6f07c28a6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-ebb4dd22795105675af042b6f07c28a6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-eaedc93337057a67fe2e1e257120cf46.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-eaedc93337057a67fe2e1e257120cf46.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-eaedc93337057a67fe2e1e257120cf46.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -211,6 +211,8 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#recommended-readings" id="toc-recommended-readings" class="nav-link" data-scroll-target="#recommended-readings">Recommended Readings</a></li>
   </ul></li>
   <li><a href="#dublin-core" id="toc-dublin-core" class="nav-link" data-scroll-target="#dublin-core">Dublin Core</a></li>
+  <li><a href="#europeana-data-model-edm" id="toc-europeana-data-model-edm" class="nav-link" data-scroll-target="#europeana-data-model-edm">Europeana Data Model (EDM)</a></li>
+  <li><a href="#exif-exchangeable-image-file-format" id="toc-exif-exchangeable-image-file-format" class="nav-link" data-scroll-target="#exif-exchangeable-image-file-format">EXIF — Exchangeable Image File Format</a></li>
   <li><a href="#cidoc-crm" id="toc-cidoc-crm" class="nav-link" data-scroll-target="#cidoc-crm">CIDOC-CRM</a></li>
   <li><a href="#controlled-vocabularies" id="toc-controlled-vocabularies" class="nav-link" data-scroll-target="#controlled-vocabularies">Controlled Vocabularies</a>
   <ul class="collapse">
@@ -261,11 +263,226 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="dublin-core" class="level2">
 <h2 class="anchored" data-anchor-id="dublin-core">Dublin Core</h2>
+<p>There are two Dublin Core schemas, both available by default in Tropy: the <a href="https://www.dublincore.org/specifications/dublin-core/dces/">Dublin Core Metadata Element Set (DCES)</a> and the <a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/">Dublin Core Metadata Terms (DCTerms)</a>.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Dublin Core Elements (DCES)</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Dublin Core Terms (DCTerms)</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<p>The <strong>Dublin Core Metadata Element Set</strong> is a set of <strong>15 basic elements</strong> designed for general-purpose description of digital resources. Simple, universal, and widely supported.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>The 15 Dublin Core Elements
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li><strong>Title</strong></li>
+<li><strong>Creator</strong></li>
+<li><strong>Subject</strong></li>
+<li><strong>Description</strong></li>
+<li><strong>Publisher</strong></li>
+<li><strong>Contributor</strong></li>
+<li><strong>Date</strong></li>
+<li><strong>Type</strong></li>
+<li><strong>Format</strong></li>
+<li><strong>Identifier</strong></li>
+<li><strong>Source</strong></li>
+<li><strong>Language</strong></li>
+<li><strong>Relation</strong></li>
+<li><strong>Coverage</strong> <em>(geographic or temporal)</em></li>
+<li><strong>Rights</strong></li>
+</ol>
+</div>
+</div>
+</div>
+<p><strong>Usage:</strong> Designed to be simple and generic — suitable for libraries, archives, and museums. No complex customisation required. An ISO standard, compatible with semantic interoperability on the web.</p>
+<p><strong>Namespace:</strong> <code>http://purl.org/dc/elements/1.1/</code></p>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<p><strong>Dublin Core Metadata Terms</strong> is an <strong>extension of DCES</strong>. It includes the 15 base elements (in more formalised forms) plus a much wider set of additional terms, qualifiers, and more precise concepts.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Extended structure of DCTerms
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>DCTerms includes:</p>
 <ul>
-<li>Official specification: <a href="https://dublincore.org/specifications/dublin-core/">dublincore.org/specifications/dublin-core/</a></li>
-<li>DCMI Metadata Terms: <a href="http://purl.org/dc/terms/">purl.org/dc/terms/</a></li>
-<li>Dublin Core in JSON-LD context: <a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/">dublincore.org/specifications/dublin-core/dcmi-terms/</a></li>
+<li>The 15 base elements (more formally defined)</li>
+<li><strong>Additional elements</strong> such as <code>Audience</code>, <code>Provenance</code>, <code>AccrualMethod</code>…</li>
+<li><strong>Qualifiers</strong> for greater precision — e.g.&nbsp;<code>Date</code> can be qualified as <code>dcterms:created</code>, <code>dcterms:modified</code>, <code>dcterms:issued</code></li>
+<li><strong>Typed values</strong> — dates as <code>xsd:date</code>, URIs for places, licenses, etc.</li>
 </ul>
+<p>Key additions over DCES:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Property</th>
+<th>Use</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>dcterms:created</code></td>
+<td>Creation date (typed)</td>
+</tr>
+<tr class="even">
+<td><code>dcterms:modified</code></td>
+<td>Last modification date</td>
+</tr>
+<tr class="odd">
+<td><code>dcterms:spatial</code></td>
+<td>Place as a URI (e.g.&nbsp;GeoNames)</td>
+</tr>
+<tr class="even">
+<td><code>dcterms:temporal</code></td>
+<td>Time period</td>
+</tr>
+<tr class="odd">
+<td><code>dcterms:license</code></td>
+<td>License URI (e.g.&nbsp;Creative Commons)</td>
+</tr>
+<tr class="even">
+<td><code>dcterms:isPartOf</code></td>
+<td>Link to a parent collection</td>
+</tr>
+<tr class="odd">
+<td><code>dcterms:provenance</code></td>
+<td>Custody history</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p><strong>Usage:</strong> Used in more complex or specialised contexts — advanced digital libraries, archives, semantic web projects, databases requiring rich structure. Expressed in <strong>RDF</strong> for web semantic compatibility.</p>
+<p><strong>Namespace:</strong> <code>http://purl.org/dc/terms/</code></p>
+</div>
+</div>
+</div>
+<p><strong>Key differences — DCES vs DCTerms:</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>DCES</th>
+<th>DCTerms</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Number of elements</td>
+<td>15 base elements</td>
+<td>15 + extended terms &amp; qualifiers</td>
+</tr>
+<tr class="even">
+<td>Complexity</td>
+<td>Simple, general</td>
+<td>More flexible and specific</td>
+</tr>
+<tr class="odd">
+<td>Typed values</td>
+<td>No</td>
+<td>Yes (<code>xsd:date</code>, URIs…)</td>
+</tr>
+<tr class="even">
+<td>Qualifiers</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr class="odd">
+<td>Best for</td>
+<td>Simple resource description</td>
+<td>Rich, semantic, interoperable data</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>In Tropy:</strong> both schemas are available by default. Use DCES for simple projects; switch to DCTerms when you want to link fields to URIs (GeoNames, Getty TGN/ULAN, controlled vocabularies) for full Linked Data interoperability.</p>
+</div>
+</div>
+<p><strong>Official references:</strong> - DCES specification: <a href="https://dublincore.org/specifications/dublin-core/dces/">dublincore.org/specifications/dublin-core/dces/</a> - DCTerms specification: <a href="https://dublincore.org/specifications/dublin-core/dcmi-terms/">dublincore.org/specifications/dublin-core/dcmi-terms/</a> - JSON-LD context: <a href="http://purl.org/dc/terms/">purl.org/dc/terms/</a> - JSON-LD Playground: <a href="https://json-ld.org/playground/">json-ld.org/playground/</a></p>
+<hr>
+</section>
+<section id="europeana-data-model-edm" class="level2">
+<h2 class="anchored" data-anchor-id="europeana-data-model-edm">Europeana Data Model (EDM)</h2>
+<p><strong>EDM</strong> is the metadata schema used by <a href="https://www.europeana.eu">Europeana</a> to describe digital cultural heritage objects according to Semantic Web standards.</p>
+<p><strong>Key features:</strong></p>
+<ul>
+<li><strong>RDF-based</strong> — built on the W3C Resource Description Framework</li>
+<li><strong>Separation of entities</strong> — distinguishes between the cultural object, its digital representation, and the aggregation:
+<ul>
+<li><code>ProvidedCHO</code> — the cultural heritage object itself (painting, manuscript…)</li>
+<li><code>WebResource</code> — the digital file (image, audio, video)</li>
+<li><code>Aggregation</code> — groups metadata from different sources</li>
+<li><code>Agent</code> — a person or organisation with a role</li>
+<li><code>Place</code> and <code>TimeSpan</code> — contextualise the object in space and time</li>
+</ul></li>
+<li><strong>Multi-representation</strong> — supports multiple digital versions of a single object</li>
+<li><strong>Aligned with other standards</strong> — Dublin Core, LIDO, EAD, OAI-PMH</li>
+</ul>
+<p>EDM is the schema to study if you plan to <strong>contribute to or consume data from Europeana</strong>, or model your corpus along the same principles.</p>
+<p>🔗 <a href="https://pro.europeana.eu/page/edm-documentation">pro.europeana.eu/page/edm-documentation</a></p>
+<hr>
+</section>
+<section id="exif-exchangeable-image-file-format" class="level2">
+<h2 class="anchored" data-anchor-id="exif-exchangeable-image-file-format">EXIF — Exchangeable Image File Format</h2>
+<p><strong>EXIF</strong> is a set of <strong>technical</strong> metadata properties embedded directly inside image and video files (JPEG, TIFF). Unlike Dublin Core, it does not aim to provide semantic description but rather a technical record of the conditions under which the image was captured.</p>
+<p>EXIF data typically includes:</p>
+<ul>
+<li>Camera model, lens, shutter speed, aperture, ISO</li>
+<li>Date and time of capture</li>
+<li>GPS coordinates (if enabled on the device)</li>
+<li>Image dimensions (pixels), resolution, colour space</li>
+<li>File size</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>In Tropy:</strong> EXIF properties are used in <strong>photo-level templates</strong> (not item-level). Tropy automatically extracts the following from each imported file:</p>
+<ul>
+<li>Filename</li>
+<li>Date created</li>
+<li>Image dimensions in pixels</li>
+<li>File size in bytes</li>
+</ul>
+<p>You can add EXIF properties to a custom photo template to surface additional technical data (GPS coordinates, camera model, etc.) directly in the description panel.</p>
+</div>
+</div>
+<p>The Wikipedia article <a href="https://en.wikipedia.org/wiki/Exchangeable_image_file_format">Exchangeable image file format</a> provides a concrete example and a full list of the main EXIF properties.</p>
 <hr>
 </section>
 <section id="cidoc-crm" class="level2">

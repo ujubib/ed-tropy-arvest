@@ -70,7 +70,7 @@
     "href": "slides.html#dublin-core-terms-dcterms",
     "title": "Organizing and Curating Image Corpora",
     "section": "Dublin Core Terms (DCTERMS)",
-    "text": "Dublin Core Terms (DCTERMS)\nRicher, typed versions of DC — plus extra properties.\n\n\n# Basic DC — just a string\ndc:date \"2024-09-15\"\n\n# DCTERMS — typed and linkable\ndcterms:created   \"2024-09-15\"^^xsd:date\ndcterms:spatial   &lt;geonames:3117735&gt;\ndcterms:license   &lt;https://creativecommons.org/licenses/by/4.0/&gt;\ndcterms:isPartOf  &lt;myArchive:collection_42&gt;\n\nKey additions:\n\ndcterms:spatial — place URI\ndcterms:temporal — time period\ndcterms:license — explicit URI\ndcterms:isPartOf — collection link",
+    "text": "Dublin Core Terms (DCTERMS)\nRicher, typed versions of DC — plus extra properties.\n\n\n# Basic DC — just a string\ndc:date \"2024-09-15\"\n\n# DCTERMS — typed and linkable\ndcterms:created   \"2024-09-15\"^^xsd:date\ndcterms:spatial   &lt;geonames:3117735&gt;\ndcterms:license   &lt;https://creativecommons.org/licenses/by/4.0/&gt;\ndcterms:isPartOf  &lt;myArchive:collection_42&gt;\n\nKey additions:\n\ndcterms:spatial — place URI\ndcterms:temporal — time period\ndcterms:license — explicit URI\ndcterms:isPartOf — collection link\n\n\n\n\n\n\n\n\nTip\n\n\nRule of thumb: use dc: when a plain string is enough — use dcterms: whenever you want to link to a URI (a place, a license, a collection). DCTerms is what makes your data truly interoperable.",
     "crumbs": [
       "Workshop",
       "Slides"
@@ -93,6 +93,17 @@
     "title": "Organizing and Curating Image Corpora",
     "section": "CIDOC-CRM — Core Classes",
     "text": "CIDOC-CRM — Core Classes\n\n\n\n\n\nClass\nMeaning\n\n\n\n\nE22\nHuman-Made Object\n\n\nE31\nDocument / Photograph\n\n\nE39\nActor (person or group)\n\n\n\n\n\n\n\nClass\nMeaning\n\n\n\n\nE52\nTime-Span\n\n\nE53\nPlace\n\n\nE65\nCreation event\n\n\n\n\n&lt;Creation_001&gt;  cidoc:P14_carried_out_by  &lt;orcid:0000-…&gt;\n&lt;Creation_001&gt;  cidoc:P7_took_place_at    &lt;geonames:3117735&gt;\n&lt;Creation_001&gt;  cidoc:P4_has_time-span    &lt;2024-09-15&gt;\n\n\n\n\n\n\nTip\n\n\nIn Tropy, you can import the CIDOC-CRM vocabulary and build event-oriented templates from these properties.",
+    "crumbs": [
+      "Workshop",
+      "Slides"
+    ]
+  },
+  {
+    "objectID": "slides.html#which-schema-for-your-template",
+    "href": "slides.html#which-schema-for-your-template",
+    "title": "Organizing and Curating Image Corpora",
+    "section": "Which Schema for Your Template?",
+    "text": "Which Schema for Your Template?\n\n\n\nYour sources\nRecommended schema\nLevel\n\n\n\n\nGeneral archival documents\nDublin Core Terms\nItem\n\n\nCorrespondence, diaries\nTropy Correspondence (DC)\nItem\n\n\nCultural heritage objects\nCIDOC-CRM\nItem\n\n\nVisual works (art history)\nVRA Core\nItem\n\n\nTechnical image data\nEXIF\nPhoto\n\n\nCrop / detail of interest\nDC or custom\nSelection\n\n\n\n\n\n\n\n\n\nNote\n\n\nThese schemas are not mutually exclusive — a single template can mix properties from several vocabularies.\nExample: dc:title + dcterms:spatial + cidoc:P138_represents in the same item template.",
     "crumbs": [
       "Workshop",
       "Slides"
@@ -297,6 +308,17 @@
     ]
   },
   {
+    "objectID": "slides.html#exif-metadata-already-in-the-file",
+    "href": "slides.html#exif-metadata-already-in-the-file",
+    "title": "Organizing and Curating Image Corpora",
+    "section": "EXIF — Metadata Already in the File",
+    "text": "EXIF — Metadata Already in the File\nSome metadata is embedded in the image file itself by the camera or scanner — no description needed.\n\n\nTropy extracts automatically:\n\nFilename\nDate & time of capture\nDimensions (pixels)\nFile size (bytes)\n\nAvailable if GPS was on:\n\nLatitude / longitude\n\n\nThe key distinction:\n\n\n\n\nWho writes it?\nWhat kind?\n\n\n\n\nEXIF\nThe device\nTechnical\n\n\nDC / CIDOC\nThe researcher\nSemantic\n\n\n\nEXIF describes how the photo was made.\nDC describes what it shows.\n\n\n\n\n\n\n\nTip\n\n\nIn Tropy, EXIF properties belong in a photo-level template — not an item template. This lets you surface technical data (camera model, GPS, resolution) alongside your semantic description.",
+    "crumbs": [
+      "Workshop",
+      "Slides"
+    ]
+  },
+  {
     "objectID": "slides.html#three-levels-of-description-2",
     "href": "slides.html#three-levels-of-description-2",
     "title": "Organizing and Curating Image Corpora",
@@ -312,7 +334,7 @@
     "href": "slides.html#templates",
     "title": "Organizing and Curating Image Corpora",
     "section": "Templates",
-    "text": "Templates\nA template defines which metadata fields appear for an item — each field is a property from a vocabulary.\n\n\nBuilt-in:\n\nTropy Generic — Dublin Core\nTropy Correspondence — letters\nTropy Photo — photo-level metadata\n\n\nCustom / imported:\nEdit → Preferences → Vocabularies → Import\nAny RDF/OWL schema (JSON-LD or Turtle) → then use those properties in your templates.",
+    "text": "Templates\nA template defines which metadata fields appear for an item — each field is a property from a vocabulary.\n\n\nBuilt-in:\n\nTropy Generic — Dublin Core\nTropy Correspondence — letters\nTropy Photo — photo-level metadata\n\nAlso available (import):\n\nCIDOC-CRM · VRA Core · Schema.org\n\n\nCustom / imported:\nEdit → Preferences → Vocabularies → Import\nAny RDF/OWL schema (JSON-LD or Turtle) → then use those properties in your templates.",
     "crumbs": [
       "Workshop",
       "Slides"
@@ -510,7 +532,29 @@
     "href": "resources/semantic-web.html#dublin-core",
     "title": "Semantic Web & Metadata",
     "section": "Dublin Core",
-    "text": "Dublin Core\n\nOfficial specification: dublincore.org/specifications/dublin-core/\nDCMI Metadata Terms: purl.org/dc/terms/\nDublin Core in JSON-LD context: dublincore.org/specifications/dublin-core/dcmi-terms/",
+    "text": "Dublin Core\nThere are two Dublin Core schemas, both available by default in Tropy: the Dublin Core Metadata Element Set (DCES) and the Dublin Core Metadata Terms (DCTerms).\n\nDublin Core Elements (DCES)Dublin Core Terms (DCTerms)\n\n\nThe Dublin Core Metadata Element Set is a set of 15 basic elements designed for general-purpose description of digital resources. Simple, universal, and widely supported.\n\n\n\n\n\n\nTipThe 15 Dublin Core Elements\n\n\n\n\n\n\nTitle\nCreator\nSubject\nDescription\nPublisher\nContributor\nDate\nType\nFormat\nIdentifier\nSource\nLanguage\nRelation\nCoverage (geographic or temporal)\nRights\n\n\n\n\nUsage: Designed to be simple and generic — suitable for libraries, archives, and museums. No complex customisation required. An ISO standard, compatible with semantic interoperability on the web.\nNamespace: http://purl.org/dc/elements/1.1/\n\n\nDublin Core Metadata Terms is an extension of DCES. It includes the 15 base elements (in more formalised forms) plus a much wider set of additional terms, qualifiers, and more precise concepts.\n\n\n\n\n\n\nTipExtended structure of DCTerms\n\n\n\n\n\nDCTerms includes:\n\nThe 15 base elements (more formally defined)\nAdditional elements such as Audience, Provenance, AccrualMethod…\nQualifiers for greater precision — e.g. Date can be qualified as dcterms:created, dcterms:modified, dcterms:issued\nTyped values — dates as xsd:date, URIs for places, licenses, etc.\n\nKey additions over DCES:\n\n\n\nProperty\nUse\n\n\n\n\ndcterms:created\nCreation date (typed)\n\n\ndcterms:modified\nLast modification date\n\n\ndcterms:spatial\nPlace as a URI (e.g. GeoNames)\n\n\ndcterms:temporal\nTime period\n\n\ndcterms:license\nLicense URI (e.g. Creative Commons)\n\n\ndcterms:isPartOf\nLink to a parent collection\n\n\ndcterms:provenance\nCustody history\n\n\n\n\n\n\nUsage: Used in more complex or specialised contexts — advanced digital libraries, archives, semantic web projects, databases requiring rich structure. Expressed in RDF for web semantic compatibility.\nNamespace: http://purl.org/dc/terms/\n\n\n\nKey differences — DCES vs DCTerms:\n\n\n\n\n\n\n\n\n\nDCES\nDCTerms\n\n\n\n\nNumber of elements\n15 base elements\n15 + extended terms & qualifiers\n\n\nComplexity\nSimple, general\nMore flexible and specific\n\n\nTyped values\nNo\nYes (xsd:date, URIs…)\n\n\nQualifiers\nNo\nYes\n\n\nBest for\nSimple resource description\nRich, semantic, interoperable data\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nIn Tropy: both schemas are available by default. Use DCES for simple projects; switch to DCTerms when you want to link fields to URIs (GeoNames, Getty TGN/ULAN, controlled vocabularies) for full Linked Data interoperability.\n\n\nOfficial references: - DCES specification: dublincore.org/specifications/dublin-core/dces/ - DCTerms specification: dublincore.org/specifications/dublin-core/dcmi-terms/ - JSON-LD context: purl.org/dc/terms/ - JSON-LD Playground: json-ld.org/playground/",
+    "crumbs": [
+      "Resources",
+      "Semantic Web & Metadata"
+    ]
+  },
+  {
+    "objectID": "resources/semantic-web.html#europeana-data-model-edm",
+    "href": "resources/semantic-web.html#europeana-data-model-edm",
+    "title": "Semantic Web & Metadata",
+    "section": "Europeana Data Model (EDM)",
+    "text": "Europeana Data Model (EDM)\nEDM is the metadata schema used by Europeana to describe digital cultural heritage objects according to Semantic Web standards.\nKey features:\n\nRDF-based — built on the W3C Resource Description Framework\nSeparation of entities — distinguishes between the cultural object, its digital representation, and the aggregation:\n\nProvidedCHO — the cultural heritage object itself (painting, manuscript…)\nWebResource — the digital file (image, audio, video)\nAggregation — groups metadata from different sources\nAgent — a person or organisation with a role\nPlace and TimeSpan — contextualise the object in space and time\n\nMulti-representation — supports multiple digital versions of a single object\nAligned with other standards — Dublin Core, LIDO, EAD, OAI-PMH\n\nEDM is the schema to study if you plan to contribute to or consume data from Europeana, or model your corpus along the same principles.\n🔗 pro.europeana.eu/page/edm-documentation",
+    "crumbs": [
+      "Resources",
+      "Semantic Web & Metadata"
+    ]
+  },
+  {
+    "objectID": "resources/semantic-web.html#exif-exchangeable-image-file-format",
+    "href": "resources/semantic-web.html#exif-exchangeable-image-file-format",
+    "title": "Semantic Web & Metadata",
+    "section": "EXIF — Exchangeable Image File Format",
+    "text": "EXIF — Exchangeable Image File Format\nEXIF is a set of technical metadata properties embedded directly inside image and video files (JPEG, TIFF). Unlike Dublin Core, it does not aim to provide semantic description but rather a technical record of the conditions under which the image was captured.\nEXIF data typically includes:\n\nCamera model, lens, shutter speed, aperture, ISO\nDate and time of capture\nGPS coordinates (if enabled on the device)\nImage dimensions (pixels), resolution, colour space\nFile size\n\n\n\n\n\n\n\nNote\n\n\n\nIn Tropy: EXIF properties are used in photo-level templates (not item-level). Tropy automatically extracts the following from each imported file:\n\nFilename\nDate created\nImage dimensions in pixels\nFile size in bytes\n\nYou can add EXIF properties to a custom photo template to surface additional technical data (GPS coordinates, camera model, etc.) directly in the description panel.\n\n\nThe Wikipedia article Exchangeable image file format provides a concrete example and a full list of the main EXIF properties.",
     "crumbs": [
       "Resources",
       "Semantic Web & Metadata"
