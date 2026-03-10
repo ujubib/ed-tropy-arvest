@@ -532,7 +532,7 @@
     "href": "resources/semantic-web.html#dublin-core",
     "title": "Semantic Web & Metadata",
     "section": "Dublin Core",
-    "text": "Dublin Core\nThere are two Dublin Core schemas, both available by default in Tropy: the Dublin Core Metadata Element Set (DCES) and the Dublin Core Metadata Terms (DCTerms).\n\nDublin Core Elements (DCES)Dublin Core Terms (DCTerms)\n\n\nThe Dublin Core Metadata Element Set is a set of 15 basic elements designed for general-purpose description of digital resources. Simple, universal, and widely supported.\n\n\n\n\n\n\nTipThe 15 Dublin Core Elements\n\n\n\n\n\n\nTitle\nCreator\nSubject\nDescription\nPublisher\nContributor\nDate\nType\nFormat\nIdentifier\nSource\nLanguage\nRelation\nCoverage (geographic or temporal)\nRights\n\n\n\n\nUsage: Designed to be simple and generic — suitable for libraries, archives, and museums. No complex customisation required. An ISO standard, compatible with semantic interoperability on the web.\nNamespace: http://purl.org/dc/elements/1.1/\n\n\nDublin Core Metadata Terms is an extension of DCES. It includes the 15 base elements (in more formalised forms) plus a much wider set of additional terms, qualifiers, and more precise concepts.\n\n\n\n\n\n\nTipExtended structure of DCTerms\n\n\n\n\n\nDCTerms includes:\n\nThe 15 base elements (more formally defined)\nAdditional elements such as Audience, Provenance, AccrualMethod…\nQualifiers for greater precision — e.g. Date can be qualified as dcterms:created, dcterms:modified, dcterms:issued\nTyped values — dates as xsd:date, URIs for places, licenses, etc.\n\nKey additions over DCES:\n\n\n\nProperty\nUse\n\n\n\n\ndcterms:created\nCreation date (typed)\n\n\ndcterms:modified\nLast modification date\n\n\ndcterms:spatial\nPlace as a URI (e.g. GeoNames)\n\n\ndcterms:temporal\nTime period\n\n\ndcterms:license\nLicense URI (e.g. Creative Commons)\n\n\ndcterms:isPartOf\nLink to a parent collection\n\n\ndcterms:provenance\nCustody history\n\n\n\n\n\n\nUsage: Used in more complex or specialised contexts — advanced digital libraries, archives, semantic web projects, databases requiring rich structure. Expressed in RDF for web semantic compatibility.\nNamespace: http://purl.org/dc/terms/\n\n\n\nKey differences — DCES vs DCTerms:\n\n\n\n\n\n\n\n\n\nDCES\nDCTerms\n\n\n\n\nNumber of elements\n15 base elements\n15 + extended terms & qualifiers\n\n\nComplexity\nSimple, general\nMore flexible and specific\n\n\nTyped values\nNo\nYes (xsd:date, URIs…)\n\n\nQualifiers\nNo\nYes\n\n\nBest for\nSimple resource description\nRich, semantic, interoperable data\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nIn Tropy: both schemas are available by default. Use DCES for simple projects; switch to DCTerms when you want to link fields to URIs (GeoNames, Getty TGN/ULAN, controlled vocabularies) for full Linked Data interoperability.\n\n\nOfficial references: - DCES specification: dublincore.org/specifications/dublin-core/dces/ - DCTerms specification: dublincore.org/specifications/dublin-core/dcmi-terms/ - JSON-LD context: purl.org/dc/terms/ - JSON-LD Playground: json-ld.org/playground/",
+    "text": "Dublin Core\nThere are two Dublin Core schemas, both available by default in Tropy: the Dublin Core Metadata Element Set (DCES) and the Dublin Core Metadata Terms (DCTerms).\n\nDublin Core Elements (DCES)Dublin Core Terms (DCTerms)\n\n\nThe Dublin Core Metadata Element Set is a set of 15 basic elements designed for general-purpose description of digital resources. Simple, universal, and widely supported.\n\n\n\n\n\n\nTipThe 15 Dublin Core Elements\n\n\n\n\n\n\nTitle\nCreator\nSubject\nDescription\nPublisher\nContributor\nDate\nType\nFormat\nIdentifier\nSource\nLanguage\nRelation\nCoverage (geographic or temporal)\nRights\n\n\n\n\nUsage: Designed to be simple and generic — suitable for libraries, archives, and museums. No complex customisation required. An ISO standard, compatible with semantic interoperability on the web.\nNamespace: http://purl.org/dc/elements/1.1/\n\n\nDublin Core Metadata Terms is an extension of DCES. It includes the 15 base elements (in more formalised forms) plus a much wider set of additional terms, qualifiers, and more precise concepts.\n\n\n\n\n\n\nTipExtended structure of DCTerms\n\n\n\n\n\nDCTerms includes:\n\nThe 15 base elements (more formally defined)\nAdditional elements such as Audience, Provenance, AccrualMethod…\nQualifiers for greater precision — e.g. Date can be qualified as dcterms:created, dcterms:modified, dcterms:issued\nTyped values — dates as xsd:date, URIs for places, licenses, etc.\n\nKey additions over DCES:\n\n\n\nProperty\nUse\n\n\n\n\ndcterms:created\nCreation date (typed)\n\n\ndcterms:modified\nLast modification date\n\n\ndcterms:spatial\nPlace as a URI (e.g. GeoNames)\n\n\ndcterms:temporal\nTime period\n\n\ndcterms:license\nLicense URI (e.g. Creative Commons)\n\n\ndcterms:isPartOf\nLink to a parent collection\n\n\ndcterms:provenance\nCustody history\n\n\n\n\n\n\nUsage: Used in more complex or specialised contexts — advanced digital libraries, archives, semantic web projects, databases requiring rich structure. Expressed in RDF for web semantic compatibility.\nNamespace: http://purl.org/dc/terms/\n\n\n\nKey differences — DCES vs DCTerms:\n\n\n\n\n\n\n\n\n\nDCES\nDCTerms\n\n\n\n\nNumber of elements\n15 base elements\n15 + extended terms & qualifiers\n\n\nComplexity\nSimple, general\nMore flexible and specific\n\n\nTyped values\nNo\nYes (xsd:date, URIs…)\n\n\nQualifiers\nNo\nYes\n\n\nBest for\nSimple resource description\nRich, semantic, interoperable data\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nIn Tropy: both schemas are available by default. Use DCES for simple projects; switch to DCTerms when you want to link fields to URIs (GeoNames, Getty TGN/ULAN, controlled vocabularies) for full Linked Data interoperability.\n\n\nOfficial references:\n\nDCES specification: dublincore.org/specifications/dublin-core/dces/\nDCTerms specification: dublincore.org/specifications/dublin-core/dcmi-terms/\nJSON-LD context: purl.org/dc/terms/\nJSON-LD Playground: json-ld.org/playground/",
     "crumbs": [
       "Resources",
       "Semantic Web & Metadata"
@@ -730,7 +730,7 @@
     "href": "resources/iiif.html",
     "title": "IIIF Resources",
     "section": "",
-    "text": "How IIIF Works (official intro): iiif.io/get-started/how-iiif-works/\nIIIF Cookbook (practical recipes with examples): iiif.io/api/cookbook/\nIIIF Awesome list: github.com/IIIF/awesome-iiif",
+    "text": "How IIIF Works (official intro): iiif.io/get-started/how-iiif-works/\nIIIF Cookbook (practical recipes with examples): iiif.io/api/cookbook/\nIIIF Awesome list: github.com/IIIF/awesome-iiif\nBiblissima IIIF documentation — one of the best practical introductions to IIIF, with annotated examples and use cases from French cultural heritage institutions: iiif.biblissima.fr",
     "crumbs": [
       "Resources",
       "IIIF"
@@ -741,7 +741,7 @@
     "href": "resources/iiif.html#getting-started-with-iiif",
     "title": "IIIF Resources",
     "section": "",
-    "text": "How IIIF Works (official intro): iiif.io/get-started/how-iiif-works/\nIIIF Cookbook (practical recipes with examples): iiif.io/api/cookbook/\nIIIF Awesome list: github.com/IIIF/awesome-iiif",
+    "text": "How IIIF Works (official intro): iiif.io/get-started/how-iiif-works/\nIIIF Cookbook (practical recipes with examples): iiif.io/api/cookbook/\nIIIF Awesome list: github.com/IIIF/awesome-iiif\nBiblissima IIIF documentation — one of the best practical introductions to IIIF, with annotated examples and use cases from French cultural heritage institutions: iiif.biblissima.fr",
     "crumbs": [
       "Resources",
       "IIIF"
@@ -786,6 +786,28 @@
     "title": "IIIF Resources",
     "section": "Manifest Creation Tools",
     "text": "Manifest Creation Tools\n\nManifest Editor (online): manifest-editor.iiif.io\nDigirati Manifest Editor: github.com/digirati-co-uk/iiif-manifest-editor\nTropy IIIF Export Plugin: generates manifests from Tropy projects",
+    "crumbs": [
+      "Resources",
+      "IIIF"
+    ]
+  },
+  {
+    "objectID": "resources/iiif.html#gallica-iiif-manifest-urls",
+    "href": "resources/iiif.html#gallica-iiif-manifest-urls",
+    "title": "IIIF Resources",
+    "section": "Gallica IIIF Manifest URLs",
+    "text": "Gallica IIIF Manifest URLs\nGallica (BnF) exposes IIIF manifests for all its digitised documents. The pattern is:\nhttps://gallica.bnf.fr/iiif/ark:/{identifier}/manifest.json\nExamples:\nhttps://gallica.bnf.fr/iiif/ark:/12148/bd6t538312611/manifest.json\nhttps://gallica.bnf.fr/iiif/ark:/12148/btv1b8451475v/manifest.json\nhttps://gallica.bnf.fr/iiif/ark:/12148/btv1b8452439r/manifest.json\nThe ARK identifier is visible in the Gallica URL when browsing a document. Replace gallica.bnf.fr/ark:/XXXXX with gallica.bnf.fr/iiif/ark:/XXXXX/manifest.json to get the IIIF manifest.\n\n\n\n\n\n\nTip\n\n\n\nThis manifest URL can be pasted directly into Tropy (IIIF plugin) or Arvest (Import → IIIF Manifest URL) to import the entire document with its metadata.\n\n\n🔗 Full Gallica IIIF API documentation: api.bnf.fr/fr/api-iiif-de-recuperation-des-images-de-gallica",
+    "crumbs": [
+      "Resources",
+      "IIIF"
+    ]
+  },
+  {
+    "objectID": "resources/iiif.html#other-iiif-annotation-tools",
+    "href": "resources/iiif.html#other-iiif-annotation-tools",
+    "title": "IIIF Resources",
+    "section": "Other IIIF Annotation Tools",
+    "text": "Other IIIF Annotation Tools\nArvest is not the only tool for annotating IIIF resources. Depending on your use case, these alternatives may be relevant:\n\nTesselle\nA lightweight annotation tool developed by the médialab at Sciences Po Paris, designed for annotating images with spatial references — particularly useful in art history and visual studies.\n\nProduces IIIF-compatible annotated manifests\nWeb-based, no installation required\n🔗 medialab.github.io/tesselle\n\nSee also: Publier une image avec ses annotations — utilisation de Tesselle en histoire de l’art — Antoine Courtin, Numérique et recherche en histoire de l’art (2020)\n\n\nAdno\nA IIIF-native annotation and storytelling tool — open source, web-based. Particularly suited for creating guided visual narratives from annotated corpora: guided tours of an image, sequential annotations with text and multimedia.\n\nWorks with any IIIF manifest URL as input\nProduces exportable annotated manifests\n🔗 adno.app · Examples · Quickstart\n\n\n\n\n\n\n\nNote\n\n\n\nArvest vs Tesselle vs Adno\n\n\n\n\n\n\n\n\nTool\nStrengths\nBest for\n\n\n\n\nArvest\nCollaboration, API, ML export\nTeam projects, large corpora\n\n\nTesselle\nSpatial annotation, simplicity\nArt history, single images\n\n\nAdno\nStorytelling, guided tours\nTeaching, public-facing narratives",
     "crumbs": [
       "Resources",
       "IIIF"
