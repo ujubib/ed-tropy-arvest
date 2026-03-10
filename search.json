@@ -154,17 +154,6 @@
     ]
   },
   {
-    "objectID": "slides.html#iiif-international-image-interoperability-framework",
-    "href": "slides.html#iiif-international-image-interoperability-framework",
-    "title": "Organizing and Curating Image Corpora",
-    "section": "IIIF — International Image Interoperability Framework",
-    "text": "IIIF — International Image Interoperability Framework",
-    "crumbs": [
-      "Workshop",
-      "Slides"
-    ]
-  },
-  {
     "objectID": "slides.html#what-is-iiif",
     "href": "slides.html#what-is-iiif",
     "title": "Organizing and Curating Image Corpora",
@@ -209,11 +198,11 @@
     ]
   },
   {
-    "objectID": "slides.html#iiif-omeka-s-uppa",
-    "href": "slides.html#iiif-omeka-s-uppa",
+    "objectID": "slides.html#iiif-omeka-s",
+    "href": "slides.html#iiif-omeka-s",
     "title": "Organizing and Curating Image Corpora",
-    "section": "IIIF — Omeka S (UPPA)",
-    "text": "IIIF — Omeka S (UPPA)\nOmeka S auto-generates IIIF Manifests for every item with an image.\nhttps://omeka.univ-pau.fr/iiif/3/{itemId}/manifest\nAny collection built in the UPPA Omeka S instance is immediately available as a IIIF source — importable in Arvest with a single URL.",
+    "section": "IIIF — Omeka S",
+    "text": "IIIF — Omeka S\nOmeka S can auto-generates IIIF Manifests for every item with an image.\nOmeka S can import IIIF Manifests and create items.",
     "crumbs": [
       "Workshop",
       "Slides"
@@ -225,17 +214,6 @@
     "title": "Organizing and Curating Image Corpora",
     "section": "IIIF — Nakala",
     "text": "IIIF — Nakala\nNakala (Huma-Num) is a research data repository that auto-generates IIIF endpoints for all deposited images.\n\n\n\nDeposit your images → get a DOI + IIIF URL\nImport the Manifest in Arvest\nAnnotate with collaborators\nExport for publication or ML\n\n\n\n\n\n\n\n\nNote\n\n\nThis is a complete, FAIR-compliant workflow for image corpora in the humanities.\n\n\n\n\n🔗 nakala.fr",
-    "crumbs": [
-      "Workshop",
-      "Slides"
-    ]
-  },
-  {
-    "objectID": "slides.html#tools-for-working-with-image-corpora",
-    "href": "slides.html#tools-for-working-with-image-corpora",
-    "title": "Organizing and Curating Image Corpora",
-    "section": "Tools for Working with Image Corpora",
-    "text": "Tools for Working with Image Corpora",
     "crumbs": [
       "Workshop",
       "Slides"
@@ -257,7 +235,7 @@
     "href": "slides.html#tropy-is-not",
     "title": "Organizing and Curating Image Corpora",
     "section": "Tropy is NOT…",
-    "text": "Tropy is NOT…\n\n\n❌ A photo editor\n(Photoshop, Lightroom…)\n❌ A reference manager\n(that’s Zotero)\n❌ A writing platform\n\n❌ An online publishing platform\n(that’s Omeka)\n✅ The missing link between your camera roll and your structured research data",
+    "text": "Tropy is NOT…\n\nA photo editor (Photoshop, Lightroom…)\nA reference manager (that’s Zotero)\nA writing platform\nAn online publishing platform (that’s Omeka)\n\n✅ The missing link between your camera roll and your structured research data.",
     "crumbs": [
       "Workshop",
       "Slides"
@@ -477,7 +455,7 @@
     "href": "slides.html#q-a",
     "title": "Organizing and Curating Image Corpora",
     "section": "Q & A",
-    "text": "Q & A\n\nQuestions?\n\n\nJulien Rabaud · UPPA · Pôle Numérique\n📧 julien.rabaud@univ-pau.fr\n🔗 orcid.org/0000-0002-6604-9777\n\n\nujubib.github.io/ed-tropy-arvest/slides.html ·",
+    "text": "Q & A\n\nQuestions?\n\n\nJulien Rabaud · UPPA · SCD · Pôle Numérique\n📧 julien.rabaud@univ-pau.fr\n\n\nujubib.github.io/ed-tropy-arvest/slides.html",
     "crumbs": [
       "Workshop",
       "Slides"
