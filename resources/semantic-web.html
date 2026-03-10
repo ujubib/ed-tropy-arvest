@@ -216,6 +216,8 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#geonames" id="toc-geonames" class="nav-link" data-scroll-target="#geonames">GeoNames</a></li>
   <li><a href="#pactols" id="toc-pactols" class="nav-link" data-scroll-target="#pactols">Pactols</a></li>
+  <li><a href="#getty-vocabularies" id="toc-getty-vocabularies" class="nav-link" data-scroll-target="#getty-vocabularies">Getty Vocabularies</a></li>
+  <li><a href="#loterre-linked-open-terminology-resources" id="toc-loterre-linked-open-terminology-resources" class="nav-link" data-scroll-target="#loterre-linked-open-terminology-resources">Loterre — Linked Open TERminology REsources</a></li>
   <li><a href="#huma-num-openthéso" id="toc-huma-num-openthéso" class="nav-link" data-scroll-target="#huma-num-openthéso">Huma-Num Openthéso</a></li>
   </ul></li>
   <li><a href="#json-ld" id="toc-json-ld" class="nav-link" data-scroll-target="#json-ld">JSON-LD</a></li>
@@ -288,15 +290,134 @@ ul.task-list li input[type="checkbox"] {
 <section id="pactols" class="level3">
 <h3 class="anchored" data-anchor-id="pactols">Pactols</h3>
 <ul>
-<li>Thesaurus browser: <a href="https://opentheso.frantiq.fr">opentheso.frantiq.fr</a></li>
+<li>Thesaurus browser: <a href="https://pactols.frantiq.fr">pactols.frantiq.fr</a></li>
 <li>Frantiq network: <a href="https://frantiq.fr">frantiq.fr</a></li>
 </ul>
+</section>
+<section id="getty-vocabularies" class="level3">
+<h3 class="anchored" data-anchor-id="getty-vocabularies">Getty Vocabularies</h3>
+<p>Published as <strong>Linked Open Data</strong> by the <a href="https://www.getty.edu/research/">Getty Research Institute</a>, the Getty Vocabularies are the standard reference for art history, architecture, and cultural heritage documentation. All terms have stable URIs under <code>http://vocab.getty.edu/</code>.</p>
+<section id="aat-art-architecture-thesaurus" class="level4">
+<h4 class="anchored" data-anchor-id="aat-art-architecture-thesaurus">AAT — Art &amp; Architecture Thesaurus</h4>
+<p>~50,000 terms covering object types, styles, materials, techniques, and concepts used in art and architectural description.</p>
+<pre><code>http://vocab.getty.edu/aat/300263552  →  oil paintings
+http://vocab.getty.edu/aat/300014109  →  watercolors
+http://vocab.getty.edu/aat/300015012  →  manuscripts</code></pre>
+<p>🔗 <a href="https://vocab.getty.edu/aat/">vocab.getty.edu/aat/</a></p>
+</section>
+<section id="tgn-thesaurus-of-geographic-names" class="level4">
+<h4 class="anchored" data-anchor-id="tgn-thesaurus-of-geographic-names">TGN — Thesaurus of Geographic Names</h4>
+<p>Over 2 million place entries — historical and current, from cities to archaeological sites. Unlike GeoNames (which focuses on current places), TGN is especially strong on <strong>historical toponyms</strong> and ancient sites.</p>
+<pre><code>http://vocab.getty.edu/tgn/7011179  →  Salamanca, Spain
+http://vocab.getty.edu/tgn/7008038  →  Paris, France
+http://vocab.getty.edu/tgn/7001386  →  Constantinople / Istanbul</code></pre>
+<p>🔗 <a href="https://vocab.getty.edu/tgn/">vocab.getty.edu/tgn/</a></p>
+</section>
+<section id="ulan-union-list-of-artist-names" class="level4">
+<h4 class="anchored" data-anchor-id="ulan-union-list-of-artist-names">ULAN — Union List of Artist Names</h4>
+<p>Biographical and bibliographic information on artists, architects, decorators, and other makers — with variant name forms across languages and periods.</p>
+<pre><code>http://vocab.getty.edu/ulan/500010570  →  Francisco de Goya
+http://vocab.getty.edu/ulan/500115588  →  El Greco
+http://vocab.getty.edu/ulan/500021099  →  Rembrandt van Rijn</code></pre>
+<p>🔗 <a href="https://vocab.getty.edu/ulan/">vocab.getty.edu/ulan/</a></p>
+</section>
+<section id="linked-data-access" class="level4">
+<h4 class="anchored" data-anchor-id="linked-data-access">Linked Data access</h4>
+<p>All Getty Vocabularies are queryable via SPARQL and available in multiple RDF serialisations:</p>
+<ul>
+<li>SPARQL endpoint: <a href="https://vocab.getty.edu/sparql">vocab.getty.edu/sparql</a></li>
+<li>Search interface: <a href="https://vocab.getty.edu">vocab.getty.edu</a></li>
+<li>Documentation: <a href="https://www.getty.edu/research/tools/vocabularies/lod/">getty.edu/research/tools/vocabularies/lod/</a></li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>In Tropy:</strong> import the Getty AAT vocabulary (<code>http://vocab.getty.edu/aat.nt</code>) into Preferences → Vocabularies to use AAT properties in your templates. Use ULAN URIs in <code>dc:creator</code> or <code>dcterms:creator</code> fields, and TGN URIs in <code>dcterms:spatial</code> (alongside or instead of GeoNames).</p>
+</div>
+</div>
+</section>
+</section>
+<section id="loterre-linked-open-terminology-resources" class="level3">
+<h3 class="anchored" data-anchor-id="loterre-linked-open-terminology-resources">Loterre — Linked Open TERminology REsources</h3>
+<p>Published by <a href="https://www.inist.fr"><strong>Inist-CNRS</strong></a>, Loterre is a multidisciplinary platform hosting 70+ scientific terminologies as SKOS/RDF Linked Open Data — fully FAIR-compliant and freely accessible.</p>
+<p>Unlike Openthéso (a tool for <em>managing</em> thesauri) or Pactols (a single domain-specific thesaurus), Loterre is a <strong>portal that aggregates terminologies</strong> from many disciplines and institutions, with a particular emphasis on the French research ecosystem.</p>
+<p><strong>Vocabularies relevant for SSH and CHORAL research:</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Vocabulary</th>
+<th>Scope</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><em>Art et Archéologie</em></td>
+<td>Visual arts, monuments, archaeological objects</td>
+</tr>
+<tr class="even">
+<td><em>Ethnologie</em></td>
+<td>Peoples, cultures, practices</td>
+</tr>
+<tr class="odd">
+<td><em>Histoire et sciences des religions</em></td>
+<td>Religious history and practices</td>
+</tr>
+<tr class="even">
+<td><em>Linguistique</em></td>
+<td>Linguistic concepts and terms</td>
+</tr>
+<tr class="odd">
+<td><em>Littérature</em></td>
+<td>Literary forms, genres, movements</td>
+</tr>
+<tr class="even">
+<td><em>Géographie de l’Amérique du Nord</em></td>
+<td>North American place names</td>
+</tr>
+<tr class="odd">
+<td><em>Pays et subdivisions</em></td>
+<td>Countries and administrative divisions</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Access:</strong></p>
+<ul>
+<li>Browse &amp; search: <a href="https://www.loterre.fr">loterre.fr</a></li>
+<li>SPARQL endpoint and REST API available for all vocabularies</li>
+<li>Download in SKOS/RDF-XML, Turtle, JSON-LD, or CSV</li>
+<li>Recently integrated into the <strong>ISTEX</strong> infrastructure for text and data mining</li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Loterre also offers <strong>tooling services</strong> for vocabulary producers: validate a SKOS file, transform from other formats, or align your vocabulary with an existing Loterre resource. Useful if you want to publish your own controlled vocabulary as Linked Open Data.</p>
+</div>
+</div>
+<p>🔗 <a href="https://www.loterre.fr">loterre.fr</a> · <a href="https://loterre.istex.fr/fr/">loterre.istex.fr</a></p>
 </section>
 <section id="huma-num-openthéso" class="level3">
 <h3 class="anchored" data-anchor-id="huma-num-openthéso">Huma-Num Openthéso</h3>
 <ul>
 <li>Platform: <a href="https://opentheso.huma-num.fr">opentheso.huma-num.fr</a></li>
-<li>GitHub (open-source): <a href="https://github.com/miledrousset/Opentheso">github.com/miledrousset/Opentheso</a></li>
+<li>GitHub (open-source): <a href="https://github.com/MOM-CNRS/Opentheso">github.com/MOM-CNRS/Opentheso</a></li>
 <li>SKOS documentation (W3C): <a href="https://www.w3.org/TR/skos-reference/">w3.org/TR/skos-reference/</a></li>
 </ul>
 <hr>
