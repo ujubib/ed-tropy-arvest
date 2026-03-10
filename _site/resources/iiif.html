@@ -211,6 +211,12 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#iiif-enabled-collections" id="toc-iiif-enabled-collections" class="nav-link" data-scroll-target="#iiif-enabled-collections">IIIF-Enabled Collections</a></li>
   <li><a href="#iiif-viewers" id="toc-iiif-viewers" class="nav-link" data-scroll-target="#iiif-viewers">IIIF Viewers</a></li>
   <li><a href="#manifest-creation-tools" id="toc-manifest-creation-tools" class="nav-link" data-scroll-target="#manifest-creation-tools">Manifest Creation Tools</a></li>
+  <li><a href="#gallica-iiif-manifest-urls" id="toc-gallica-iiif-manifest-urls" class="nav-link" data-scroll-target="#gallica-iiif-manifest-urls">Gallica IIIF Manifest URLs</a></li>
+  <li><a href="#other-iiif-annotation-tools" id="toc-other-iiif-annotation-tools" class="nav-link" data-scroll-target="#other-iiif-annotation-tools">Other IIIF Annotation Tools</a>
+  <ul class="collapse">
+  <li><a href="#tesselle" id="toc-tesselle" class="nav-link" data-scroll-target="#tesselle">Tesselle</a></li>
+  <li><a href="#adno" id="toc-adno" class="nav-link" data-scroll-target="#adno">Adno</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/ujubib/ed-tropy-arvest/blob/main/resources/iiif.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/ujubib/ed-tropy-arvest/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -243,6 +249,7 @@ ul.task-list li input[type="checkbox"] {
 <li><strong>How IIIF Works</strong> (official intro): <a href="https://iiif.io/get-started/how-iiif-works/">iiif.io/get-started/how-iiif-works/</a></li>
 <li><strong>IIIF Cookbook</strong> (practical recipes with examples): <a href="https://iiif.io/api/cookbook/">iiif.io/api/cookbook/</a></li>
 <li><strong>IIIF Awesome list</strong>: <a href="https://github.com/IIIF/awesome-iiif">github.com/IIIF/awesome-iiif</a></li>
+<li><strong>Biblissima IIIF documentation</strong> — one of the best practical introductions to IIIF, with annotated examples and use cases from French cultural heritage institutions: <a href="https://iiif.biblissima.fr">iiif.biblissima.fr</a></li>
 </ul>
 <hr>
 </section>
@@ -315,8 +322,101 @@ ul.task-list li input[type="checkbox"] {
 <li><strong>Digirati Manifest Editor</strong>: <a href="https://github.com/digirati-co-uk/iiif-manifest-editor">github.com/digirati-co-uk/iiif-manifest-editor</a></li>
 <li><strong>Tropy IIIF Export Plugin</strong>: generates manifests from Tropy projects</li>
 </ul>
+<hr>
+</section>
+<section id="gallica-iiif-manifest-urls" class="level2">
+<h2 class="anchored" data-anchor-id="gallica-iiif-manifest-urls">Gallica IIIF Manifest URLs</h2>
+<p>Gallica (BnF) exposes IIIF manifests for all its digitised documents. The pattern is:</p>
+<pre><code>https://gallica.bnf.fr/iiif/ark:/{identifier}/manifest.json</code></pre>
+<p><strong>Examples:</strong></p>
+<pre><code>https://gallica.bnf.fr/iiif/ark:/12148/bd6t538312611/manifest.json
+https://gallica.bnf.fr/iiif/ark:/12148/btv1b8451475v/manifest.json
+https://gallica.bnf.fr/iiif/ark:/12148/btv1b8452439r/manifest.json</code></pre>
+<p>The ARK identifier is visible in the Gallica URL when browsing a document. Replace <code>gallica.bnf.fr/ark:/XXXXX</code> with <code>gallica.bnf.fr/iiif/ark:/XXXXX/manifest.json</code> to get the IIIF manifest.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This manifest URL can be pasted directly into <strong>Tropy</strong> (IIIF plugin) or <strong>Arvest</strong> (Import → IIIF Manifest URL) to import the entire document with its metadata.</p>
+</div>
+</div>
+<p>🔗 Full Gallica IIIF API documentation: <a href="https://api.bnf.fr/fr/api-iiif-de-recuperation-des-images-de-gallica">api.bnf.fr/fr/api-iiif-de-recuperation-des-images-de-gallica</a></p>
+<hr>
+</section>
+<section id="other-iiif-annotation-tools" class="level2">
+<h2 class="anchored" data-anchor-id="other-iiif-annotation-tools">Other IIIF Annotation Tools</h2>
+<p>Arvest is not the only tool for annotating IIIF resources. Depending on your use case, these alternatives may be relevant:</p>
+<section id="tesselle" class="level3">
+<h3 class="anchored" data-anchor-id="tesselle">Tesselle</h3>
+<p>A lightweight annotation tool developed by the <strong>médialab at Sciences Po Paris</strong>, designed for annotating images with spatial references — particularly useful in art history and visual studies.</p>
+<ul>
+<li>Produces IIIF-compatible annotated manifests</li>
+<li>Web-based, no installation required</li>
+<li>🔗 <a href="https://medialab.github.io/tesselle/#/">medialab.github.io/tesselle</a></li>
+</ul>
+<p>See also: <a href="https://numrha.hypotheses.org/1019">Publier une image avec ses annotations — utilisation de Tesselle en histoire de l’art</a> — Antoine Courtin, <em>Numérique et recherche en histoire de l’art</em> (2020)</p>
+</section>
+<section id="adno" class="level3">
+<h3 class="anchored" data-anchor-id="adno">Adno</h3>
+<p>A IIIF-native annotation and storytelling tool — open source, web-based. Particularly suited for creating <strong>guided visual narratives</strong> from annotated corpora: guided tours of an image, sequential annotations with text and multimedia.</p>
+<ul>
+<li>Works with any IIIF manifest URL as input</li>
+<li>Produces exportable annotated manifests</li>
+<li>🔗 <a href="https://adno.app">adno.app</a> · <a href="https://adno.app/fr/example/">Examples</a> · <a href="https://adno.app/fr/docs/prologue/quick-start/">Quickstart</a></li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Arvest vs Tesselle vs Adno</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Tool</th>
+<th>Strengths</th>
+<th>Best for</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Arvest</strong></td>
+<td>Collaboration, API, ML export</td>
+<td>Team projects, large corpora</td>
+</tr>
+<tr class="even">
+<td><strong>Tesselle</strong></td>
+<td>Spatial annotation, simplicity</td>
+<td>Art history, single images</td>
+</tr>
+<tr class="odd">
+<td><strong>Adno</strong></td>
+<td>Storytelling, guided tours</td>
+<td>Teaching, public-facing narratives</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

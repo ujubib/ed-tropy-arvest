@@ -8,6 +8,7 @@ subtitle: "Viewers, collections, tools and documentation"
 - **How IIIF Works** (official intro): [iiif.io/get-started/how-iiif-works/](https://iiif.io/get-started/how-iiif-works/)
 - **IIIF Cookbook** (practical recipes with examples): [iiif.io/api/cookbook/](https://iiif.io/api/cookbook/)
 - **IIIF Awesome list**: [github.com/IIIF/awesome-iiif](https://github.com/IIIF/awesome-iiif)
+- **Biblissima IIIF documentation** — one of the best practical introductions to IIIF, with annotated examples and use cases from French cultural heritage institutions: [iiif.biblissima.fr](https://iiif.biblissima.fr)
 
 ---
 
@@ -48,3 +49,64 @@ subtitle: "Viewers, collections, tools and documentation"
 - **Manifest Editor** (online): [manifest-editor.iiif.io](https://manifest-editor.iiif.io)
 - **Digirati Manifest Editor**: [github.com/digirati-co-uk/iiif-manifest-editor](https://github.com/digirati-co-uk/iiif-manifest-editor)
 - **Tropy IIIF Export Plugin**: generates manifests from Tropy projects
+
+---
+
+## Gallica IIIF Manifest URLs
+
+Gallica (BnF) exposes IIIF manifests for all its digitised documents. The pattern is:
+
+```
+https://gallica.bnf.fr/iiif/ark:/{identifier}/manifest.json
+```
+
+**Examples:**
+
+```
+https://gallica.bnf.fr/iiif/ark:/12148/bd6t538312611/manifest.json
+https://gallica.bnf.fr/iiif/ark:/12148/btv1b8451475v/manifest.json
+https://gallica.bnf.fr/iiif/ark:/12148/btv1b8452439r/manifest.json
+```
+
+The ARK identifier is visible in the Gallica URL when browsing a document. Replace `gallica.bnf.fr/ark:/XXXXX` with `gallica.bnf.fr/iiif/ark:/XXXXX/manifest.json` to get the IIIF manifest.
+
+::: {.callout-tip}
+This manifest URL can be pasted directly into **Tropy** (IIIF plugin) or **Arvest** (Import → IIIF Manifest URL) to import the entire document with its metadata.
+:::
+
+🔗 Full Gallica IIIF API documentation: [api.bnf.fr/fr/api-iiif-de-recuperation-des-images-de-gallica](https://api.bnf.fr/fr/api-iiif-de-recuperation-des-images-de-gallica)
+
+---
+
+## Other IIIF Annotation Tools
+
+Arvest is not the only tool for annotating IIIF resources. Depending on your use case, these alternatives may be relevant:
+
+### Tesselle
+
+A lightweight annotation tool developed by the **médialab at Sciences Po Paris**, designed for annotating images with spatial references — particularly useful in art history and visual studies.
+
+- Produces IIIF-compatible annotated manifests
+- Web-based, no installation required
+- 🔗 [medialab.github.io/tesselle](https://medialab.github.io/tesselle/#/)
+
+See also: [Publier une image avec ses annotations — utilisation de Tesselle en histoire de l'art](https://numrha.hypotheses.org/1019) — Antoine Courtin, *Numérique et recherche en histoire de l'art* (2020)
+
+### Adno
+
+A IIIF-native annotation and storytelling tool — open source, web-based. Particularly suited for creating **guided visual narratives** from annotated corpora: guided tours of an image, sequential annotations with text and multimedia.
+
+- Works with any IIIF manifest URL as input
+- Produces exportable annotated manifests
+- 🔗 [adno.app](https://adno.app) · [Examples](https://adno.app/fr/example/) · [Quickstart](https://adno.app/fr/docs/prologue/quick-start/)
+
+::: {.callout-note}
+**Arvest vs Tesselle vs Adno**
+
+| Tool | Strengths | Best for |
+|---|---|---|
+| **Arvest** | Collaboration, API, ML export | Team projects, large corpora |
+| **Tesselle** | Spatial annotation, simplicity | Art history, single images |
+| **Adno** | Storytelling, guided tours | Teaching, public-facing narratives |
+:::
+

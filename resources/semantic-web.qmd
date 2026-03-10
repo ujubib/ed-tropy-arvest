@@ -95,6 +95,7 @@ Key additions over DCES:
 :::
 
 **Official references:**
+
 - DCES specification: [dublincore.org/specifications/dublin-core/dces/](https://dublincore.org/specifications/dublin-core/dces/)
 - DCTerms specification: [dublincore.org/specifications/dublin-core/dcmi-terms/](https://dublincore.org/specifications/dublin-core/dcmi-terms/)
 - JSON-LD context: [purl.org/dc/terms/](http://purl.org/dc/terms/)
