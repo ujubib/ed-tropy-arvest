@@ -37,12 +37,95 @@ subtitle: "Resources and further reading"
 - API documentation: [geonames.org/export/web-services.html](https://www.geonames.org/export/web-services.html)
 
 ### Pactols
-- Thesaurus browser: [opentheso.frantiq.fr](https://opentheso.frantiq.fr)
+- Thesaurus browser: [pactols.frantiq.fr](https://pactols.frantiq.fr)
 - Frantiq network: [frantiq.fr](https://frantiq.fr)
+
+### Getty Vocabularies
+
+Published as **Linked Open Data** by the [Getty Research Institute](https://www.getty.edu/research/), the Getty Vocabularies are the standard reference for art history, architecture, and cultural heritage documentation. All terms have stable URIs under `http://vocab.getty.edu/`.
+
+#### AAT — Art & Architecture Thesaurus
+
+~50,000 terms covering object types, styles, materials, techniques, and concepts used in art and architectural description.
+
+```
+http://vocab.getty.edu/aat/300263552  →  oil paintings
+http://vocab.getty.edu/aat/300014109  →  watercolors
+http://vocab.getty.edu/aat/300015012  →  manuscripts
+```
+
+🔗 [vocab.getty.edu/aat/](https://vocab.getty.edu/aat/)
+
+#### TGN — Thesaurus of Geographic Names
+
+Over 2 million place entries — historical and current, from cities to archaeological sites. Unlike GeoNames (which focuses on current places), TGN is especially strong on **historical toponyms** and ancient sites.
+
+```
+http://vocab.getty.edu/tgn/7011179  →  Salamanca, Spain
+http://vocab.getty.edu/tgn/7008038  →  Paris, France
+http://vocab.getty.edu/tgn/7001386  →  Constantinople / Istanbul
+```
+
+🔗 [vocab.getty.edu/tgn/](https://vocab.getty.edu/tgn/)
+
+#### ULAN — Union List of Artist Names
+
+Biographical and bibliographic information on artists, architects, decorators, and other makers — with variant name forms across languages and periods.
+
+```
+http://vocab.getty.edu/ulan/500010570  →  Francisco de Goya
+http://vocab.getty.edu/ulan/500115588  →  El Greco
+http://vocab.getty.edu/ulan/500021099  →  Rembrandt van Rijn
+```
+
+🔗 [vocab.getty.edu/ulan/](https://vocab.getty.edu/ulan/)
+
+#### Linked Data access
+
+All Getty Vocabularies are queryable via SPARQL and available in multiple RDF serialisations:
+
+- SPARQL endpoint: [vocab.getty.edu/sparql](https://vocab.getty.edu/sparql)
+- Search interface: [vocab.getty.edu](https://vocab.getty.edu)
+- Documentation: [getty.edu/research/tools/vocabularies/lod/](https://www.getty.edu/research/tools/vocabularies/lod/)
+
+::: {.callout-tip}
+**In Tropy:** import the Getty AAT vocabulary (`http://vocab.getty.edu/aat.nt`) into Preferences → Vocabularies to use AAT properties in your templates. Use ULAN URIs in `dc:creator` or `dcterms:creator` fields, and TGN URIs in `dcterms:spatial` (alongside or instead of GeoNames).
+:::
+
+### Loterre — Linked Open TERminology REsources
+
+Published by [**Inist-CNRS**](https://www.inist.fr), Loterre is a multidisciplinary platform hosting 70+ scientific terminologies as SKOS/RDF Linked Open Data — fully FAIR-compliant and freely accessible.
+
+Unlike Openthéso (a tool for *managing* thesauri) or Pactols (a single domain-specific thesaurus), Loterre is a **portal that aggregates terminologies** from many disciplines and institutions, with a particular emphasis on the French research ecosystem.
+
+**Vocabularies relevant for SSH and CHORAL research:**
+
+| Vocabulary | Scope |
+|---|---|
+| *Art et Archéologie* | Visual arts, monuments, archaeological objects |
+| *Ethnologie* | Peoples, cultures, practices |
+| *Histoire et sciences des religions* | Religious history and practices |
+| *Linguistique* | Linguistic concepts and terms |
+| *Littérature* | Literary forms, genres, movements |
+| *Géographie de l'Amérique du Nord* | North American place names |
+| *Pays et subdivisions* | Countries and administrative divisions |
+
+**Access:**
+
+- Browse & search: [loterre.fr](https://www.loterre.fr)
+- SPARQL endpoint and REST API available for all vocabularies
+- Download in SKOS/RDF-XML, Turtle, JSON-LD, or CSV
+- Recently integrated into the **ISTEX** infrastructure for text and data mining
+
+::: {.callout-tip}
+Loterre also offers **tooling services** for vocabulary producers: validate a SKOS file, transform from other formats, or align your vocabulary with an existing Loterre resource. Useful if you want to publish your own controlled vocabulary as Linked Open Data.
+:::
+
+🔗 [loterre.fr](https://www.loterre.fr) · [loterre.istex.fr](https://loterre.istex.fr/fr/)
 
 ### Huma-Num Openthéso
 - Platform: [opentheso.huma-num.fr](https://opentheso.huma-num.fr)
-- GitHub (open-source): [github.com/miledrousset/Opentheso](https://github.com/miledrousset/Opentheso)
+- GitHub (open-source): [github.com/MOM-CNRS/Opentheso](https://github.com/MOM-CNRS/Opentheso)
 - SKOS documentation (W3C): [w3.org/TR/skos-reference/](https://www.w3.org/TR/skos-reference/)
 
 ---

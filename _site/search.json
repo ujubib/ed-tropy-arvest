@@ -125,7 +125,29 @@
     "href": "slides.html#pactols",
     "title": "Organizing and Curating Image Corpora",
     "section": "Pactols",
-    "text": "Pactols\nMultilingual thesaurus for Archaeology, Classical and Oriental Studies — maintained by the Frantiq network.\nCovers: archaeological periods · object types · materials · ancient places · historical figures\n\n\n\n\n\n\nNote\n\n\nEspecially relevant for CHORAL research — Romance cultures, Mediterranean and Iberian heritage, classical antiquity.\n\n\n\n🔗 opentheso.frantiq.fr",
+    "text": "Pactols\nMultilingual thesaurus for Archaeology, Classical and Oriental Studies — maintained by the Frantiq network.\nCovers: archaeological periods · object types · materials · ancient places · historical figures\n\n\n\n\n\n\nNote\n\n\nEspecially relevant for CHORAL research — Romance cultures, Mediterranean and Iberian heritage, classical antiquity.\n\n\n\n🔗 pactols.frantiq.fr",
+    "crumbs": [
+      "Workshop",
+      "Slides"
+    ]
+  },
+  {
+    "objectID": "slides.html#getty-vocabularies",
+    "href": "slides.html#getty-vocabularies",
+    "title": "Organizing and Curating Image Corpora",
+    "section": "Getty Vocabularies",
+    "text": "Getty Vocabularies\nPublished as Linked Open Data by the Getty Research Institute — the standard reference for art history and cultural heritage.\n\n\n\n\n\n\n\n\n\nVocabulary\nScope\n\n\n\n\nAAT\nArt & Architecture Thesaurus — styles, materials, techniques, object types\n\n\nTGN\nThesaurus of Geographic Names — historical & current places\n\n\nULAN\nUnion List of Artist Names — artists, architects, makers\n\n\n\n\nvocab.getty.edu/aat/300263552\n  →  oil paintings\n\nvocab.getty.edu/tgn/7011179\n  →  Salamanca\n\nvocab.getty.edu/ulan/500010570\n  →  Francisco Goya\n\n🔗 vocab.getty.edu",
+    "crumbs": [
+      "Workshop",
+      "Slides"
+    ]
+  },
+  {
+    "objectID": "slides.html#loterre",
+    "href": "slides.html#loterre",
+    "title": "Organizing and Curating Image Corpora",
+    "section": "Loterre",
+    "text": "Loterre\nLinked Open TERminology REsources — published by Inist-CNRS.\nA multidisciplinary platform hosting 70+ scientific terminologies as SKOS/RDF Linked Open Data.\n\n\nRelevant for SSH researchers:\n\nArt et Archéologie\nEthnologie\nHistoire et sciences des religions\nLinguistique · Littérature\nGéographie de l’Amérique du Nord\nPays et subdivisions\n\n\nAll vocabularies are:\n\nFree to consult & download\nAvailable as SKOS/RDF, JSON-LD, CSV\nQueryable via SPARQL & REST API\nFAIR-compliant\n\n\n🔗 loterre.fr",
     "crumbs": [
       "Workshop",
       "Slides"
@@ -510,7 +532,7 @@
     "href": "resources/semantic-web.html#controlled-vocabularies",
     "title": "Semantic Web & Metadata",
     "section": "Controlled Vocabularies",
-    "text": "Controlled Vocabularies\n\nGeoNames\n\nSearch interface: geonames.org/search.html\nAPI documentation: geonames.org/export/web-services.html\n\n\n\nPactols\n\nThesaurus browser: opentheso.frantiq.fr\nFrantiq network: frantiq.fr\n\n\n\nHuma-Num Openthéso\n\nPlatform: opentheso.huma-num.fr\nGitHub (open-source): github.com/miledrousset/Opentheso\nSKOS documentation (W3C): w3.org/TR/skos-reference/",
+    "text": "Controlled Vocabularies\n\nGeoNames\n\nSearch interface: geonames.org/search.html\nAPI documentation: geonames.org/export/web-services.html\n\n\n\nPactols\n\nThesaurus browser: pactols.frantiq.fr\nFrantiq network: frantiq.fr\n\n\n\nGetty Vocabularies\nPublished as Linked Open Data by the Getty Research Institute, the Getty Vocabularies are the standard reference for art history, architecture, and cultural heritage documentation. All terms have stable URIs under http://vocab.getty.edu/.\n\nAAT — Art & Architecture Thesaurus\n~50,000 terms covering object types, styles, materials, techniques, and concepts used in art and architectural description.\nhttp://vocab.getty.edu/aat/300263552  →  oil paintings\nhttp://vocab.getty.edu/aat/300014109  →  watercolors\nhttp://vocab.getty.edu/aat/300015012  →  manuscripts\n🔗 vocab.getty.edu/aat/\n\n\nTGN — Thesaurus of Geographic Names\nOver 2 million place entries — historical and current, from cities to archaeological sites. Unlike GeoNames (which focuses on current places), TGN is especially strong on historical toponyms and ancient sites.\nhttp://vocab.getty.edu/tgn/7011179  →  Salamanca, Spain\nhttp://vocab.getty.edu/tgn/7008038  →  Paris, France\nhttp://vocab.getty.edu/tgn/7001386  →  Constantinople / Istanbul\n🔗 vocab.getty.edu/tgn/\n\n\nULAN — Union List of Artist Names\nBiographical and bibliographic information on artists, architects, decorators, and other makers — with variant name forms across languages and periods.\nhttp://vocab.getty.edu/ulan/500010570  →  Francisco de Goya\nhttp://vocab.getty.edu/ulan/500115588  →  El Greco\nhttp://vocab.getty.edu/ulan/500021099  →  Rembrandt van Rijn\n🔗 vocab.getty.edu/ulan/\n\n\nLinked Data access\nAll Getty Vocabularies are queryable via SPARQL and available in multiple RDF serialisations:\n\nSPARQL endpoint: vocab.getty.edu/sparql\nSearch interface: vocab.getty.edu\nDocumentation: getty.edu/research/tools/vocabularies/lod/\n\n\n\n\n\n\n\nTip\n\n\n\nIn Tropy: import the Getty AAT vocabulary (http://vocab.getty.edu/aat.nt) into Preferences → Vocabularies to use AAT properties in your templates. Use ULAN URIs in dc:creator or dcterms:creator fields, and TGN URIs in dcterms:spatial (alongside or instead of GeoNames).\n\n\n\n\n\nLoterre — Linked Open TERminology REsources\nPublished by Inist-CNRS, Loterre is a multidisciplinary platform hosting 70+ scientific terminologies as SKOS/RDF Linked Open Data — fully FAIR-compliant and freely accessible.\nUnlike Openthéso (a tool for managing thesauri) or Pactols (a single domain-specific thesaurus), Loterre is a portal that aggregates terminologies from many disciplines and institutions, with a particular emphasis on the French research ecosystem.\nVocabularies relevant for SSH and CHORAL research:\n\n\n\n\n\n\n\nVocabulary\nScope\n\n\n\n\nArt et Archéologie\nVisual arts, monuments, archaeological objects\n\n\nEthnologie\nPeoples, cultures, practices\n\n\nHistoire et sciences des religions\nReligious history and practices\n\n\nLinguistique\nLinguistic concepts and terms\n\n\nLittérature\nLiterary forms, genres, movements\n\n\nGéographie de l’Amérique du Nord\nNorth American place names\n\n\nPays et subdivisions\nCountries and administrative divisions\n\n\n\nAccess:\n\nBrowse & search: loterre.fr\nSPARQL endpoint and REST API available for all vocabularies\nDownload in SKOS/RDF-XML, Turtle, JSON-LD, or CSV\nRecently integrated into the ISTEX infrastructure for text and data mining\n\n\n\n\n\n\n\nTip\n\n\n\nLoterre also offers tooling services for vocabulary producers: validate a SKOS file, transform from other formats, or align your vocabulary with an existing Loterre resource. Useful if you want to publish your own controlled vocabulary as Linked Open Data.\n\n\n🔗 loterre.fr · loterre.istex.fr\n\n\nHuma-Num Openthéso\n\nPlatform: opentheso.huma-num.fr\nGitHub (open-source): github.com/MOM-CNRS/Opentheso\nSKOS documentation (W3C): w3.org/TR/skos-reference/",
     "crumbs": [
       "Resources",
       "Semantic Web & Metadata"

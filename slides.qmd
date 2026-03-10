@@ -339,7 +339,68 @@ Covers: archaeological periods · object types · materials · ancient places ·
 Especially relevant for **CHORAL** research — Romance cultures, Mediterranean and Iberian heritage, classical antiquity.
 :::
 
-🔗 [opentheso.frantiq.fr](https://opentheso.frantiq.fr)
+🔗 [pactols.frantiq.fr](https://pactols.frantiq.fr)
+
+---
+
+## Getty Vocabularies
+
+Published as **Linked Open Data** by the Getty Research Institute — the standard reference for art history and cultural heritage.
+
+::: {.columns}
+::: {.column width="55%"}
+| Vocabulary | Scope |
+|---|---|
+| **AAT** | Art & Architecture Thesaurus — styles, materials, techniques, object types |
+| **TGN** | Thesaurus of Geographic Names — historical & current places |
+| **ULAN** | Union List of Artist Names — artists, architects, makers |
+:::
+::: {.column width="45%"}
+```
+vocab.getty.edu/aat/300263552
+  →  oil paintings
+
+vocab.getty.edu/tgn/7011179
+  →  Salamanca
+
+vocab.getty.edu/ulan/500010570
+  →  Francisco Goya
+```
+:::
+:::
+
+🔗 [vocab.getty.edu](https://vocab.getty.edu)
+
+---
+
+## Loterre
+
+**Linked Open TERminology REsources** — published by [Inist-CNRS](https://www.inist.fr).
+
+A multidisciplinary platform hosting 70+ scientific terminologies as **SKOS/RDF Linked Open Data**.
+
+::: {.columns}
+::: {.column width="55%"}
+Relevant for **SSH researchers:**
+
+- *Art et Archéologie*
+- *Ethnologie*
+- *Histoire et sciences des religions*
+- *Linguistique · Littérature*
+- *Géographie de l'Amérique du Nord*
+- *Pays et subdivisions*
+:::
+::: {.column width="45%"}
+All vocabularies are:
+
+- Free to consult & download
+- Available as SKOS/RDF, JSON-LD, CSV
+- Queryable via **SPARQL** & **REST API**
+- FAIR-compliant
+:::
+:::
+
+🔗 [loterre.fr](https://www.loterre.fr)
 
 ---
 
