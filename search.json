@@ -737,22 +737,11 @@
     ]
   },
   {
-    "objectID": "resources/iiif.html",
-    "href": "resources/iiif.html",
-    "title": "IIIF Resources",
-    "section": "",
-    "text": "How IIIF Works (official intro): iiif.io/get-started/how-iiif-works/\nIIIF Cookbook (practical recipes with examples): iiif.io/api/cookbook/\nIIIF Awesome list: github.com/IIIF/awesome-iiif\nBiblissima IIIF documentation — one of the best practical introductions to IIIF, with annotated examples and use cases from French cultural heritage institutions: iiif.biblissima.fr",
-    "crumbs": [
-      "Resources",
-      "IIIF"
-    ]
-  },
-  {
     "objectID": "resources/iiif.html#getting-started-with-iiif",
     "href": "resources/iiif.html#getting-started-with-iiif",
     "title": "IIIF Resources",
-    "section": "",
-    "text": "How IIIF Works (official intro): iiif.io/get-started/how-iiif-works/\nIIIF Cookbook (practical recipes with examples): iiif.io/api/cookbook/\nIIIF Awesome list: github.com/IIIF/awesome-iiif\nBiblissima IIIF documentation — one of the best practical introductions to IIIF, with annotated examples and use cases from French cultural heritage institutions: iiif.biblissima.fr",
+    "section": "Getting Started with IIIF",
+    "text": "Getting Started with IIIF\n\nHow IIIF Works (official intro): iiif.io/get-started/how-iiif-works/\nIIIF Cookbook (practical recipes with examples): iiif.io/api/cookbook/\nIIIF Awesome list: github.com/IIIF/awesome-iiif\nBiblissima IIIF documentation — one of the best practical introductions to IIIF, with annotated examples and use cases from French cultural heritage institutions: iiif.biblissima.fr",
     "crumbs": [
       "Resources",
       "IIIF"
