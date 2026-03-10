@@ -6,7 +6,6 @@ subtitle: "Documentation, API and use cases"
 ## Official Resources
 
 - **Website**: [arvest.app](https://arvest.app)
-- **Documentation**: [docs.arvest.app](https://docs.arvest.app)
 - **Register**: [arvest.app/register](https://arvest.app/register)
 
 ---
