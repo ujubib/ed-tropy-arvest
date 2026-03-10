@@ -56,6 +56,11 @@ table {
   }
 }
 
+// Tables dans les slides Reveal.js — légèrement plus grandes
+.reveal table {
+  font-size: 1.3rem;
+}
+
 // Code blocks
 pre {
   border-left: 3px solid $primary;

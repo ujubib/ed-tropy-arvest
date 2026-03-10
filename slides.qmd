@@ -219,6 +219,10 @@ dcterms:isPartOf  <myArchive:collection_42>
 :::
 :::
 
+::: {.callout-tip}
+**Rule of thumb:** use `dc:` when a plain string is enough — use `dcterms:` whenever you want to link to a **URI** (a place, a license, a collection). DCTerms is what makes your data truly interoperable.
+:::
+
 ---
 
 ## CIDOC-CRM
@@ -267,6 +271,24 @@ Everything important in CIDOC-CRM *happens*.
 
 ::: {.callout-tip}
 In Tropy, you can import the CIDOC-CRM vocabulary and build event-oriented templates from these properties.
+:::
+
+---
+
+## Which Schema for Your Template?
+
+| Your sources | Recommended schema | Level |
+|---|---|---|
+| General archival documents | **Dublin Core Terms** | Item |
+| Correspondence, diaries | *Tropy Correspondence* (DC) | Item |
+| Cultural heritage objects | **CIDOC-CRM** | Item |
+| Visual works (art history) | **VRA Core** | Item |
+| Technical image data | **EXIF** | Photo |
+| Crop / detail of interest | **DC or custom** | Selection |
+
+::: {.callout-note}
+These schemas are not mutually exclusive — a single template can mix properties from several vocabularies.  
+*Example:* `dc:title` + `dcterms:spatial` + `cidoc:P138_represents` in the same item template.
 :::
 
 # Controlled Vocabularies {background-color="#2297D4" .center}
@@ -647,6 +669,42 @@ Metadata: filename, dimensions, date taken.
 
 ---
 
+## EXIF — Metadata Already in the File
+
+Some metadata is **embedded in the image file itself** by the camera or scanner — no description needed.
+
+::: {.columns}
+::: {.column width="50%"}
+**Tropy extracts automatically:**
+
+- Filename
+- Date & time of capture
+- Dimensions (pixels)
+- File size (bytes)
+
+**Available if GPS was on:**
+
+- Latitude / longitude
+:::
+::: {.column width="50%"}
+**The key distinction:**
+
+| | Who writes it? | What kind? |
+|---|---|---|
+| **EXIF** | The device | Technical |
+| **DC / CIDOC** | The researcher | Semantic |
+
+EXIF describes **how** the photo was made.  
+DC describes **what** it shows.
+:::
+:::
+
+::: {.callout-tip}
+In Tropy, EXIF properties belong in a **photo-level template** — not an item template. This lets you surface technical data (camera model, GPS, resolution) alongside your semantic description.
+:::
+
+---
+
 ## Three Levels of Description
 
 **🔍 Selection** — a cropped region
@@ -668,6 +726,10 @@ A **template** defines which metadata fields appear for an item — each field i
 - *Tropy Generic* — Dublin Core
 - *Tropy Correspondence* — letters
 - *Tropy Photo* — photo-level metadata
+
+**Also available (import):**
+
+- *CIDOC-CRM* · *VRA Core* · *Schema.org*
 :::
 ::: {.column width="50%"}
 **Custom / imported:**

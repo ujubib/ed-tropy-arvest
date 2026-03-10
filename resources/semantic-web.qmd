@@ -15,9 +15,139 @@ subtitle: "Resources and further reading"
 
 ## Dublin Core
 
-- Official specification: [dublincore.org/specifications/dublin-core/](https://dublincore.org/specifications/dublin-core/)
-- DCMI Metadata Terms: [purl.org/dc/terms/](http://purl.org/dc/terms/)
-- Dublin Core in JSON-LD context: [dublincore.org/specifications/dublin-core/dcmi-terms/](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/)
+There are two Dublin Core schemas, both available by default in Tropy: the [Dublin Core Metadata Element Set (DCES)](https://www.dublincore.org/specifications/dublin-core/dces/) and the [Dublin Core Metadata Terms (DCTerms)](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/).
+
+:::: {.panel-tabset}
+
+## Dublin Core Elements (DCES)
+
+The **Dublin Core Metadata Element Set** is a set of **15 basic elements** designed for general-purpose description of digital resources. Simple, universal, and widely supported.
+
+::: {.callout-tip collapse="true"}
+### The 15 Dublin Core Elements
+
+1. **Title**
+2. **Creator**
+3. **Subject**
+4. **Description**
+5. **Publisher**
+6. **Contributor**
+7. **Date**
+8. **Type**
+9. **Format**
+10. **Identifier**
+11. **Source**
+12. **Language**
+13. **Relation**
+14. **Coverage** *(geographic or temporal)*
+15. **Rights**
+:::
+
+**Usage:** Designed to be simple and generic — suitable for libraries, archives, and museums. No complex customisation required. An ISO standard, compatible with semantic interoperability on the web.
+
+**Namespace:** `http://purl.org/dc/elements/1.1/`
+
+## Dublin Core Terms (DCTerms)
+
+**Dublin Core Metadata Terms** is an **extension of DCES**. It includes the 15 base elements (in more formalised forms) plus a much wider set of additional terms, qualifiers, and more precise concepts.
+
+::: {.callout-tip collapse="true"}
+### Extended structure of DCTerms
+
+DCTerms includes:
+
+- The 15 base elements (more formally defined)
+- **Additional elements** such as `Audience`, `Provenance`, `AccrualMethod`…
+- **Qualifiers** for greater precision — e.g. `Date` can be qualified as `dcterms:created`, `dcterms:modified`, `dcterms:issued`
+- **Typed values** — dates as `xsd:date`, URIs for places, licenses, etc.
+
+Key additions over DCES:
+
+| Property | Use |
+|---|---|
+| `dcterms:created` | Creation date (typed) |
+| `dcterms:modified` | Last modification date |
+| `dcterms:spatial` | Place as a URI (e.g. GeoNames) |
+| `dcterms:temporal` | Time period |
+| `dcterms:license` | License URI (e.g. Creative Commons) |
+| `dcterms:isPartOf` | Link to a parent collection |
+| `dcterms:provenance` | Custody history |
+:::
+
+**Usage:** Used in more complex or specialised contexts — advanced digital libraries, archives, semantic web projects, databases requiring rich structure. Expressed in **RDF** for web semantic compatibility.
+
+**Namespace:** `http://purl.org/dc/terms/`
+
+::::
+
+**Key differences — DCES vs DCTerms:**
+
+| | DCES | DCTerms |
+|---|---|---|
+| Number of elements | 15 base elements | 15 + extended terms & qualifiers |
+| Complexity | Simple, general | More flexible and specific |
+| Typed values | No | Yes (`xsd:date`, URIs…) |
+| Qualifiers | No | Yes |
+| Best for | Simple resource description | Rich, semantic, interoperable data |
+
+::: {.callout-note}
+**In Tropy:** both schemas are available by default. Use DCES for simple projects; switch to DCTerms when you want to link fields to URIs (GeoNames, Getty TGN/ULAN, controlled vocabularies) for full Linked Data interoperability.
+:::
+
+**Official references:**
+- DCES specification: [dublincore.org/specifications/dublin-core/dces/](https://dublincore.org/specifications/dublin-core/dces/)
+- DCTerms specification: [dublincore.org/specifications/dublin-core/dcmi-terms/](https://dublincore.org/specifications/dublin-core/dcmi-terms/)
+- JSON-LD context: [purl.org/dc/terms/](http://purl.org/dc/terms/)
+- JSON-LD Playground: [json-ld.org/playground/](https://json-ld.org/playground/)
+
+---
+
+## Europeana Data Model (EDM)
+
+**EDM** is the metadata schema used by [Europeana](https://www.europeana.eu) to describe digital cultural heritage objects according to Semantic Web standards.
+
+**Key features:**
+
+- **RDF-based** — built on the W3C Resource Description Framework
+- **Separation of entities** — distinguishes between the cultural object, its digital representation, and the aggregation:
+  - `ProvidedCHO` — the cultural heritage object itself (painting, manuscript…)
+  - `WebResource` — the digital file (image, audio, video)
+  - `Aggregation` — groups metadata from different sources
+  - `Agent` — a person or organisation with a role
+  - `Place` and `TimeSpan` — contextualise the object in space and time
+- **Multi-representation** — supports multiple digital versions of a single object
+- **Aligned with other standards** — Dublin Core, LIDO, EAD, OAI-PMH
+
+EDM is the schema to study if you plan to **contribute to or consume data from Europeana**, or model your corpus along the same principles.
+
+🔗 [pro.europeana.eu/page/edm-documentation](https://pro.europeana.eu/page/edm-documentation)
+
+---
+
+## EXIF — Exchangeable Image File Format
+
+**EXIF** is a set of **technical** metadata properties embedded directly inside image and video files (JPEG, TIFF). Unlike Dublin Core, it does not aim to provide semantic description but rather a technical record of the conditions under which the image was captured.
+
+EXIF data typically includes:
+
+- Camera model, lens, shutter speed, aperture, ISO
+- Date and time of capture
+- GPS coordinates (if enabled on the device)
+- Image dimensions (pixels), resolution, colour space
+- File size
+
+::: {.callout-note}
+**In Tropy:** EXIF properties are used in **photo-level templates** (not item-level). Tropy automatically extracts the following from each imported file:
+
+- Filename
+- Date created
+- Image dimensions in pixels
+- File size in bytes
+
+You can add EXIF properties to a custom photo template to surface additional technical data (GPS coordinates, camera model, etc.) directly in the description panel.
+:::
+
+The Wikipedia article [Exchangeable image file format](https://en.wikipedia.org/wiki/Exchangeable_image_file_format) provides a concrete example and a full list of the main EXIF properties.
 
 ---
 

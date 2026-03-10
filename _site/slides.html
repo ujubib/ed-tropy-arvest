@@ -97,7 +97,7 @@
     code span.vs { color: #032f62; } /* VerbatimString */
     code span.wa { color: #ff5555; } /* Warning */
   </style>
-  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-410daf4f4946f04ed9bba490e3034f5f.css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-0b1eeb6aa1fab680693d2caac9dd8329.css">
   <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -454,6 +454,19 @@ dcterms:isPartOf  &lt;myArchive:collection_42&gt;</code></pre>
 <li><code>dcterms:isPartOf</code> — collection link</li>
 </ul>
 </div></div>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tip</strong></p>
+</div>
+<div class="callout-content">
+<p><strong>Rule of thumb:</strong> use <code>dc:</code> when a plain string is enough — use <code>dcterms:</code> whenever you want to link to a <strong>URI</strong> (a place, a license, a collection). DCTerms is what makes your data truly interoperable.</p>
+</div>
+</div>
+</div>
 </section>
 <section id="cidoc-crm" class="slide level2">
 <h2>CIDOC-CRM</h2>
@@ -541,6 +554,64 @@ it was taken <strong>by someone</strong>, <strong>somewhere</strong>, <strong>at
 </div>
 <div class="callout-content">
 <p>In Tropy, you can import the CIDOC-CRM vocabulary and build event-oriented templates from these properties.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="which-schema-for-your-template" class="slide level2">
+<h2>Which Schema for Your Template?</h2>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Your sources</th>
+<th>Recommended schema</th>
+<th>Level</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>General archival documents</td>
+<td><strong>Dublin Core Terms</strong></td>
+<td>Item</td>
+</tr>
+<tr class="even">
+<td>Correspondence, diaries</td>
+<td><em>Tropy Correspondence</em> (DC)</td>
+<td>Item</td>
+</tr>
+<tr class="odd">
+<td>Cultural heritage objects</td>
+<td><strong>CIDOC-CRM</strong></td>
+<td>Item</td>
+</tr>
+<tr class="even">
+<td>Visual works (art history)</td>
+<td><strong>VRA Core</strong></td>
+<td>Item</td>
+</tr>
+<tr class="odd">
+<td>Technical image data</td>
+<td><strong>EXIF</strong></td>
+<td>Photo</td>
+</tr>
+<tr class="even">
+<td>Crop / detail of interest</td>
+<td><strong>DC or custom</strong></td>
+<td>Selection</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p>These schemas are not mutually exclusive — a single template can mix properties from several vocabularies.<br>
+<em>Example:</em> <code>dc:title</code> + <code>dcterms:spatial</code> + <code>cidoc:P138_represents</code> in the same item template.</p>
 </div>
 </div>
 </div>
@@ -956,6 +1027,62 @@ Search for heritage from Spain, Portugal, France, Italy, Romania — manuscripts
 <p>Metadata: filename, dimensions, date taken.</p>
 <p><em>You rarely describe photos individually — the item is the primary unit of description.</em></p>
 </section>
+<section id="exif-metadata-already-in-the-file" class="slide level2">
+<h2>EXIF — Metadata Already in the File</h2>
+<p>Some metadata is <strong>embedded in the image file itself</strong> by the camera or scanner — no description needed.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Tropy extracts automatically:</strong></p>
+<ul>
+<li>Filename</li>
+<li>Date &amp; time of capture</li>
+<li>Dimensions (pixels)</li>
+<li>File size (bytes)</li>
+</ul>
+<p><strong>Available if GPS was on:</strong></p>
+<ul>
+<li>Latitude / longitude</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>The key distinction:</strong></p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th></th>
+<th>Who writes it?</th>
+<th>What kind?</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>EXIF</strong></td>
+<td>The device</td>
+<td>Technical</td>
+</tr>
+<tr class="even">
+<td><strong>DC / CIDOC</strong></td>
+<td>The researcher</td>
+<td>Semantic</td>
+</tr>
+</tbody>
+</table>
+<p>EXIF describes <strong>how</strong> the photo was made.<br>
+DC describes <strong>what</strong> it shows.</p>
+</div></div>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tip</strong></p>
+</div>
+<div class="callout-content">
+<p>In Tropy, EXIF properties belong in a <strong>photo-level template</strong> — not an item template. This lets you surface technical data (camera model, GPS, resolution) alongside your semantic description.</p>
+</div>
+</div>
+</div>
+</section>
 <section id="three-levels-of-description-2" class="slide level2">
 <h2>Three Levels of Description</h2>
 <p><strong>🔍 Selection</strong> — a cropped region</p>
@@ -972,6 +1099,10 @@ Search for heritage from Spain, Portugal, France, Italy, Romania — manuscripts
 <li><em>Tropy Generic</em> — Dublin Core</li>
 <li><em>Tropy Correspondence</em> — letters</li>
 <li><em>Tropy Photo</em> — photo-level metadata</li>
+</ul>
+<p><strong>Also available (import):</strong></p>
+<ul>
+<li><em>CIDOC-CRM</em> · <em>VRA Core</em> · <em>Schema.org</em></li>
 </ul>
 </div><div class="column" style="width:50%;">
 <p><strong>Custom / imported:</strong></p>
