@@ -11,6 +11,7 @@ date-format: "MMMM D, YYYY"
 format:
   revealjs:
     theme: [default, custom.scss]
+    logo: ""
     slide-number: c/t
     chalkboard:
       buttons: true
@@ -31,7 +32,7 @@ format:
     margin: 0.1
 ---
 
-## Agenda {background-color="#003865" .center}
+## Agenda {.center}
 
 ::: {.columns}
 ::: {.column width="50%"}
@@ -55,9 +56,7 @@ format:
 :::
 :::
 
----
-
-# Part 1 {background-gradient="linear-gradient(135deg, #003865 0%, #2297D4 100%)" .center}
+# Part 1 {.center}
 
 ## Conceptual Foundations
 
@@ -155,8 +154,6 @@ When you put a GeoNames URI in a Tropy metadata field, you're not typing a strin
 ::: {.callout-note}
 Tropy stores all metadata as **JSON-LD** — your descriptions are already Linked Data, even if you don't think of them that way.
 :::
-
----
 
 # Metadata Schemas {background-color="#2297D4" .center}
 
@@ -274,8 +271,6 @@ Everything important in CIDOC-CRM *happens*.
 In Tropy, you can import the CIDOC-CRM vocabulary and build event-oriented templates from these properties.
 :::
 
----
-
 # Controlled Vocabularies {background-color="#2297D4" .center}
 
 *Consistent, linked values for metadata fields*
@@ -376,11 +371,9 @@ Hosted thesauri include:
 
 🔗 [opentheso.huma-num.fr](https://opentheso.huma-num.fr)
 
----
+# Part 2 -- IIIF {.center}
 
-# Part 2 {background-gradient="linear-gradient(135deg, #003865 0%, #2297D4 100%)" .center}
-
-## IIIF — International Image Interoperability Framework
+*International Image Interoperability Framework*
 
 ---
 
@@ -457,15 +450,12 @@ Search for heritage from Spain, Portugal, France, Italy, Romania — manuscripts
 
 ---
 
-## IIIF — Omeka S (UPPA)
+## IIIF — Omeka S 
 
-Omeka S **auto-generates** IIIF Manifests for every item with an image.
+Omeka S can **auto-generates** IIIF Manifests for every item with an image.
 
-```
-https://omeka.univ-pau.fr/iiif/3/{itemId}/manifest
-```
+Omeka S can **import** IIIF Manifests and create items.
 
-Any collection built in the UPPA Omeka S instance is **immediately available as a IIIF source** — importable in Arvest with a single URL.
 
 ---
 
@@ -489,11 +479,8 @@ This is a complete, **FAIR-compliant** workflow for image corpora in the humanit
 
 🔗 [nakala.fr](https://nakala.fr)
 
----
 
-# Part 3 {background-gradient="linear-gradient(135deg, #003865 0%, #2297D4 100%)" .center}
-
-## Tools for Working with Image Corpora
+# Part 3<br/>-- Tools for Working with Image Corpora
 
 ---
 
@@ -527,27 +514,17 @@ First release: 2017 · License: AGPL-3.0
 
 ---
 
----
-
 ## Tropy is NOT…
 
-::: {.columns}
-::: {.column width="50%"}
-❌ A photo editor  
-*(Photoshop, Lightroom…)*
+- A photo editor *(Photoshop, Lightroom…)*
 
-❌ A reference manager  
-*(that's Zotero)*
+- A reference manager *(that's Zotero)*
 
-❌ A writing platform
-:::
-::: {.column width="50%"}
-❌ An online publishing platform  
-*(that's Omeka)*
+- A writing platform
 
-✅ The **missing link** between your camera roll and your **structured research data**
-:::
-:::
+- An online publishing platform *(that's Omeka)*
+
+✅ The **missing link** between your camera roll and your **structured research data**.
 
 ---
 
@@ -705,8 +682,6 @@ UPPA-specific templates on request.
 5. Use tags and saved searches
 6. Export as JSON-LD
 :::
-
----
 
 # Arvest {background-color="#003865" .center}
 
@@ -879,21 +854,20 @@ flowchart LR
 
 ---
 
-## Q & A {background-gradient="linear-gradient(135deg, #003865 0%, #2297D4 100%)" .center}
+## Q & A {.center}
 
-::: {style="text-align:center; font-size:1.8em; color:white; margin-top:1.5rem;"}
+::: {style="text-align:center; font-size:1.8em; margin-top:1.5rem;"}
 Questions?
 :::
 
 ::: {style="text-align:center; margin-top:2rem; color:rgba(255,255,255,0.9); line-height:2;"}
-**Julien Rabaud** · UPPA · Pôle Numérique
+**Julien Rabaud** · UPPA · SCD · Pôle Numérique
 
 📧 [julien.rabaud@univ-pau.fr](mailto:julien.rabaud@univ-pau.fr)  
-🔗 [orcid.org/0000-0002-6604-9777](https://orcid.org/0000-0002-6604-9777)
 :::
 
 ::: {style="text-align:center; font-size:0.65em; color:rgba(255,255,255,0.5); margin-top:2rem;"}
-[ujubib.github.io/ed-tropy-arvest/slides.html](https://ujubib.github.io/ed-tropy-arvest/slides.html) · [![CC BY 4.0](https://licensebuttons.net/l/by/4.0/80x15.png)](https://creativecommons.org/licenses/by/4.0/)
+[ujubib.github.io/ed-tropy-arvest/slides.html](https://ujubib.github.io/ed-tropy-arvest/slides.html)
 :::
 
 ---
