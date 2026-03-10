@@ -102,3 +102,15 @@ iframe {
     display: none;
   }
 }
+// Reveal.js — logo géré dans le footer, masquer l'injection automatique de _brand.yml
+.reveal .slide-logo {
+  display: none !important;
+}
+
+// Title slide — subtitle
+.reveal .title-slide .subtitle,
+.reveal #title-slide .subtitle {
+  font-family: 'Amaranth', sans-serif;
+  font-style: italic;
+  font-size: 1.8em;
+}
