@@ -1,3 +1,5 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Amaranth:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 /* css styles */
 body {
     hyphens: auto;
@@ -15,6 +17,11 @@ figcaption{
     border: 2px solid black;
     border-radius: 12px;
     padding-bottom: 1.4em;
+}
+section#title-slide p.subtitle {
+    font-family: Amaranth, sans-serif;
+    font-size: 1.8em;
+    font-style: italic;
 }
 .quarto-title-meta-heading {
     text-transform: none !important;
