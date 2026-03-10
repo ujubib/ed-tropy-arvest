@@ -15,21 +15,20 @@ format:
     chalkboard:
       buttons: true
     preview-links: auto
-    logo: img/logoUPPA-RepFr.png
-    footer: "UPPA · ED 481 SSH · CHORAL — *Organizing and Curating Image Corpora*"
+    footer: '<img src="img/logoUPPA-RepFr.png" style="height:28px; vertical-align:middle; margin-right:12px;"> UPPA · ED 481 SSH · CHORAL — <em>Organizing and Curating Image Corpora</em>'
     transition: slide
     background-transition: fade
     progress: true
     controls: true
     controls-layout: bottom-right
-    smaller: true
+    smaller: false
     highlight-style: github
     code-line-numbers: false
     code-copy: true
     link-external-newwindow: true
     width: 1280
     height: 720
-    margin: 0.08
+    margin: 0.1
 ---
 
 ## Agenda {background-color="#003865" .center}

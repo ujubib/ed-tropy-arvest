@@ -1215,9 +1215,9 @@ GET /api/v1/manifests/{id}/canvas/{n}</code></pre>
 </section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
-<p><img src="img/logoUPPA-RepFr.png" class="slide-logo"></p>
+<p><img src="img\logoUPPA-RepFr.png" class="slide-logo"></p>
 <div class="footer footer-default">
-<p>UPPA · ED 481 SSH · CHORAL — <em>Organizing and Curating Image Corpora</em></p>
+<p><img src="img/logoUPPA-RepFr.png" style="height:28px; vertical-align:middle; margin-right:12px;"> UPPA · ED 481 SSH · CHORAL — <em>Organizing and Curating Image Corpora</em></p>
 </div>
 </div></div>
 
@@ -1402,7 +1402,7 @@ GET /api/v1/manifests/{id}/canvas/{n}</code></pre>
         height: 720,
 
         // Factor of the display size that should remain empty around the content
-        margin: 8.0e-2,
+        margin: 0.1,
 
         math: {
           mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
@@ -1501,7 +1501,7 @@ GET /api/v1/manifests/{id}/canvas/{n}</code></pre>
         }
           var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
           var mailtoRegex = new RegExp(/^mailto:/);
-            var filterRegex = new RegExp("https:\/\/ujubib\.github\.io\/ed-tropy-arvest\/");
+            var filterRegex = new RegExp('/' + window.location.host + '/');
           var isInternal = (href) => {
               return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
           }
