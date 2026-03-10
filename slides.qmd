@@ -56,9 +56,7 @@ format:
 :::
 :::
 
-# Part 1 {.center}
-
-## Conceptual Foundations
+# Part 1<br/>-- Conceptual Foundations {.center}
 
 ---
 
@@ -277,7 +275,7 @@ In Tropy, you can import the CIDOC-CRM vocabulary and build event-oriented templ
 
 ---
 
-## The Problem with Free Text
+## The Problem with Free Text {.smaller}
 
 ::: {.columns}
 ::: {.column width="50%"}
@@ -345,7 +343,7 @@ Especially relevant for **CHORAL** research — Romance cultures, Mediterranean 
 
 ---
 
-## Huma-Num Openthéso
+## Huma-Num Openthéso {.smaller}
 
 A platform hosting many **discipline-specific thesauri** — terms expressed in **SKOS**.
 
@@ -481,8 +479,6 @@ This is a complete, **FAIR-compliant** workflow for image corpora in the humanit
 
 
 # Part 3<br/>-- Tools for Working with Image Corpora
-
----
 
 # Tropy {background-color="#003865" .center}
 
@@ -854,13 +850,13 @@ flowchart LR
 
 ---
 
-## Q & A {.center}
+## *
 
 ::: {style="text-align:center; font-size:1.8em; margin-top:1.5rem;"}
 Questions?
 :::
 
-::: {style="text-align:center; margin-top:2rem; color:rgba(255,255,255,0.9); line-height:2;"}
+::: {style="text-align:center; margin-top:2rem; line-height:2;"}
 **Julien Rabaud** · UPPA · SCD · Pôle Numérique
 
 📧 [julien.rabaud@univ-pau.fr](mailto:julien.rabaud@univ-pau.fr)  
