@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<link href="./img/favicon.png" rel="icon" type="image/png">
+<link href="./img/DCMI-logo.png" rel="icon" type="image/png">
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-html/tabby.min.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -97,7 +97,7 @@
     code span.vs { color: #032f62; } /* VerbatimString */
     code span.wa { color: #ff5555; } /* Warning */
   </style>
-  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-0b1eeb6aa1fab680693d2caac9dd8329.css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-fd1e7ccad6810bb33b60c6e220fe3448.css">
   <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -217,7 +217,7 @@ Julien Rabaud <a href="https://orcid.org/0000-0002-6604-9777" class="quarto-titl
   <p class="date">March 10, 2026</p>
 </section>
 <section id="agenda" class="slide level2 center">
-<h2>Agenda</h2>
+<h2>– Agenda</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><strong>Part 1 — Conceptual Foundations</strong></p>
@@ -245,8 +245,8 @@ Julien Rabaud <a href="https://orcid.org/0000-0002-6604-9777" class="quarto-titl
 <h1>Part 1<br>– Conceptual Foundations</h1>
 
 </section>
-<section id="two-webs" class="slide level2">
-<h2>Two Webs</h2>
+<section id="two-webs" class="slide level2 center">
+<h2>– Two Webs</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <h3 id="the-web-we-know">The Web we know</h3>
@@ -273,8 +273,8 @@ Julien Rabaud <a href="https://orcid.org/0000-0002-6604-9777" class="quarto-titl
 </div>
 </div>
 </section>
-<section id="triples" class="slide level2">
-<h2>Triples</h2>
+<section id="triples" class="slide level2 center">
+<h2>– Triples</h2>
 <p>Everything in the Semantic Web is a <strong>triple</strong>:</p>
 <blockquote>
 <p><strong>Subject — Predicate — Object</strong></p>
@@ -296,13 +296,13 @@ Julien Rabaud <a href="https://orcid.org/0000-0002-6604-9777" class="quarto-titl
 </div>
 </div>
 </section>
-<section id="uris-naming-things" class="slide level2">
-<h2>URIs — Naming Things</h2>
+<section id="uris-naming-things" class="slide level2 center">
+<h2>– URIs: Naming Things</h2>
 <p>A <strong>URI</strong> is a unique, global, persistent identifier for <em>any</em> thing.</p>
 <pre><code>https://sws.geonames.org/2988507/          →  Paris
 https://www.wikidata.org/entity/Q937       →  Marie Curie
 http://vocab.getty.edu/page/aat/300015646  →  photographs</code></pre>
-<p>Unlike a URL (which <em>locates</em> a page), a URI <strong>names</strong> a resource — in any language, forever.</p>
+<p>Unlike a <strong>URL</strong> (which <em>locates</em> a page), a URI <strong>names</strong> a resource — in any language, forever.</p>
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -317,17 +317,17 @@ http://vocab.getty.edu/page/aat/300015646  →  photographs</code></pre>
 </div>
 </div>
 </section>
-<section id="rdf-the-standard-for-triples" class="slide level2">
-<h2>RDF — The Standard for Triples</h2>
+<section id="rdf-the-standard-for-triples" class="slide level2 center">
+<h2>– RDF: The Standard for Triples</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><strong>Turtle</strong> — human-readable:</p>
+<h3 id="turtle-human-readable">Turtle — <em>human-readable</em>:</h3>
 <pre class="turtle"><code>&lt;https://myarchive.org/photo/001&gt;
   dc:title   "Cloister of S. Domingo" ;
   dc:creator "Julien Rabaud" ;
   dc:date    "2024-09-15" .</code></pre>
 </div><div class="column" style="width:50%;">
-<p><strong>JSON-LD</strong> — used by Tropy:</p>
+<h3 id="json-ld-used-by-tropy">JSON-LD — <em>used by Tropy</em>:</h3>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
 <span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="dt">"@id"</span><span class="fu">:</span> <span class="st">"https://myarchive.org/photo/001"</span><span class="fu">,</span></span>
 <span id="cb4-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="dt">"dc:title"</span><span class="fu">:</span> <span class="st">"Cloister of S. Domingo"</span><span class="fu">,</span></span>
@@ -353,7 +353,7 @@ http://vocab.getty.edu/page/aat/300015646  →  photographs</code></pre>
 <h1>Metadata Schemas</h1>
 <p><em>How do we describe what we see?</em></p>
 </section>
-<section id="dublin-core" class="slide level2">
+<section id="dublin-core" class="slide level2 center">
 <h2>Dublin Core</h2>
 <p>15 universal elements — usable for <strong>any</strong> resource type.</p>
 <div class="columns">
@@ -375,6 +375,14 @@ http://vocab.getty.edu/page/aat/300015646  →  photographs</code></pre>
 <td>Photographer / author</td>
 </tr>
 <tr class="odd">
+<td><code>dc:contributor</code></td>
+<td>Other contributors</td>
+</tr>
+<tr class="even">
+<td><code>dc:publisher</code></td>
+<td>Publisher / institution</td>
+</tr>
+<tr class="odd">
 <td><code>dc:date</code></td>
 <td>Date of creation</td>
 </tr>
@@ -387,8 +395,8 @@ http://vocab.getty.edu/page/aat/300015646  →  photographs</code></pre>
 <td>Free-text note</td>
 </tr>
 <tr class="even">
-<td><code>dc:rights</code></td>
-<td>License / copyright</td>
+<td><code>dc:type</code></td>
+<td>Resource type</td>
 </tr>
 </tbody>
 </table>
@@ -425,15 +433,17 @@ http://vocab.getty.edu/page/aat/300015646  →  photographs</code></pre>
 <td><code>dc:relation</code></td>
 <td>Related items</td>
 </tr>
+<tr class="odd">
+<td><code>dc:rights</code></td>
+<td>License / copyright</td>
+</tr>
 </tbody>
 </table>
 </div></div>
-
-<aside><div>
 <p>🔗 <a href="https://dublincore.org">dublincore.org</a> · <code>http://purl.org/dc/elements/1.1/</code></p>
-</div></aside></section>
-<section id="dublin-core-terms-dcterms" class="slide level2">
-<h2>Dublin Core Terms (DCTERMS)</h2>
+</section>
+<section id="dublin-core-terms-dcterms" class="slide level2 smaller center">
+<h2>– Dublin Core Terms (DCTERMS)</h2>
 <p>Richer, <strong>typed</strong> versions of DC — plus extra properties.</p>
 <div class="columns">
 <div class="column" style="width:55%;">
@@ -468,8 +478,8 @@ dcterms:isPartOf  &lt;myArchive:collection_42&gt;</code></pre>
 </div>
 </div>
 </section>
-<section id="cidoc-crm" class="slide level2">
-<h2>CIDOC-CRM</h2>
+<section id="cidoc-crm" class="slide level2 center">
+<h2>– CIDOC-CRM</h2>
 <p>The international standard for <strong>cultural heritage</strong> data (Europeana, museums, major archives).</p>
 <p>Unlike Dublin Core, CIDOC-CRM models <strong>events</strong> — not just documents.</p>
 <div class="callout callout-note callout-titled callout-style-default">
@@ -491,8 +501,8 @@ it was taken <strong>by someone</strong>, <strong>somewhere</strong>, <strong>at
 <aside><div>
 <p>🔗 <a href="https://cidoc-crm.org">cidoc-crm.org</a></p>
 </div></aside></section>
-<section id="cidoc-crm-core-classes" class="slide level2">
-<h2>CIDOC-CRM — Core Classes</h2>
+<section id="cidoc-crm-core-classes" class="slide level2 center">
+<h2>– CIDOC-CRM — Core Classes</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <table class="caption-top">
@@ -558,7 +568,7 @@ it was taken <strong>by someone</strong>, <strong>somewhere</strong>, <strong>at
 </div>
 </div>
 </section>
-<section id="which-schema-for-your-template" class="slide level2">
+<section id="which-schema-for-your-template" class="slide level2 center">
 <h2>Which Schema for Your Template?</h2>
 <table class="caption-top">
 <thead>
@@ -621,8 +631,8 @@ it was taken <strong>by someone</strong>, <strong>somewhere</strong>, <strong>at
 <h1>Controlled Vocabularies</h1>
 <p><em>Consistent, linked values for metadata fields</em></p>
 </section>
-<section id="the-problem-with-free-text" class="slide level2 smaller">
-<h2>The Problem with Free Text</h2>
+<section id="the-problem-with-free-text" class="slide level2 smaller center">
+<h2>– The Problem with Free Text</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><strong>Typing “Paris” yourself:</strong></p>
@@ -657,8 +667,8 @@ When everyone uses the same URI, datasets become <strong>interoperable</strong>.
 </div>
 </div>
 </section>
-<section id="geonames" class="slide level2">
-<h2>GeoNames</h2>
+<section id="geonames" class="slide level2 center">
+<h2>– GeoNames</h2>
 <p>Over <strong>12 million</strong> geographic names — all with stable URIs.</p>
 <pre><code>https://sws.geonames.org/2988507/  →  Paris, France
 https://sws.geonames.org/3117735/  →  Salamanca, Spain
@@ -679,8 +689,8 @@ https://sws.geonames.org/6440564/  →  Anglet, France</code></pre>
 </div>
 </div>
 </section>
-<section id="pactols" class="slide level2">
-<h2>Pactols</h2>
+<section id="pactols" class="slide level2 center">
+<h2>– Pactols</h2>
 <p>Multilingual thesaurus for <strong>Archaeology, Classical and Oriental Studies</strong> — maintained by the Frantiq network.</p>
 <p>Covers: archaeological periods · object types · materials · ancient places · historical figures</p>
 <div class="callout callout-note callout-titled callout-style-default">
@@ -698,8 +708,8 @@ https://sws.geonames.org/6440564/  →  Anglet, France</code></pre>
 </div>
 <p>🔗 <a href="https://pactols.frantiq.fr">pactols.frantiq.fr</a></p>
 </section>
-<section id="getty-vocabularies" class="slide level2">
-<h2>Getty Vocabularies</h2>
+<section id="getty-vocabularies" class="slide level2 center">
+<h2>– Getty Vocabularies</h2>
 <p>Published as <strong>Linked Open Data</strong> by the Getty Research Institute — the standard reference for art history and cultural heritage.</p>
 <div class="columns">
 <div class="column" style="width:55%;">
@@ -741,8 +751,8 @@ vocab.getty.edu/ulan/500010570
 </div></div>
 <p>🔗 <a href="https://vocab.getty.edu">vocab.getty.edu</a></p>
 </section>
-<section id="loterre" class="slide level2">
-<h2>Loterre</h2>
+<section id="loterre" class="slide level2 smaller center">
+<h2>– Loterre</h2>
 <p><strong>Linked Open TERminology REsources</strong> — published by <a href="https://www.inist.fr">Inist-CNRS</a>.</p>
 <p>A multidisciplinary platform hosting 70+ scientific terminologies as <strong>SKOS/RDF Linked Open Data</strong>.</p>
 <div class="columns">
@@ -767,8 +777,8 @@ vocab.getty.edu/ulan/500010570
 </div></div>
 <p>🔗 <a href="https://www.loterre.fr">loterre.fr</a></p>
 </section>
-<section id="huma-num-openthéso" class="slide level2 smaller">
-<h2>Huma-Num Openthéso</h2>
+<section id="openthéso-huma-num-instance" class="slide level2 smaller center">
+<h2>– Openthéso (Huma-Num instance)</h2>
 <p>A platform hosting many <strong>discipline-specific thesauri</strong> — terms expressed in <strong>SKOS</strong>.</p>
 <div class="columns">
 <div class="column" style="width:55%;">
@@ -783,7 +793,6 @@ vocab.getty.edu/ulan/500010570
 </div><div class="column" style="width:45%;">
 <p>Hosted thesauri include:</p>
 <ul>
-<li>PACTOLS (Archaeology)</li>
 <li>Architectural heritage (MHFA)</li>
 <li>Performing arts vocabulary</li>
 <li>… and many others</li>
@@ -796,8 +805,8 @@ vocab.getty.edu/ulan/500010570
 <h1>Part 2 – IIIF</h1>
 <p><em>International Image Interoperability Framework</em></p>
 </section>
-<section id="what-is-iiif" class="slide level2">
-<h2>What is IIIF?</h2>
+<section id="what-is-iiif" class="slide level2 center">
+<h2>– What is IIIF?</h2>
 <p>Open standards for <strong>rich access</strong> to digitized images — developed since 2011 by libraries, archives, and museums worldwide.</p>
 <div class="callout callout-note callout-titled callout-style-default">
 <div class="callout-body">
@@ -813,13 +822,13 @@ Any IIIF-compliant viewer can display any IIIF-compliant image — <strong>regar
 </div>
 </div>
 </div>
-<p>Deep zoom · cropping · structured collections · shared annotations · multi-institutional exhibitions</p>
+<p><em>Deep zoom</em> · <em>cropping</em> · <em>structured collections</em> · <em>shared annotations</em> · <em>multi-institutional exhibitions</em></p>
 
 <aside><div>
 <p>🔗 <a href="https://iiif.io">iiif.io</a> — pronounced <em>“triple-eye-eff”</em></p>
 </div></aside></section>
-<section id="image-api" class="slide level2">
-<h2>Image API</h2>
+<section id="image-api" class="slide level2 center">
+<h2>– Image API</h2>
 <p>Standardizes <strong>how images are served</strong>.</p>
 <pre><code>{server}/{identifier}/{region}/{size}/{rotation}/{quality}.{format}
 
@@ -830,8 +839,8 @@ https://example.org/iiif/photo001/full/800,/0/default.jpg
 https://example.org/iiif/photo001/pct:0,0,50,50/full/0/default.jpg</code></pre>
 <p>→ Deep zoom, cropping, resizing — all <strong>server-side</strong>, no file duplication.</p>
 </section>
-<section id="presentation-api-the-manifest" class="slide level2">
-<h2>Presentation API — The Manifest</h2>
+<section id="presentation-api-the-manifest" class="slide level2 center">
+<h2>– Presentation API: The Manifest</h2>
 <p>Standardizes <strong>how collections are described</strong>.</p>
 <p>A <strong>Manifest</strong> is a JSON-LD document that groups images into a structured object.</p>
 <pre><code>Manifest
@@ -854,7 +863,7 @@ An altarpiece → 1 Manifest, front + back + details.</p>
 </div>
 </div>
 </section>
-<section id="iiif-europeana" class="slide level2">
+<section id="iiif-europeana" class="slide level2 center">
 <h2>IIIF — Europeana</h2>
 <p><strong>3,000+ institutions</strong> aggregated — IIIF access to millions of items.</p>
 <pre><code>https://iiif.europeana.eu/presentation/{collection}/{id}/manifest</code></pre>
@@ -874,12 +883,12 @@ Search for heritage from Spain, Portugal, France, Italy, Romania — manuscripts
 </div>
 <p>🔗 <a href="https://europeana.eu">europeana.eu</a></p>
 </section>
-<section id="iiif-omeka-s" class="slide level2">
+<section id="iiif-omeka-s" class="slide level2 center">
 <h2>IIIF — Omeka S</h2>
 <p>Omeka S can <strong>auto-generates</strong> IIIF Manifests for every item with an image.</p>
 <p>Omeka S can <strong>import</strong> IIIF Manifests and create items.</p>
 </section>
-<section id="iiif-nakala" class="slide level2">
+<section id="iiif-nakala" class="slide level2 center">
 <h2>IIIF — Nakala</h2>
 <p><strong>Nakala</strong> (Huma-Num) is a research data repository that auto-generates IIIF endpoints for all deposited images.</p>
 <div class="columns">
@@ -917,8 +926,8 @@ Search for heritage from Spain, Portugal, France, Italy, Romania — manuscripts
 <h1>Tropy</h1>
 <p><em>From archival photos to structured, linked research data</em></p>
 </section>
-<section id="what-is-tropy" class="slide level2">
-<h2>What is Tropy?</h2>
+<section id="what-is-tropy" class="slide level2 smaller center">
+<h2>– What is Tropy?</h2>
 <p>A <strong>free, open-source desktop app</strong> for organizing and describing research photographs.</p>
 <p>Not a generic photo manager — built specifically for <strong>historians, art historians, and humanists</strong>.</p>
 <div class="columns">
@@ -935,8 +944,8 @@ Search for heritage from Spain, Portugal, France, Italy, Romania — manuscripts
 💬 <a href="https://community.tropy.org">community.tropy.org</a></p>
 </div></div>
 </section>
-<section id="tropy-is-not" class="slide level2">
-<h2>Tropy is NOT…</h2>
+<section id="tropy-is-not" class="slide level2 center">
+<h2>– Tropy is NOT…</h2>
 <ul>
 <li><p>A photo editor <em>(Photoshop, Lightroom…)</em></p></li>
 <li><p>A reference manager <em>(that’s Zotero)</em></p></li>
@@ -945,8 +954,8 @@ Search for heritage from Spain, Portugal, France, Italy, Romania — manuscripts
 </ul>
 <p>✅ The <strong>missing link</strong> between your camera roll and your <strong>structured research data</strong>.</p>
 </section>
-<section id="the-core-workflow" class="slide level2">
-<h2>The Core Workflow</h2>
+<section id="the-core-workflow" class="slide level2 center">
+<h2>– The Core Workflow</h2>
 <ol type="1">
 <li><strong>Import</strong> photos from your archival sessions — including <strong>PDFs</strong></li>
 <li><strong>Group</strong> related photos into <em>items</em></li>
@@ -968,8 +977,8 @@ Search for heritage from Spain, Portugal, France, Italy, Romania — manuscripts
 </div>
 </div>
 </section>
-<section id="the-tropy-interface" class="slide level2">
-<h2>The Tropy Interface</h2>
+<section id="the-tropy-interface" class="slide level2 smaller center">
+<h2>– The Tropy Interface</h2>
 <div class="columns">
 <div class="column" style="width:55%;">
 <p><strong>4 main panels:</strong></p>
@@ -1016,19 +1025,19 @@ Search for heritage from Spain, Portugal, France, Italy, Romania — manuscripts
 </div>
 </div>
 </section>
-<section id="three-levels-of-description" class="slide level2">
-<h2>Three Levels of Description</h2>
+<section id="three-levels-of-description" class="slide level2 center">
+<h2>– Three Levels of Description</h2>
 <p><strong>📁 Item</strong> — the primary unit</p>
 <p>Groups logically related photos. <em>Example: a document photographed recto/verso = 1 item, 2 photos.</em></p>
 </section>
-<section id="three-levels-of-description-1" class="slide level2">
-<h2>Three Levels of Description</h2>
+<section id="three-levels-of-description-1" class="slide level2 center">
+<h2>– Three Levels of Description</h2>
 <p><strong>🖼️ Photo</strong> — one image file</p>
 <p>Metadata: filename, dimensions, date taken.</p>
 <p><em>You rarely describe photos individually — the item is the primary unit of description.</em></p>
 </section>
-<section id="exif-metadata-already-in-the-file" class="slide level2">
-<h2>EXIF — Metadata Already in the File</h2>
+<section id="exif-metadata-already-in-the-file" class="slide level2 smaller center">
+<h2>– EXIF: Metadata Already in the File</h2>
 <p>Some metadata is <strong>embedded in the image file itself</strong> by the camera or scanner — no description needed.</p>
 <div class="columns">
 <div class="column" style="width:50%;">
@@ -1083,14 +1092,14 @@ DC describes <strong>what</strong> it shows.</p>
 </div>
 </div>
 </section>
-<section id="three-levels-of-description-2" class="slide level2">
-<h2>Three Levels of Description</h2>
+<section id="three-levels-of-description-2" class="slide level2 center">
+<h2>– Three Levels of Description</h2>
 <p><strong>🔍 Selection</strong> — a cropped region</p>
 <p>A seal, a signature, an inscription, a motif.</p>
 <p>Has its own title, notes, and tags — linked to pixel coordinates in the image.</p>
 </section>
-<section id="templates" class="slide level2">
-<h2>Templates</h2>
+<section id="templates" class="slide level2 smaller center">
+<h2>– Templates</h2>
 <p>A <strong>template</strong> defines which metadata fields appear for an item — each field is a <strong>property</strong> from a vocabulary.</p>
 <div class="columns">
 <div class="column" style="width:50%;">
@@ -1110,8 +1119,8 @@ DC describes <strong>what</strong> it shows.</p>
 <p>Any RDF/OWL schema (JSON-LD or Turtle) → then use those properties in your templates.</p>
 </div></div>
 </section>
-<section id="plugins" class="slide level2">
-<h2>Plugins</h2>
+<section id="plugins" class="slide level2 smaller center">
+<h2>– Plugins</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><strong>Import</strong></p>
@@ -1124,31 +1133,23 @@ DC describes <strong>what</strong> it shows.</p>
 <p><strong>Export</strong></p>
 <ul>
 <li>Omeka S Export</li>
-<li>IIIF Export (generate Manifests)</li>
 <li>CSV Export</li>
 <li><strong>CSL / Zotero Export</strong></li>
 </ul>
 </div></div>
-<p>🔗 <a href="https://tropy.org/plugins">tropy.org/plugins</a></p>
+<p>🔗 <a href="https://tropy.org">tropy.org</a></p>
+<p><strong>Experimental:</strong> <a href="https://gitlab.huma-num.fr/bmorandiere/tropy-plugin-nakala">tropy-plugin-nakala</a> by Bruno Morandière</p>
 </section>
-<section id="learning-tropy" class="slide level2">
-<h2>Learning Tropy</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
+<section id="learning-tropy" class="slide level2 center">
+<h2>– Learning Tropy</h2>
 <p><strong>English:</strong></p>
 <p>📚 <a href="https://docs.tropy.org">docs.tropy.org</a><br>
-▶️ <a href="https://vimeo.com/user104478141">vimeo.com/user104478141</a><br>
-▶️ <a href="https://www.youtube.com/@tropyorg">youtube.com/<span class="citation" data-cites="tropyorg">@tropyorg</span></a><br>
-💬 <a href="https://community.tropy.org">community.tropy.org</a></p>
-</div><div class="column" style="width:50%;">
-<p><strong>French / UPPA:</strong></p>
-<p>📄 <a href="https://programmation-pist.huma-num.fr">programmation-pist.huma-num.fr</a></p>
-<p>📧 <a href="mailto:julien.rabaud@univ-pau.fr">julien.rabaud@univ-pau.fr</a><br>
-UPPA-specific templates on request.</p>
-</div></div>
+▶️ <a href="https://vimeo.com/user73164761">vimeo.com/user104478141</a><br>
+▶️ <a href="https://www.youtube.com/@tropyorg">youtube.com/<span class="citation" data-cites="tropy">@tropy</span></a><br>
+💬 <a href="https://forums.tropy.org">forums.tropy.org</a></p>
 </section>
-<section id="hands-on-tropy" class="slide level2">
-<h2>Hands-On: Tropy</h2>
+<section id="hands-on-tropy" class="slide level2 center">
+<h2>– Hands-On: Tropy</h2>
 <div class="callout callout-note callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -1169,14 +1170,44 @@ UPPA-specific templates on request.</p>
 </div>
 </div>
 </div>
+</section>
+<section id="beyond-description-visualizing-your-corpus" class="slide level2 smaller center">
+<h2>Beyond Description — Visualizing Your Corpus</h2>
+<p>Once your images are described and structured, new possibilities open up.</p>
+<p><strong>VIKUS Viewer</strong> — developed at <em>FH Potsdam’s Urban Complexity Lab</em> — arranges thousands of cultural artifacts on a dynamic canvas, letting you explore <strong>thematic and temporal patterns</strong> across an entire collection at a glance.</p>
+<div class="columns">
+<div class="column" style="width:60%;">
+<ul>
+<li>Items positioned along a <strong>timeline</strong></li>
+<li>Keywords visualized as an interactive <strong>frequency map</strong></li>
+<li>Zoom into high-resolution textures</li>
+<li>Runs in the browser — no installation</li>
+</ul>
+</div><div class="column" style="width:40%;">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p>I won’t go into this further today — but it’s a beautiful example of what a <strong>well-described corpus</strong> enables.</p>
+<p>Once you’ve done the work in Tropy, tools like this become possible.</p>
+</div>
+</div>
+</div>
+</div></div>
+<p>🔗 <a href="https://vikusviewer.fh-potsdam.de">vikusviewer.fh-potsdam.de</a></p>
 </section></section>
 <section>
 <section id="arvest" class="title-slide slide level1 center" data-background-color="#003865">
 <h1>Arvest</h1>
 <p><em>Annotate, collaborate, expose IIIF collections</em></p>
 </section>
-<section id="what-is-arvest" class="slide level2">
-<h2>What is Arvest?</h2>
+<section id="what-is-arvest" class="slide level2 center">
+<h2>– What is Arvest?</h2>
 <p>A <strong>web platform</strong> for working with IIIF image collections — no installation needed.</p>
 <ul>
 <li>Import local images <strong>or</strong> IIIF Manifests</li>
@@ -1187,8 +1218,8 @@ UPPA-specific templates on request.</p>
 </ul>
 <p>🔗 <a href="https://arvest.app">arvest.app</a> · 📚 <a href="https://docs.arvest.app">docs.arvest.app</a></p>
 </section>
-<section id="importing-local-files" class="slide level2">
-<h2>Importing — Local Files</h2>
+<section id="importing-local-files" class="slide level2 center">
+<h2>– Importing — Local Files</h2>
 <ol type="1">
 <li>Create a workspace</li>
 <li><em>Import → Upload files</em></li>
@@ -1196,8 +1227,8 @@ UPPA-specific templates on request.</p>
 </ol>
 <p>Supported formats: JPEG, PNG, TIFF, WebP</p>
 </section>
-<section id="importing-iiif-manifest" class="slide level2">
-<h2>Importing — IIIF Manifest</h2>
+<section id="importing-iiif-manifest" class="slide level2 center">
+<h2>– Importing — IIIF Manifest</h2>
 <ol type="1">
 <li>Find a Manifest URL (Europeana, Nakala, Omeka S, Gallica…)</li>
 <li><em>Import → IIIF Manifest URL</em></li>
@@ -1205,8 +1236,8 @@ UPPA-specific templates on request.</p>
 </ol>
 <pre><code>https://gallica.bnf.fr/iiif/ark:/12148/btv1b8452439r/manifest.json</code></pre>
 </section>
-<section id="annotating" class="slide level2">
-<h2>Annotating</h2>
+<section id="annotating" class="slide level2 center">
+<h2>– Annotating</h2>
 <p>Arvest uses the <strong>W3C Web Annotation</strong> standard.</p>
 <div class="columns">
 <div class="column" style="width:50%;">
@@ -1225,8 +1256,8 @@ UPPA-specific templates on request.</p>
 </ul>
 </div></div>
 </section>
-<section id="uses-in-humanities-research" class="slide level2">
-<h2>Uses in Humanities Research</h2>
+<section id="uses-in-humanities-research" class="slide level2 center">
+<h2>– Uses in Humanities Research</h2>
 <ul>
 <li>Identify depicted <strong>persons, places, objects</strong></li>
 <li>Transcribe visible <strong>text or inscriptions</strong></li>
@@ -1235,14 +1266,14 @@ UPPA-specific templates on request.</p>
 <li>Compare <strong>motifs</strong> across a corpus</li>
 </ul>
 </section>
-<section id="collaborating" class="slide level2">
-<h2>Collaborating</h2>
+<section id="collaborating" class="slide level2 center">
+<h2>– Collaborating</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><strong>Shared workspaces:</strong></p>
 <ul>
 <li>Invite collaborators by email</li>
-<li>Roles: viewer · annotator · editor · admin</li>
+<li>Roles: <em>viewer</em> · <em>annotator</em> · <em>editor</em> · <em>admin</em></li>
 <li>All annotations visible to the team</li>
 <li>Comment threads · activity log</li>
 </ul>
@@ -1263,8 +1294,8 @@ Invite partners across institutions, annotate the same corpus collaboratively �
 </div>
 </div></div>
 </section>
-<section id="annotation-workflow" class="slide level2">
-<h2>Annotation Workflow</h2>
+<section id="annotation-workflow" class="slide level2 center">
+<h2>– Annotation Workflow</h2>
 <ol type="1">
 <li>Lead researcher imports corpus + sets guidelines</li>
 <li>Collaborators annotate independently</li>
@@ -1273,8 +1304,8 @@ Invite partners across institutions, annotate the same corpus collaboratively �
 <li>Export for publication or ML</li>
 </ol>
 </section>
-<section id="exposing-data-via-api" class="slide level2">
-<h2>Exposing Data via API</h2>
+<section id="exposing-data-via-api" class="slide level2 center">
+<h2>– Exposing Data via API</h2>
 <pre><code>GET /api/v1/workspaces/{id}/manifests
 GET /api/v1/workspaces/{id}/annotations
 GET /api/v1/manifests/{id}/canvas/{n}</code></pre>
@@ -1303,8 +1334,8 @@ GET /api/v1/manifests/{id}/canvas/{n}</code></pre>
 </div>
 </div></div>
 </section>
-<section id="the-full-workflow" class="slide level2">
-<h2>The Full Workflow</h2>
+<section id="the-full-workflow" class="slide level2 center">
+<h2>– The Full Workflow</h2>
 <div class="cell" data-reveal="true" data-layout-align="default">
 <div class="cell-output-display">
 <div>
@@ -1324,7 +1355,7 @@ GET /api/v1/manifests/{id}/canvas/{n}</code></pre>
 </div>
 </div>
 </section>
-<section id="summary" class="slide level2">
+<section id="summary" class="slide level2 center">
 <h2>Summary</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
@@ -1346,7 +1377,7 @@ GET /api/v1/manifests/{id}/canvas/{n}</code></pre>
 </ol>
 </div></div>
 </section>
-<section id="section" class="slide level2">
+<section id="section" class="slide level2 center">
 <h2>*</h2>
 <div style="text-align:center; font-size:1.8em; margin-top:1.5rem;">
 <p>Questions?</p>
@@ -1359,17 +1390,18 @@ GET /api/v1/manifests/{id}/canvas/{n}</code></pre>
 <p><a href="https://ujubib.github.io/ed-tropy-arvest/slides.html">ujubib.github.io/ed-tropy-arvest/slides.html</a></p>
 </div>
 </section>
-<section id="references" class="slide level2 smaller">
+<section id="references" class="slide level2 smaller center">
 <h2>References</h2>
 <p><strong>Semantic Web &amp; RDF:</strong> <a href="https://www.w3.org/TR/rdf11-primer/">w3.org/TR/rdf11-primer</a></p>
 <p><strong>Dublin Core:</strong> <a href="https://dublincore.org">dublincore.org</a></p>
 <p><strong>CIDOC-CRM:</strong> <a href="https://cidoc-crm.org">cidoc-crm.org</a></p>
 <p><strong>GeoNames:</strong> <a href="https://geonames.org">geonames.org</a></p>
-<p><strong>Pactols / Openthéso:</strong> <a href="https://frantiq.fr">frantiq.fr</a> · <a href="https://opentheso.huma-num.fr">opentheso.huma-num.fr</a></p>
+<p><strong>Pactols / Openthéso:</strong> <a href="https://pactols.frantiq.fr">pactols.frantiq.fr</a> · <a href="https://opentheso.huma-num.fr">opentheso.huma-num.fr</a></p>
 <p><strong>IIIF:</strong> <a href="https://iiif.io">iiif.io</a> · <a href="https://iiif.io/api/cookbook/">iiif.io/api/cookbook</a></p>
-<p><strong>Tropy:</strong> <a href="https://docs.tropy.org">docs.tropy.org</a> · <a href="https://community.tropy.org">community.tropy.org</a></p>
+<p><strong>Tropy:</strong> <a href="https://docs.tropy.org">docs.tropy.org</a> · <a href="https://forums.tropy.org">forums.tropy.org</a></p>
 <p><strong>Nakala:</strong> <a href="https://nakala.fr">nakala.fr</a></p>
-<p><strong>Arvest:</strong> <a href="https://arvest.app">arvest.app</a> · <a href="https://docs.arvest.app">docs.arvest.app</a></p>
+<p><strong>Arvest:</strong> <a href="https://arvest.app">arvest.app</a></p>
+<p><strong>VIKUS Viewer:</strong> <a href="https://vikusviewer.fh-potsdam.de">vikusviewer.fh-potsdam.de</a></p>
 
 
 </section></section>
@@ -1461,7 +1493,7 @@ GET /api/v1/manifests/{id}/canvas/{n}</code></pre>
         disableLayout: false,
 
         // Vertical centering of slides
-        center: false,
+        center: true,
 
         // Enables touch navigation on devices with touch input
         touch: true,
@@ -1661,7 +1693,7 @@ GET /api/v1/manifests/{id}/canvas/{n}</code></pre>
         }
           var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
           var mailtoRegex = new RegExp(/^mailto:/);
-            var filterRegex = new RegExp('/' + window.location.host + '/');
+            var filterRegex = new RegExp("https:\/\/ujubib\.github\.io\/ed-tropy-arvest\/");
           var isInternal = (href) => {
               return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
           }

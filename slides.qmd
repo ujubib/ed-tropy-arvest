@@ -23,6 +23,7 @@ format:
     controls: true
     controls-layout: bottom-right
     smaller: false
+    center: true
     highlight-style: github
     code-line-numbers: false
     code-copy: true
@@ -32,7 +33,7 @@ format:
     margin: 0.1
 ---
 
-## Agenda {.center}
+## -- Agenda {.center}
 
 ::: {.columns}
 ::: {.column width="50%"}
@@ -60,7 +61,7 @@ format:
 
 ---
 
-## Two Webs
+## -- Two Webs
 
 ::: {.columns}
 ::: {.column width="50%"}
@@ -87,7 +88,7 @@ A global **knowledge graph**
 
 ---
 
-## Triples
+## -- Triples
 
 Everything in the Semantic Web is a **triple**:
 
@@ -105,7 +106,7 @@ Each resource can be both **subject** and **object** — triples form an interco
 
 ---
 
-## URIs — Naming Things
+## -- URIs: Naming Things
 
 A **URI** is a unique, global, persistent identifier for *any* thing.
 
@@ -115,7 +116,7 @@ https://www.wikidata.org/entity/Q937       →  Marie Curie
 http://vocab.getty.edu/page/aat/300015646  →  photographs
 ```
 
-Unlike a URL (which *locates* a page), a URI **names** a resource — in any language, forever.
+Unlike a **URL** (which *locates* a page), a URI **names** a resource — in any language, forever.
 
 ::: {.callout-tip}
 When you put a GeoNames URI in a Tropy metadata field, you're not typing a string — you're linking your data to a **global knowledge graph**.
@@ -123,11 +124,11 @@ When you put a GeoNames URI in a Tropy metadata field, you're not typing a strin
 
 ---
 
-## RDF — The Standard for Triples
+## -- RDF: The Standard for Triples
 
 ::: {.columns}
 ::: {.column width="50%"}
-**Turtle** — human-readable:
+### Turtle — *human-readable*:
 
 ```turtle
 <https://myarchive.org/photo/001>
@@ -137,7 +138,7 @@ When you put a GeoNames URI in a Tropy metadata field, you're not typing a strin
 ```
 :::
 ::: {.column width="50%"}
-**JSON-LD** — used by Tropy:
+### JSON-LD — *used by Tropy*:
 
 ```json
 {
@@ -163,16 +164,18 @@ Tropy stores all metadata as **JSON-LD** — your descriptions are already Linke
 
 15 universal elements — usable for **any** resource type.
 
-::: {.columns}
+:::: {.columns}
 ::: {.column width="50%"}
 | Property | Usage |
 |---|---|
 | `dc:title` | Title |
 | `dc:creator` | Photographer / author |
+| `dc:contributor` | Other contributors |
+| `dc:publisher` | Publisher / institution |
 | `dc:date` | Date of creation |
 | `dc:subject` | Topic / theme |
 | `dc:description` | Free-text note |
-| `dc:rights` | License / copyright |
+| `dc:type` | Resource type |
 :::
 ::: {.column width="50%"}
 | Property | Usage |
@@ -183,16 +186,17 @@ Tropy stores all metadata as **JSON-LD** — your descriptions are already Linke
 | `dc:language` | Language of visible text |
 | `dc:coverage` | Place or period |
 | `dc:relation` | Related items |
+| `dc:rights` | License / copyright |
 :::
-:::
+::::
 
-::: aside
+
 🔗 [dublincore.org](https://dublincore.org) · `http://purl.org/dc/elements/1.1/`
-:::
+
 
 ---
 
-## Dublin Core Terms (DCTERMS)
+## -- Dublin Core Terms (DCTERMS) {.smaller}
 
 Richer, **typed** versions of DC — plus extra properties.
 
@@ -225,7 +229,7 @@ dcterms:isPartOf  <myArchive:collection_42>
 
 ---
 
-## CIDOC-CRM
+## -- CIDOC-CRM
 
 The international standard for **cultural heritage** data (Europeana, museums, major archives).
 
@@ -244,7 +248,7 @@ Everything important in CIDOC-CRM *happens*.
 
 ---
 
-## CIDOC-CRM — Core Classes
+## -- CIDOC-CRM — Core Classes
 
 ::: {.columns}
 ::: {.column width="50%"}
@@ -297,7 +301,7 @@ These schemas are not mutually exclusive — a single template can mix propertie
 
 ---
 
-## The Problem with Free Text {.smaller}
+## -- The Problem with Free Text {.smaller}
 
 ::: {.columns}
 ::: {.column width="50%"}
@@ -332,7 +336,7 @@ When everyone uses the same URI, datasets become **interoperable**.
 
 ---
 
-## GeoNames
+## -- GeoNames
 
 Over **12 million** geographic names — all with stable URIs.
 
@@ -351,7 +355,7 @@ In Tropy: use GeoNames URIs in the `dcterms:spatial` field.
 
 ---
 
-## Pactols
+## -- Pactols
 
 Multilingual thesaurus for **Archaeology, Classical and Oriental Studies** — maintained by the Frantiq network.
 
@@ -365,7 +369,7 @@ Especially relevant for **CHORAL** research — Romance cultures, Mediterranean 
 
 ---
 
-## Getty Vocabularies
+## -- Getty Vocabularies
 
 Published as **Linked Open Data** by the Getty Research Institute — the standard reference for art history and cultural heritage.
 
@@ -395,7 +399,7 @@ vocab.getty.edu/ulan/500010570
 
 ---
 
-## Loterre
+## -- Loterre {.smaller}
 
 **Linked Open TERminology REsources** — published by [Inist-CNRS](https://www.inist.fr).
 
@@ -426,7 +430,7 @@ All vocabularies are:
 
 ---
 
-## Huma-Num Openthéso {.smaller}
+## -- Openthéso (Huma-Num instance) {.smaller}
 
 A platform hosting many **discipline-specific thesauri** — terms expressed in **SKOS**.
 
@@ -443,7 +447,6 @@ Each term has:
 ::: {.column width="45%"}
 Hosted thesauri include:
 
-- PACTOLS (Archaeology)
 - Architectural heritage (MHFA)
 - Performing arts vocabulary
 - … and many others
@@ -458,7 +461,7 @@ Hosted thesauri include:
 
 ---
 
-## What is IIIF?
+## -- What is IIIF?
 
 Open standards for **rich access** to digitized images — developed since 2011 by libraries, archives, and museums worldwide.
 
@@ -467,7 +470,7 @@ Open standards for **rich access** to digitized images — developed since 2011 
 Any IIIF-compliant viewer can display any IIIF-compliant image — **regardless of where it is hosted**.
 :::
 
-Deep zoom · cropping · structured collections · shared annotations · multi-institutional exhibitions
+*Deep zoom* · *cropping* · *structured collections* · *shared annotations* · *multi-institutional exhibitions*
 
 ::: aside
 🔗 [iiif.io](https://iiif.io) — pronounced *"triple-eye-eff"*
@@ -475,7 +478,7 @@ Deep zoom · cropping · structured collections · shared annotations · multi-i
 
 ---
 
-## Image API
+## -- Image API
 
 Standardizes **how images are served**.
 
@@ -493,7 +496,7 @@ https://example.org/iiif/photo001/pct:0,0,50,50/full/0/default.jpg
 
 ---
 
-## Presentation API — The Manifest
+## -- Presentation API: The Manifest
 
 Standardizes **how collections are described**.
 
@@ -569,7 +572,7 @@ This is a complete, **FAIR-compliant** workflow for image corpora in the humanit
 
 ---
 
-## What is Tropy?
+## -- What is Tropy? {.smaller}
 
 A **free, open-source desktop app** for organizing and describing research photographs.
 
@@ -593,7 +596,7 @@ First release: 2017 · License: AGPL-3.0
 
 ---
 
-## Tropy is NOT…
+## -- Tropy is NOT…
 
 - A photo editor *(Photoshop, Lightroom…)*
 
@@ -607,7 +610,7 @@ First release: 2017 · License: AGPL-3.0
 
 ---
 
-## The Core Workflow
+## -- The Core Workflow
 
 1. **Import** photos from your archival sessions — including **PDFs**
 2. **Group** related photos into *items*
@@ -621,7 +624,7 @@ One Tropy project per **research trip** or **archive collection**.
 
 ---
 
-## The Tropy Interface
+## -- The Tropy Interface {.smaller}
 
 ::: {.columns}
 ::: {.column width="55%"}
@@ -651,7 +654,7 @@ Before your first import, set a **default template** in
 
 ---
 
-## Three Levels of Description
+## -- Three Levels of Description
 
 **📁 Item** — the primary unit
 
@@ -659,7 +662,7 @@ Groups logically related photos. *Example: a document photographed recto/verso =
 
 ---
 
-## Three Levels of Description
+## -- Three Levels of Description
 
 **🖼️ Photo** — one image file
 
@@ -669,7 +672,7 @@ Metadata: filename, dimensions, date taken.
 
 ---
 
-## EXIF — Metadata Already in the File
+## -- EXIF: Metadata Already in the File {.smaller}
 
 Some metadata is **embedded in the image file itself** by the camera or scanner — no description needed.
 
@@ -705,7 +708,7 @@ In Tropy, EXIF properties belong in a **photo-level template** — not an item t
 
 ---
 
-## Three Levels of Description
+## -- Three Levels of Description
 
 **🔍 Selection** — a cropped region
 
@@ -715,7 +718,7 @@ Has its own title, notes, and tags — linked to pixel coordinates in the image.
 
 ---
 
-## Templates
+## -- Templates {.smaller}
 
 A **template** defines which metadata fields appear for an item — each field is a **property** from a vocabulary.
 
@@ -742,7 +745,7 @@ Any RDF/OWL schema (JSON-LD or Turtle) → then use those properties in your tem
 
 ---
 
-## Plugins
+## -- Plugins {.smaller}
 
 ::: {.columns}
 ::: {.column width="50%"}
@@ -756,40 +759,31 @@ Any RDF/OWL schema (JSON-LD or Turtle) → then use those properties in your tem
 **Export**
 
 - Omeka S Export
-- IIIF Export (generate Manifests)
 - CSV Export
 - **CSL / Zotero Export**
 :::
 :::
 
-🔗 [tropy.org/plugins](https://tropy.org/plugins)
+🔗 [tropy.org](https://tropy.org)
+
+**Experimental:** [tropy-plugin-nakala](https://gitlab.huma-num.fr/bmorandiere/tropy-plugin-nakala) by Bruno Morandière
 
 ---
 
-## Learning Tropy
+## -- Learning Tropy
 
-::: {.columns}
-::: {.column width="50%"}
+
 **English:**
 
 📚 [docs.tropy.org](https://docs.tropy.org)  
-▶️ [vimeo.com/user104478141](https://vimeo.com/user104478141)  
-▶️ [youtube.com/@tropyorg](https://www.youtube.com/@tropyorg)  
-💬 [community.tropy.org](https://community.tropy.org)
-:::
-::: {.column width="50%"}
-**French / UPPA:**
+▶️ [vimeo.com/user104478141](https://vimeo.com/user73164761)  
+▶️ [youtube.com/@tropy](https://www.youtube.com/@tropyorg)  
+💬 [forums.tropy.org](https://forums.tropy.org)
 
-📄 [programmation-pist.huma-num.fr](https://programmation-pist.huma-num.fr)
-
-📧 [julien.rabaud@univ-pau.fr](mailto:julien.rabaud@univ-pau.fr)  
-UPPA-specific templates on request.
-:::
-:::
 
 ---
 
-## Hands-On: Tropy
+## -- Hands-On: Tropy
 
 ::: {.callout-note}
 ### We will explore together:
@@ -802,13 +796,40 @@ UPPA-specific templates on request.
 6. Export as JSON-LD
 :::
 
+---
+
+## Beyond Description — Visualizing Your Corpus {.smaller}
+
+Once your images are described and structured, new possibilities open up.
+
+**VIKUS Viewer** — developed at *FH Potsdam's Urban Complexity Lab* — arranges thousands of cultural artifacts on a dynamic canvas, letting you explore **thematic and temporal patterns** across an entire collection at a glance.
+
+::::: {.columns}
+:::: {.column width="60%"}
+- Items positioned along a **timeline**
+- Keywords visualized as an interactive **frequency map**
+- Zoom into high-resolution textures
+- Runs in the browser — no installation
+::::
+
+:::: {.column width="40%"}
+::: {.callout-note}
+I won't go into this further today — but it's a beautiful example of what a **well-described corpus** enables.
+
+Once you've done the work in Tropy, tools like this become possible.
+:::
+::::
+:::::
+
+🔗 [vikusviewer.fh-potsdam.de](https://vikusviewer.fh-potsdam.de)
+
 # Arvest {background-color="#003865" .center}
 
 *Annotate, collaborate, expose IIIF collections*
 
 ---
 
-## What is Arvest?
+## -- What is Arvest?
 
 A **web platform** for working with IIIF image collections — no installation needed.
 
@@ -822,7 +843,7 @@ A **web platform** for working with IIIF image collections — no installation n
 
 ---
 
-## Importing — Local Files
+## -- Importing — Local Files
 
 1. Create a workspace
 2. *Import → Upload files*
@@ -832,7 +853,7 @@ Supported formats: JPEG, PNG, TIFF, WebP
 
 ---
 
-## Importing — IIIF Manifest
+## -- Importing — IIIF Manifest
 
 1. Find a Manifest URL (Europeana, Nakala, Omeka S, Gallica…)
 2. *Import → IIIF Manifest URL*
@@ -844,7 +865,7 @@ https://gallica.bnf.fr/iiif/ark:/12148/btv1b8452439r/manifest.json
 
 ---
 
-## Annotating
+## -- Annotating
 
 Arvest uses the **W3C Web Annotation** standard.
 
@@ -867,7 +888,7 @@ Arvest uses the **W3C Web Annotation** standard.
 
 ---
 
-## Uses in Humanities Research
+## -- Uses in Humanities Research
 
 - Identify depicted **persons, places, objects**
 - Transcribe visible **text or inscriptions**
@@ -877,14 +898,14 @@ Arvest uses the **W3C Web Annotation** standard.
 
 ---
 
-## Collaborating
+## -- Collaborating
 
 ::: {.columns}
 ::: {.column width="50%"}
 **Shared workspaces:**
 
 - Invite collaborators by email
-- Roles: viewer · annotator · editor · admin
+- Roles: *viewer* · *annotator* · *editor* · *admin*
 - All annotations visible to the team
 - Comment threads · activity log
 :::
@@ -898,7 +919,7 @@ Invite partners across institutions, annotate the same corpus collaboratively �
 
 ---
 
-## Annotation Workflow
+## -- Annotation Workflow
 
 1. Lead researcher imports corpus + sets guidelines
 2. Collaborators annotate independently
@@ -908,7 +929,7 @@ Invite partners across institutions, annotate the same corpus collaboratively �
 
 ---
 
-## Exposing Data via API
+## -- Exposing Data via API
 
 ```
 GET /api/v1/workspaces/{id}/manifests
@@ -935,7 +956,7 @@ Annotate once → reuse everywhere.
 
 ---
 
-## The Full Workflow
+## -- The Full Workflow
 
 ```{mermaid}
 flowchart LR
@@ -1001,12 +1022,14 @@ Questions?
 
 **GeoNames:** [geonames.org](https://geonames.org)
 
-**Pactols / Openthéso:** [frantiq.fr](https://frantiq.fr) · [opentheso.huma-num.fr](https://opentheso.huma-num.fr)
+**Pactols / Openthéso:** [pactols.frantiq.fr](https://pactols.frantiq.fr) · [opentheso.huma-num.fr](https://opentheso.huma-num.fr)
 
 **IIIF:** [iiif.io](https://iiif.io) · [iiif.io/api/cookbook](https://iiif.io/api/cookbook/)
 
-**Tropy:** [docs.tropy.org](https://docs.tropy.org) · [community.tropy.org](https://community.tropy.org)
+**Tropy:** [docs.tropy.org](https://docs.tropy.org) · [forums.tropy.org](https://forums.tropy.org)
 
 **Nakala:** [nakala.fr](https://nakala.fr)
 
-**Arvest:** [arvest.app](https://arvest.app) · [docs.arvest.app](https://docs.arvest.app)
+**Arvest:** [arvest.app](https://arvest.app) 
+
+**VIKUS Viewer:** [vikusviewer.fh-potsdam.de](https://vikusviewer.fh-potsdam.de)

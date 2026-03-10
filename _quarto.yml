@@ -5,7 +5,7 @@ project:
 website:
   title: "Organizing and Curating Image Corpora"
   description: "With Tropy and Arvest — Workshop for ED 481 SSH / CHORAL"
-  favicon: img/favicon.png
+  favicon: img/DCMI-logo.png
   repo-url: https://github.com/ujubib/ed-tropy-arvest
   repo-actions: [source, issue]
 
@@ -39,18 +39,18 @@ website:
             href: resources/arvest.qmd
 
   page-footer:
-    background: FloralWhite
+    background: floralwhite
     border: false
     left: "Made with [Quarto](https://quarto.org) · UPPA · ED 481 SSH · CHORAL"
     right: "Last update: {{< meta site-date >}}"
 
-site-date: 2026-03-09
+site-date: 2026-03-10
 
 format:
   html:
     theme: [journal, custom.scss]
     css: styles.css
-    backgroundcolor: FloralWhite
+    backgroundcolor: floralwhite
     lang: en
     toc: true
     toc-depth: 3
@@ -59,5 +59,10 @@ format:
     link-external-newwindow: true
     reference-location: margin
     number-sections: false
+    grid:
+      sidebar-width: 300px
+      body-width: 900px
+      margin-width: 300px
+      gutter-width: 1.5rem
 
 brand: _brand.yml

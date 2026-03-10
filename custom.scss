@@ -1,5 +1,11 @@
 /*-- scss:defaults --*/
 
+// Typography — explicit override of journal theme font variables
+// (_brand.yml injects before the theme; journal redefines after — so we pin here)
+$headings-font-family:  'Amaranth', sans-serif;
+$font-family-base:      'Arsenal', sans-serif;
+$font-family-monospace: 'B612 Mono', monospace;
+
 // UPPA colors
 $primary: #003D7A;
 $secondary: #2297D4;
