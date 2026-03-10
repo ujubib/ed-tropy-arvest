@@ -374,6 +374,17 @@
     ]
   },
   {
+    "objectID": "slides.html#beyond-description-visualizing-your-corpus",
+    "href": "slides.html#beyond-description-visualizing-your-corpus",
+    "title": "Organizing and Curating Image Corpora",
+    "section": "Beyond Description — Visualizing Your Corpus",
+    "text": "Beyond Description — Visualizing Your Corpus\nOnce your images are described and structured, new possibilities open up.\nVIKUS Viewer — developed at FH Potsdam’s Urban Complexity Lab — arranges thousands of cultural artifacts on a dynamic canvas, letting you explore thematic and temporal patterns across an entire collection at a glance.\n\n\n\nItems positioned along a timeline\nKeywords visualized as an interactive frequency map\nZoom into high-resolution textures\nRuns in the browser — no installation\n\nCollections already online: Van Gogh · Prussian Coins · 6,900 drawings by Frederick William IV · protest signs from the Boston Women’s March…\n\n\n\n\n\n\n\nNote\n\n\nI won’t go into this further today — but it’s a beautiful example of what a well-described corpus enables.\nOnce you’ve done the work in Tropy, tools like this become possible.\n\n\n\n\n🔗 vikusviewer.fh-potsdam.de",
+    "crumbs": [
+      "Workshop",
+      "Slides"
+    ]
+  },
+  {
     "objectID": "slides.html#what-is-arvest",
     "href": "slides.html#what-is-arvest",
     "title": "Organizing and Curating Image Corpora",
@@ -499,7 +510,7 @@
     "href": "slides.html#references",
     "title": "Organizing and Curating Image Corpora",
     "section": "References",
-    "text": "References\nSemantic Web & RDF: w3.org/TR/rdf11-primer\nDublin Core: dublincore.org\nCIDOC-CRM: cidoc-crm.org\nGeoNames: geonames.org\nPactols / Openthéso: frantiq.fr · opentheso.huma-num.fr\nIIIF: iiif.io · iiif.io/api/cookbook\nTropy: docs.tropy.org · community.tropy.org\nNakala: nakala.fr\nArvest: arvest.app · docs.arvest.app",
+    "text": "References\nSemantic Web & RDF: w3.org/TR/rdf11-primer\nDublin Core: dublincore.org\nCIDOC-CRM: cidoc-crm.org\nGeoNames: geonames.org\nPactols / Openthéso: frantiq.fr · opentheso.huma-num.fr\nIIIF: iiif.io · iiif.io/api/cookbook\nTropy: docs.tropy.org · community.tropy.org\nNakala: nakala.fr\nArvest: arvest.app · docs.arvest.app\nVIKUS Viewer: vikusviewer.fh-potsdam.de",
     "crumbs": [
       "Workshop",
       "Slides"
