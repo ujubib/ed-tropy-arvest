@@ -3,6 +3,8 @@ title: "IIIF Resources"
 subtitle: "Viewers, collections, tools and documentation"
 ---
 
+![](/img/IIIF-logo-with-text.png "logo IIIF International Image Interoperability Framework"){fig-align="center" width=50%}
+
 ## Getting Started with IIIF
 
 - **How IIIF Works** (official intro): [iiif.io/get-started/how-iiif-works/](https://iiif.io/get-started/how-iiif-works/)

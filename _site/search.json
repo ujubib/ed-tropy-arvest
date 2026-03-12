@@ -389,7 +389,7 @@
     "href": "slides.html#what-is-arvest",
     "title": "Organizing and Curating Image Corpora",
     "section": "– What is Arvest?",
-    "text": "– What is Arvest?\nA web platform for working with IIIF image collections — no installation needed.\n\nImport local images or IIIF Manifests\nAnnotate with the W3C Web Annotation standard\nCollaborate with shared workspaces\nExpose data via a REST API\nExport for machine learning pipelines\n\n🔗 arvest.app · 📚 docs.arvest.app",
+    "text": "– What is Arvest?\nA web platform for working with IIIF image collections — no installation needed.\n\nImport local images or IIIF Manifests\nAnnotate with the W3C Web Annotation standard\nCollaborate with shared workspaces\nExpose data via a REST API\nExport for machine learning pipelines\n\n🔗 arvest.app",
     "crumbs": [
       "Workshop",
       "Slides"
@@ -730,29 +730,18 @@
     "href": "index.html#about-the-tools",
     "title": "Organizing and Curating Image Corpora",
     "section": "About the Tools",
-    "text": "About the Tools\n\nTropy\nTropy is a free, open-source desktop application developed by the Roy Rosenzweig Center for History and New Media (George Mason University) and the Luxembourg Centre for Contemporary and Digital History (C²DH). It allows researchers to import, organize, describe, and annotate the photos they take during archival research.\n🔗 tropy.org · Documentation · GitHub\n\n\nArvest\nArvest is a web platform for working with IIIF image collections. It allows importing images (locally or via IIIF manifests), collaborative annotation, and exposing data through APIs for further analysis — including machine learning applications.\n🔗 arvest.app · Documentation\n\n\n\n\n\n\n\n\nNoteCC BY 4.0 License\n\n\n\nAll workshop materials are released under a Creative Commons Attribution 4.0 license. You are free to use, modify, and share them with attribution.",
+    "text": "About the Tools\n\nTropy\nTropy is a free, open-source desktop application developed by the Roy Rosenzweig Center for History and New Media (George Mason University) and the Luxembourg Centre for Contemporary and Digital History (C²DH). It allows researchers to import, organize, describe, and annotate the photos they take during archival research.\n🔗 tropy.org · Documentation · GitHub\n\n\nArvest\nArvest is a web platform for working with IIIF image collections. It allows importing images (locally or via IIIF manifests), collaborative annotation, and exposing data through APIs for further analysis — including machine learning applications.\n🔗 arvest.app\n\n\n\n\n\n\n\n\nNoteCC BY 4.0 License\n\n\n\nAll workshop materials are released under a Creative Commons Attribution 4.0 license. You are free to use, modify, and share them with attribution.",
     "crumbs": [
       "Workshop",
       "Home"
     ]
   },
   {
-    "objectID": "resources/iiif.html",
-    "href": "resources/iiif.html",
-    "title": "IIIF Resources",
-    "section": "",
-    "text": "How IIIF Works (official intro): iiif.io/get-started/how-iiif-works/\nIIIF Cookbook (practical recipes with examples): iiif.io/api/cookbook/\nIIIF Awesome list: github.com/IIIF/awesome-iiif\nBiblissima IIIF documentation — one of the best practical introductions to IIIF, with annotated examples and use cases from French cultural heritage institutions: iiif.biblissima.fr",
-    "crumbs": [
-      "Resources",
-      "IIIF"
-    ]
-  },
-  {
     "objectID": "resources/iiif.html#getting-started-with-iiif",
     "href": "resources/iiif.html#getting-started-with-iiif",
     "title": "IIIF Resources",
-    "section": "",
-    "text": "How IIIF Works (official intro): iiif.io/get-started/how-iiif-works/\nIIIF Cookbook (practical recipes with examples): iiif.io/api/cookbook/\nIIIF Awesome list: github.com/IIIF/awesome-iiif\nBiblissima IIIF documentation — one of the best practical introductions to IIIF, with annotated examples and use cases from French cultural heritage institutions: iiif.biblissima.fr",
+    "section": "Getting Started with IIIF",
+    "text": "Getting Started with IIIF\n\nHow IIIF Works (official intro): iiif.io/get-started/how-iiif-works/\nIIIF Cookbook (practical recipes with examples): iiif.io/api/cookbook/\nIIIF Awesome list: github.com/IIIF/awesome-iiif\nBiblissima IIIF documentation — one of the best practical introductions to IIIF, with annotated examples and use cases from French cultural heritage institutions: iiif.biblissima.fr",
     "crumbs": [
       "Resources",
       "IIIF"

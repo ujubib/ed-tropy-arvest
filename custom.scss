@@ -83,6 +83,35 @@ a {
   }
 }
 
+h1 {
+    color:#981b3e;
+}
+
+h2 {
+    color: steelblue
+}
+
+h3 {
+    color: mediumvioletred;
+}
+
+h4 {
+    color: #981b3e;
+}
+
+.subtitle {
+    color: #981b3e;
+    font-family: Amaranth;
+    font-size: 1.8em;
+    
+    
+}
+
+.quarto-title-meta-contents {
+    color: #981b3e;
+    
+}
+
 // Navbar
 .navbar {
   box-shadow: 0 2px 4px rgba(0,0,0,.1);
@@ -91,9 +120,15 @@ a {
 // Sidebar
 .sidebar-item {
   padding: 0.5rem 1rem;
+  border: 1px solid #2297D4;
+  border-radius: 8px;
   &:hover {
-    background-color: rgba(0, 61, 122, 0.05);
+    background-color: rgba(10, 92, 173, 0.14);
   }
+}
+
+.sidebar-item .sidebar-item {
+  border: none;
 }
 
 // Grid

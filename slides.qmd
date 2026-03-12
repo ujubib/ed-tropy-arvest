@@ -33,7 +33,7 @@ format:
     margin: 0.1
 ---
 
-## -- Agenda {.center}
+## -- Agenda
 
 ::: {.columns}
 ::: {.column width="50%"}
@@ -57,7 +57,7 @@ format:
 :::
 :::
 
-# Part 1<br/>-- Conceptual Foundations {.center}
+# Part 1<br/>-- Conceptual Foundations
 
 ---
 
@@ -154,7 +154,7 @@ When you put a GeoNames URI in a Tropy metadata field, you're not typing a strin
 Tropy stores all metadata as **JSON-LD** — your descriptions are already Linked Data, even if you don't think of them that way.
 :::
 
-# Metadata Schemas {background-color="#2297D4" .center}
+# Metadata Schemas {background-color="#2297D4"}
 
 *How do we describe what we see?*
 
@@ -295,7 +295,7 @@ These schemas are not mutually exclusive — a single template can mix propertie
 *Example:* `dc:title` + `dcterms:spatial` + `cidoc:P138_represents` in the same item template.
 :::
 
-# Controlled Vocabularies {background-color="#2297D4" .center}
+# Controlled Vocabularies {background-color="#2297D4"}
 
 *Consistent, linked values for metadata fields*
 
@@ -455,7 +455,7 @@ Hosted thesauri include:
 
 🔗 [opentheso.huma-num.fr](https://opentheso.huma-num.fr)
 
-# Part 2 -- IIIF {.center}
+# Part 2 -- IIIF
 
 *International Image Interoperability Framework*
 
@@ -566,7 +566,7 @@ This is a complete, **FAIR-compliant** workflow for image corpora in the humanit
 
 # Part 3<br/>-- Tools for Working with Image Corpora
 
-# Tropy {background-color="#003865" .center}
+# Tropy {background-color="#003865"}
 
 *From archival photos to structured, linked research data*
 
@@ -777,7 +777,7 @@ Any RDF/OWL schema (JSON-LD or Turtle) → then use those properties in your tem
 
 📚 [docs.tropy.org](https://docs.tropy.org)  
 ▶️ [vimeo.com/user104478141](https://vimeo.com/user73164761)  
-▶️ [youtube.com/@tropy](https://www.youtube.com/@tropyorg)  
+▶️ [youtube.com/@tropy](https://www.youtube.com/@tropy)  
 💬 [forums.tropy.org](https://forums.tropy.org)
 
 
@@ -823,7 +823,7 @@ Once you've done the work in Tropy, tools like this become possible.
 
 🔗 [vikusviewer.fh-potsdam.de](https://vikusviewer.fh-potsdam.de)
 
-# Arvest {background-color="#003865" .center}
+# Arvest {background-color="#003865"}
 
 *Annotate, collaborate, expose IIIF collections*
 
@@ -839,7 +839,7 @@ A **web platform** for working with IIIF image collections — no installation n
 - Expose data via a **REST API**
 - Export for **machine learning** pipelines
 
-🔗 [arvest.app](https://arvest.app) · 📚 [docs.arvest.app](https://docs.arvest.app)
+🔗 [arvest.app](https://arvest.app)
 
 ---
 

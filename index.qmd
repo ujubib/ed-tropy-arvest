@@ -6,7 +6,7 @@ author:
     orcid: 0000-0002-6604-9777
     affiliations:
       - name: Applied Mathematics Research Library · UPPA
-        url: https://bibliotheques.univ-pau.fr
+        url: https://bibliotheques.univ-pau.fr/fr/infos-pratiques/pau/bibliotheque-de-recherche-mathematiques-appliquees-ipra.html
       - name: Pôle Numérique · Research Data Management
         url: https://recherche.univ-pau.fr/fr/science-ouverte/donnees-de-la-recherche.html
 date: 2026-03-10
@@ -91,7 +91,7 @@ This workshop introduces the full pipeline for organizing, describing, and expos
 
 **Arvest** is a web platform for working with IIIF image collections. It allows importing images (locally or via IIIF manifests), collaborative annotation, and exposing data through APIs for further analysis — including machine learning applications.
 
-🔗 [arvest.app](https://arvest.app) · [Documentation](https://docs.arvest.app)
+🔗 [arvest.app](https://arvest.app)
 ::::
 
 ---
